@@ -392,9 +392,12 @@ select {
 /* ----------------------------------------------------------- */
 /* LOGIN */
 .login{
-    padding: 220px 0 250px 0;
-    text-align: center;
+	width: 400px;
+    margin: 200px auto 250px auto;
 }
+
+
+
 .login fieldset{
     border: none;
 }
@@ -403,25 +406,38 @@ legend{
     display: none;
 }
 
+.login_form{
+	margin: 0 auto;
+}
 
 
-.login_form input{
-    width: 300px;
-    height: 35px;
-    margin-bottom: 10px;
+
+#member_id, #member_passwd{
+	width: 400px;
+    height: 40px;
     padding-left: 5px;
     font-size: 11px;
     border: 1px solid #ddd;
 }
 
+#member_id{
+	margin-bottom: 15px;
+}
+
+#loginMsg{
+	margin-top: 10px;
+	text-align: left;
+}
+
 .login_btn ul{
     display: flex;
     justify-content: center;
+    margin-top: 5px;
     margin-bottom: 10px;
 }
 
 .login_btn .left a{
-    font-size: 11px;
+    font-size: 12px;
     color: #888;
 }
 
@@ -437,9 +453,6 @@ legend{
 .login_btn .left a:last-child::after{
     display: none;
 }
-.login_btn .right{
-    margin-left: 90px;
-}
 
 .login_btn .right a{
     color: #222;
@@ -447,21 +460,12 @@ legend{
 }
 
 
-.login_submit a{
-    margin: 0 auto;
-    width: 300px;
-    display: block;
-    line-height: 40px;
-    border: 1px solid #000;
-    color: #000;
-    padding: 0 5px;
-}
 
 #login_submit{
 	margin: 0 auto;
-    width: 310px;
+    width: 410px;
     display: block;
-    line-height: 40px;
+    line-height: 45px;
     border: 1px solid #000;
     color: #000;
     padding: 0 5px;

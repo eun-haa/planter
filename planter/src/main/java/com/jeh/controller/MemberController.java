@@ -63,28 +63,34 @@ public class MemberController {
 	public void login() {
 		System.out.println("login.jsp");
 	}
+
+	
 	
 	// 2-2.로그인 실행
 	@PostMapping("login")
-	public String postLogin(MemberDTO mdto, HttpSession session) {
+	@ResponseBody
+	public int postLogin(MemberDTO mdto, HttpSession session) {
 		/* mservice.postLogin(mdto)을 MemberDTO login에 저장해서 session에 이용 */
-		MemberDTO login = mservice.postLogin(mdto);
+		MemberDTO getLogin = mservice.getLogin(mdto);
+		System.out.println("login = " + getLogin);
 		
-		/* MemberDTO에 있는 로그인 할 회원 정보를 세션 영역에 login이라는 변수에 저장 */
-		// 세션 객체에 "login" 변수에, login 값을 저장(setAttribute)
-		session.setAttribute("login", login);
-		
-		// session 영역에 login이라는 변수("login")에 값이 있으면 로그인 된 채로
-		if(session.getAttribute("login") != null) {
-			// main 페이지로 이동 = 로그인 성공
+		/* 회원 정보가 있을 경우 1(로그인 성공), 없을 경우 0(로그인 실패) */
+		int loginCheck = mservice.loginCheck(mdto.getMid(), mdto.getPasswd());
+		System.out.println("loginCheck = " + loginCheck);
+	
+		if(loginCheck == 1) {// loginCheck == 1이면 로그인 성공	
+			/* MemberDTO에 있는 로그인 할 회원 정보를 세션 영역에 login이라는 변수에 저장 */
+			// 세션 객체에 "login" 변수에, getLogin 값을 저장(setAttribute)
+			session.setAttribute("login", getLogin);
+			
 			System.out.println("login SUCCESS");
-			return "redirect:/main";
-		}else {// session 영역에 login이라는 변수("login")에 값이 없으면
-			// login 페이지로 다시 이동 = 로그인 실패
+			return loginCheck;
+		}else {// loginCheck == 0이면 로그인 실패
 			System.out.println("login FAIL");
-			return "redirect:/member/login";
+			return loginCheck;
 		}
 	}
+
 	
 	// 3.로그아웃
 	@GetMapping("logout")
@@ -119,9 +125,9 @@ public class MemberController {
 		if(mservice.findIdCheck(mdto.getEmail()) == 0) {//사용자가 입력한 이메일이 member 테이블에 없으면
 			System.out.println("FIND ID FAIL");
 			
-			// (2)model을 통해 "msg" 변수에 아래 문구를 저장해서 jsp로 보냄 -> jsp에서 스크립트를 사용해 화면에 alert 띄울 것
+			// (1)model을 통해 "msg" 변수에 아래 문구를 저장해서 jsp로 보냄 -> jsp에서 스크립트를 사용해 화면에 alert 띄울 것
 			model.addAttribute("msg", "이메일을 확인해주세요.");
-			// (3)findId.jsp 화면으로 리턴
+			// (2)findId.jsp 화면으로 리턴
 			return "/member/findId";
 		}else {// 사용자가 입력한 이메일이 member 테이블에 있으면(=회원이라면)
 			System.out.println("FIND ID SUCCESS");
@@ -179,19 +185,26 @@ public class MemberController {
 	// 5-4.PW 찾기 실행
 	@PostMapping("findPw")
 	public String postFindPw(MemberDTO mdto, Model model) {
+		// 콘솔 확인용
 		System.out.println("member ID = " + mdto.getMid());
 		System.out.println("member email = " + mdto.getEmail());
 		
-		if(mservice.findPwCheck(mdto)==0) {
+		if(mservice.findPwCheck(mdto)==0) {// findPwCheck의 값이 0일 경우(찾는 정보가 데이터에 없을 경우/비회원)
+			// (1)model을 통해 "msg" 변수에 아래 문구를 저장해서 jsp로 보냄 -> jsp에서 스크립트를 사용해 화면에 alert 띄울 것
 			model.addAttribute("msg", "아이디와 이메일을 확인해주세요.");
 			System.out.println("FIND PW FAIL");
+			
+			// (2)findPw.jsp 화면으로 리턴
 			return "/member/findPw";
 			
-		}else {
+		}else {// findPwCheck의 값이 1일 경우(찾는 정보가 데이터에 있을 경우/회원)
 			mservice.postFindPw(mdto.getEmail(),mdto.getMid());
 			model.addAttribute("member", mdto.getEmail());
-			System.out.println("FIND PW SUCCESS");
+			
+			// 임시 비밀번호를 발급하기 위한 id/email 수집
 			sendEmailPw(mdto.getMid(), mdto.getEmail());
+			
+			System.out.println("FIND PW SUCCESS");
 			return"/member/findPwView";
 		}
 	}

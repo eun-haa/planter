@@ -32,8 +32,16 @@ public class MemberServiceImpl implements MemberService{
     }
     
     // 2.로그인 구현
-    public MemberDTO postLogin(MemberDTO mdto) {
-    	return mmapper.postLogin(mdto);
+    public MemberDTO getLogin(MemberDTO mdto) {
+    	return mmapper.getLogin(mdto);
+    }
+	/*public int loginCheck(MemberDTO mdto) {
+		return mmapper.loginCheck(mdto);
+	}*/
+    @Override
+    public int loginCheck(String mid, String passwd) {
+    	int data = mmapper.loginCheck(mid, passwd);
+        return data;
     }
     
     // 3.ID 찾기 구현
@@ -44,14 +52,7 @@ public class MemberServiceImpl implements MemberService{
 		return mmapper.findIdCheck(email);
 	}
 	
-	// 4.PW 찾기 구현
-	/*public MemberDTO postFindPw(MemberDTO mdto){
-		return mmapper.postFindPw(mdto);
-	}
-	public int findPwCheck(String check) {
-		return mmapper.findPwCheck(check);
-	}*/
-	
+	// 4.PW 찾기 구현	
 	public void postFindPw(String email,String mid) {
 		System.out.println("service");
 	}

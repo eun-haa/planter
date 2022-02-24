@@ -24,10 +24,20 @@
     </select>
     
     <!-- 2.로그인 설계 -->
-    <select id="postLogin" resultType="com.jeh.domain.MemberDTO">
+    <select id="getLogin" resultType="com.jeh.domain.MemberDTO">
     	SELECT * FROM member
     	WHERE mid = #{mid}
     	AND passwd = #{passwd}
+    </select>
+    <!-- <select id="loginCheck" resultType="int">
+    	SELECT COUNT(*) FROM member 
+		WHERE mid = #{mid}
+		AND passwd = #{passwd}
+    </select> -->
+    <select id="loginCheck" resultType="int">
+        SELECT COUNT(*) FROM member 
+        WHERE mid= #{mid}
+        AND passwd = #{passwd}
     </select>
     
     <!-- 3.ID 찾기 -->

@@ -68,7 +68,7 @@ $(document).ready(function(){
 		        console.log("data : " + data);
 		    },
 		    error:function(){
-		        alert("errer");
+		        alert("error");
 		    }
 		})
 	 });
@@ -230,38 +230,10 @@ $(document).ready(function(){
 			        console.log("data : " + data);
 			    },
 			    error:function(){
-			        alert("errer");
+			        alert("error");
 			    }
 			})
 		 });
-	
-	/*$("#email").blur(function(){
-		if($("#email").val() == ""){
-			$("#emailMsg").html("이메일을 입력해주세요.")
-			$("#emailMsg").css("color","red")
-			emailCk = false;
-			console.log('emailCk fail')
-		}
-		else if(!emailCheck.test($("#email").val())){
-			$("#emailMsg").html("이메일을 다시 확인해주세요.")
-			$("#emailMsg").css("color","red")
-			emailCk = false;
-			console.log('emailCk 형식 fail')
-		}
-		else if(emailCheck.test($("#email").val())){
-			$("#emailMsg").html("")
-			emailCk = true;
-			console.log('emailCk ok')
-		}else{
-			$("#emailMsg").html("이메일을 다시 확인해주세요.")
-			$("#emailMsg").css("color","red")
-			emailCk = false;
-			console.log('emailCk 형식 fail')
-		}
-	});*/
-	
-	
-
 	
 	
 	// 7.최종(전체) 유효성 검사
@@ -277,30 +249,37 @@ $(document).ready(function(){
 		// * 최종 유효성 ck *
 	    if(!idCk) {
 	        alert("아이디를 확인해주세요.");
+	        $("#mid").focus();
 	        return false;
 	    }
 	    else if(!pwCk) {
 			alert("비밀번호를 확인해주세요.");
+			$("#passwd").focus();
 			return false;
 	    }
 	    else if(!pwcfCk) {
 			alert("비밀번호체크를 확인해주세요.");
+			$("#passwd_confirm").focus();
 			return false;
 	    }
 	    else if(!nameCk) {
 			alert("이름을 확인해주세요.");
+			$("#name").focus();
 			return false;
 	    }
 	    else if(!phoneCk){
 			alert("번호를 확인해주세요.");
+			$("#phone").focus();
 			return false;
 	    }
 	    else if(!emailCk){
 			alert("이메일을 확인해주세요.");
+			$("#email").focus();
 			return false;
 	    }
 	    else if(!agreeCk){
 			alert("이용약관 및 개인정보 수집/이용에 동의해주세요.");
+			$("input[name='agree_check']").focus();
 			return false;
 	    }
 	    else{
