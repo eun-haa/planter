@@ -13,6 +13,7 @@
 	                        <legend>회원로그인</legend>
 	                        <div class="login_form">
 	                        	<input id="member_id" name="mid" placeholder="MEMBER ID" value="" type="text">
+	                        	<br>
 	                        	<input id="member_passwd" name="passwd" value="" type="password" placeholder="PASSWORD">                        
 	                        </div>
 	                        <div id="loginMsg"></div>        

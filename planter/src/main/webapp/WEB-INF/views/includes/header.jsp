@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>planter</title>
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,8 +99,11 @@
 	                           <a href="#">ORDER</a>
 	                       </li>
 	                       
+	                       <li>
+	                            <a href="/member/myAccount">MY ACCOUNT</a>
+	                       	</li>
 	                       <!-- login 여부에 따른 분기(MY ACCOUNT를 눌렀을 때 이동하는 페이지) -->
-	                   	   <c:choose>
+	                   	   <!--<c:choose>
 	                   	   		<c:when test="${login!=null}">
 	                   	   			<li>
 	                           			<a href="/member/myAccount">MY ACCOUNT</a>
@@ -111,7 +114,7 @@
 	                            		<a href="/member/login">MY ACCOUNT</a>
 	                       			</li>
 	                   	   		</c:otherwise>
-	                   	   </c:choose>
+	                   	   </c:choose>-->
 							
 	                   </ul>
 	               </div><!--.membership_list-->

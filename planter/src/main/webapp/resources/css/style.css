@@ -308,6 +308,10 @@ select {
     padding: 10px 20px;
 }
 
+#email{
+	width: 300px;
+}
+
 /* adress(다음 api) */
 
 .zipcode, .address1, .address2, .address3{
@@ -620,6 +624,122 @@ legend{
 }
 
 /* ----------------------------------------------------------- */
+/* ----------------------------------------------------------- */
+/* MY ACCOUNT */
+
+#myAccount_wrap{
+    width: 55%;
+    margin: 0 auto;
+}
+.myshop_orderstate .order{
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.myshop_orderstate .order li{
+    /*background-color: beige;
+    height: 70px;
+    padding: 0 50px;
+    border-right: 1px solid #ddd;
+    line-height: 70px;*/
+    display: list-item;
+    float: left;
+    width: 20%;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    margin-left: -1px;
+    line-height: 30px;
+}
+
+.myshop_orderstate .order li a{
+    color: #555;
+}
+
+.myshop_orderstate .order li a:hover{
+    color: #999;
+}
+
+.myshop_orderstate .order li strong{
+    display: block;
+}
+
+.myshop_orderstate ul li.cs{
+    padding-top: 5px;
+    border-right: none;
+}
+
+.myshop_orderstate ul li.cs a {
+    display: block;
+    font-size: 11px;
+    line-height: 16px;
+    color: #555;
+}
+
+.myshop_orderstate .order li.cs strong{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+/**/
+
+.myshop_bankbook{
+    display: flex;
+    justify-content: space-between;
+    margin: 60px auto 60px auto;
+    width: 60%;
+}
+
+.myshop_bankbook ul{
+    width: 33.33%;
+    text-align: center;
+}
+
+.myshop_bankbook a{
+    color: #555;
+}
+
+.myAccount_ico{
+    margin-bottom: 10px;
+}
+
+.myAccount_wrap ul{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    border: 1px solid #ddd;
+
+}
+
+.myAccount_wrap ul li{
+    width: 16.6666%;
+    border-right: 1px solid #ddd;
+    padding: 70px 0;
+}
+
+.myAccount_wrap ul li a{
+    color: #555;
+}
+
+.myAccount_wrap ul li:hover{
+    background-color: rgb(240, 240, 240);
+}
+
+.myAccount_wrap ul li strong{
+    font-size: 11px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.myAccount_wrap ul:last-child{
+    border-right: none;
+}
+
+.myAccount_wrap ul li strong{
+    display: block;
+}
 /* ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */
 /* NOTICE - WRITE */

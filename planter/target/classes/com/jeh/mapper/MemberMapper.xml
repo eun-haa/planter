@@ -29,11 +29,7 @@
     	WHERE mid = #{mid}
     	AND passwd = #{passwd}
     </select>
-    <!-- <select id="loginCheck" resultType="int">
-    	SELECT COUNT(*) FROM member 
-		WHERE mid = #{mid}
-		AND passwd = #{passwd}
-    </select> -->
+
     <select id="loginCheck" resultType="int">
         SELECT COUNT(*) FROM member 
         WHERE mid= #{mid}

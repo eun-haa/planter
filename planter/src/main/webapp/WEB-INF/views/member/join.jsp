@@ -75,7 +75,7 @@
 	
 	                            <tr>
 	                                <th scope="row">EMAIL</th>
-	                                <td><input id="email" name="email" fw-filter="isFill&amp;isEmail" fw-label="이메일" fw-alone="N" fw-msg="" value="" type="text"> 
+	                                <td><input id="email" name="email" value="" type="text"> 
 	                                	<div id="emailMsg" class="text_guide error"></div>
 	                                </td>
 	                            </tr>

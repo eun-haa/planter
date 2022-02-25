@@ -209,6 +209,18 @@ public class MemberController {
 		}
 	}
 	
+	// 6-1. MY ACCOUNT 화면
+	@GetMapping("myAccount")
+	public void myAccount() {
+		System.out.println("myAccount.jsp");
+	}
+	
+	// 6-2. MY ACCOUNT-MODIFY 화면
+	@GetMapping("myAccount_modify")
+	public void myAccount_modify(MemberDTO mdto) {
+		System.out.println("myAccount_modify.jsp");
+	}
+	
 
 
 		
