@@ -62,4 +62,9 @@ public class MemberServiceImpl implements MemberService{
 	public void updatePw(MemberDTO mdto) {
 		mmapper.updatePw(mdto);
 	}
+	
+	// 5.MY ACCOUNT-MODIFY 수정 설계
+	public void postMyAccMod(MemberDTO mdto) {
+		mmapper.postMyAccMod(mdto);
+	}
 }

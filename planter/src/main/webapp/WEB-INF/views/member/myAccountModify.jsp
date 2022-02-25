@@ -7,7 +7,7 @@
                 <div class="titleArea">
                     <h2>PROFILE</h2>
                 </div><!--.titleArea-->
-                <form id="joinForm" name="joinForm" action="/member/join" method="post" onsubmit="return valid()">
+                <form id="joinForm" name="joinForm" method="post" action="/member/myAccountModify">
                 
 	                <div class="join_table">
 	                    <table border="1" summary="">
@@ -20,7 +20,7 @@
 	                        <tbody>
 	                            <tr>
 	                                <th scope="row">ID</th>
-	                                <td><input id="mid" name="mid" class="inputTypeText"value="${login.mid}" type="text" disabled>
+	                                <td><input id="mid" name="mid" class="inputTypeText" value="${login.mid}" type="text" disabled>
 		                                <div id="idMsg" class="text_guide error"></div> 
 		                                <!-- <p class="text_guide">영문 소문자/숫자를 조합, 4-16자</p> -->
 	                                </td>
@@ -75,7 +75,7 @@
 	
 	                            <tr>
 	                                <th scope="row">EMAIL</th>
-	                                <td><input id="email" name="email" value="${login.email}" type="text"> 
+	                                <td><input id="email" name="email" value="${login.email}" type="text" disabled> 
 	                                	<div id="emailMsg" class="text_guide error"></div>
 	                                </td>
 	                            </tr>
@@ -111,10 +111,15 @@
 	                        <a href="" class="btn_1000">SUBMIT</a>
 	                    </div> -->
 	                    <input id="j_submit" type="submit" value="MODIFY">
+	                    <!-- 
+	                    <div class="myAccModBtns">
+	                    	<a href="#" class="myAccModBtns_del">회원탈퇴</a>
+	                    	<a href="/member/myAccountModify" class="myAccModBtns_mod">회원정보수정</a>
+	                    </div> -->
 	                </div><!--.join_table-->
 				</form>
 
             </div><!--#contents-->
-
+    <script src="../resources/js/myAccountModify.js"></script>
     <script src="../resources/js/join-daum.js"></script>
 <%@ include file="../includes/footer.jsp" %>

@@ -337,6 +337,12 @@ select {
     background-color: #fff;
     width: 100px;
     text-align: center;
+    color: #555;
+}
+
+.postcode_btn:hover{
+	background-color: #aaa;
+	color: #fff;
 }
 
 .address1{
@@ -352,6 +358,35 @@ select {
 
 .address3{
     width: 230px;
+}
+
+/* MY ACCOUNT - MODIFY */
+.myAccModBtns{
+	width: 70%;
+	margin: 30px auto 0 auto;
+	text-align: center;
+}
+
+.myAccModBtns a{
+	padding: 10px 50px;
+	border-radius: 30px;
+	font-size: 12px;
+	color: #777;
+	margin: 0 5px;
+}
+
+
+.myAccModBtns a:hover{
+	background-color: #aaa;
+	color: #fff;
+}
+
+.myAccModBtns_mod{
+	border: 1px solid #ddd;
+}
+
+.myAccModBtns_del{
+	border: 1px solid #ddd;
 }
 
 /*----adress(다음 api) 끝----*/

@@ -66,6 +66,16 @@
 		SET passwd = #{passwd} 
 		WHERE email = #{email}
 	</update>
+	
+	<!-- 5.MY ACCOUNT-MODIFY 수정 -->
+	<update id="postMyAccMod">
+		UPDATE member
+		SET passwd = #{passwd}, phone = #{phone}, 
+			postcode=#{postcode}, address1 = #{address1}, 
+			address2 = #{address2}, address3 = #{address3}
+		WHERE mid = #{mid}
+		
+	</update>
     
 
     

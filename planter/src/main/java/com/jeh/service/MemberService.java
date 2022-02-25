@@ -16,7 +16,6 @@ public interface MemberService{
 	
 	// 2.로그인 설계
 	public MemberDTO getLogin(MemberDTO mdto);
-	//public int loginCheck(MemberDTO mdto);
 	public int loginCheck(String mid, String passwd);
 	
 	// 3.ID 찾기 설계
@@ -27,4 +26,7 @@ public interface MemberService{
 	public void postFindPw(String email,String mid);
 	public int findPwCheck(MemberDTO mdto);
 	public void updatePw(MemberDTO mdto);
+	
+	// 5.MY ACCOUNT-MODIFY 수정 설계
+	public void postMyAccMod(MemberDTO mdto);
 }

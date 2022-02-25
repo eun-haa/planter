@@ -1,6 +1,5 @@
 package com.jeh.mapper;
 
-import java.util.ArrayList;
 
 import org.apache.ibatis.annotations.Param;
 
@@ -18,7 +17,6 @@ public interface MemberMapper {
 	
 	// 2.로그인 설계
 	public MemberDTO getLogin(MemberDTO mdto);
-	//public int loginCheck(MemberDTO mdto);
 	public int loginCheck(@Param("mid")String mid, @Param("passwd")String passwd);
 	
 	// 3.ID 찾기 설계
@@ -29,4 +27,7 @@ public interface MemberMapper {
 	public int postFindPw(String email,String mid);
 	public int findPwCheck(MemberDTO mdto);
 	public void updatePw(MemberDTO mdto);
+	
+	// 5.MY ACCOUNT-MODIFY 수정 설계
+	public void postMyAccMod(MemberDTO mdto);
 }

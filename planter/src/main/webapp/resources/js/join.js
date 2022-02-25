@@ -75,22 +75,24 @@ $(document).ready(function(){
 	 
 	// 2.비밀번호 유효성 검사
 	$("#passwd").blur(function(){
-	  if(!pwCheck.test($("#passwd").val())){
-		  $("#pwMsg").html("비밀번호는 영문 소문자/숫자/특수문자 중 2가지 이상 조합으로 10-16글자로 입력해 주세요.")
-		  pwCk = false;
-		  console.log('pwCk fail')
-	  }
-	  else if($("#passwd").val() == ""){
-		  $("#pwMsg").text("비밀번호는 영문 소문자/숫자/특수문자 중 2가지 이상 조합으로 10-16글자로 입력해 주세요.")
-		  pwCk = false;
-		  console.log('pwCk fail')
-	  }
-	  else{
-		  $("#pwMsg").html("적절한 비밀번호입니다.")
-		  $("#pwMsg").css("color","blue")
-		  pwCk = true;
-	      console.log('pwCk ok')
-	  }
+		  if(!pwCheck.test($("#passwd").val())){
+			  $("#pwMsg").html("비밀번호는 영문 소문자/숫자/특수문자 조합으로 8-16글자로 입력해 주세요.")
+			  $("#pwMsg").css("color","red")
+			  pwCk = false;
+			  console.log('pwCk fail')
+		  }
+		  else if($("#passwd").val() == ""){
+			  $("#pwMsg").text("비밀번호는 영문 소문자/숫자/특수문자 조합으로 8-16글자로 입력해 주세요.")
+			  $("#pwMsg").css("color","red")
+			  pwCk = false;
+			  console.log('pwCk fail')
+		  }
+		  else{
+			  $("#pwMsg").html("적절한 비밀번호입니다.")
+			  $("#pwMsg").css("color","blue")
+			  pwCk = true;
+		      console.log('pwCk ok')
+		  }
 	});
 		
 	// 3.비밀번호 확인 유효성 검사
@@ -223,7 +225,7 @@ $(document).ready(function(){
 			        else if(data == 0){
 						  $("#emailMsg").html("사용가능한 이메일입니다.")
 						  $("#emailMsg").css("color","blue")
-					      idCk = true;
+					      emailCk = true;
 					      console.log("emailCk ok")
 			        }
 

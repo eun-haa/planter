@@ -1,5 +1,6 @@
 package com.jeh.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -47,7 +49,7 @@ public class MemberController {
 	    return data;
 	}
 	
-	// 1-4.이메일 중복체크(아이디 찾기와 비밀번호 찾기를 위해서)
+	// 1-4.이메일 중복체크(아이디 찾기와 비밀번호 찾기를 위해서) 0이면 중복 아니라 성공
 	@PostMapping("/email_check")
 	@ResponseBody
 	public int emailCheck(@RequestParam("email") String email){
@@ -209,16 +211,27 @@ public class MemberController {
 		}
 	}
 	
-	// 6-1. MY ACCOUNT 화면
+	// 6-1.MY ACCOUNT 화면
 	@GetMapping("myAccount")
 	public void myAccount() {
 		System.out.println("myAccount.jsp");
 	}
 	
-	// 6-2. MY ACCOUNT-MODIFY 화면
-	@GetMapping("myAccount_modify")
-	public void myAccount_modify(MemberDTO mdto) {
-		System.out.println("myAccount_modify.jsp");
+	// 6-2.MY ACCOUNT-MODIFY 화면
+	@GetMapping("myAccountModify")
+	public void myAccountModify(MemberDTO mdto) {
+		System.out.println("myAccountModify.jsp");
+	}
+
+
+	
+	// 6-3.MY ACCOUNT-MODIFY 수정 실행
+	@PostMapping("myAccountModify")
+	public String postMyAccMod(MemberDTO mdto, Model model) {
+		System.out.println("post 회원정보수정 진입");
+		mservice.postMyAccMod(mdto);
+		
+		return "redirect:/member/myAccountModify";
 	}
 	
 

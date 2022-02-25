@@ -91,7 +91,7 @@
                     <div class="myAccount_wrap">
                         <ul>
                             <li><a href="#"><strong>ORDER TRACKING</strong> 주문내역조회</a></li>
-                            <li><a href="/member/myAccount_modify?mid=${login.mid}"><strong>PROFILE</strong> 내 정보수정</a></li>
+                            <li><a href="/member/myAccountModify?mid=${login.mid}"><strong>PROFILE</strong> 내 정보수정</a></li>
                             <li class="myAccount_last"><a href="#"><strong>WISHLIST</strong>관심상품</a></li>
                             <li><a href="#"><strong>MY WRITING</strong>내가쓴글</a></li>
                             <li><a href="#"><strong>MILEAGE</strong> 적립금</a></li>

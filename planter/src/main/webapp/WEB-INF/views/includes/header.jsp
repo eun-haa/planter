@@ -90,20 +90,27 @@
 	                   	   		</c:otherwise>
 	                   	   </c:choose>
 
-	
-	                       <li>
-	                           <a href="/member/join">JOIN</a>
-	                       </li>
+						   <!-- login 여부에 따른 분기(JOIN/MODIFY) -->
+	                   	   <c:choose>
+	                   	   		<c:when test="${login!=null}">
+									<li>
+										<a href="/member/myAccountModify">MODIFY</a>
+									</li>
+	                   	   		</c:when>
+	                   	   		<c:otherwise>
+			                        <li>
+			                            <a href="/member/join">JOIN</a>
+			                        </li>
+	                   	   		</c:otherwise>
+	                   	   </c:choose>
+
 	
 	                       <li>
 	                           <a href="#">ORDER</a>
 	                       </li>
 	                       
-	                       <li>
-	                            <a href="/member/myAccount">MY ACCOUNT</a>
-	                       	</li>
 	                       <!-- login 여부에 따른 분기(MY ACCOUNT를 눌렀을 때 이동하는 페이지) -->
-	                   	   <!--<c:choose>
+	                   	   <c:choose>
 	                   	   		<c:when test="${login!=null}">
 	                   	   			<li>
 	                           			<a href="/member/myAccount">MY ACCOUNT</a>
@@ -114,7 +121,7 @@
 	                            		<a href="/member/login">MY ACCOUNT</a>
 	                       			</li>
 	                   	   		</c:otherwise>
-	                   	   </c:choose>-->
+	                   	   </c:choose>
 							
 	                   </ul>
 	               </div><!--.membership_list-->
