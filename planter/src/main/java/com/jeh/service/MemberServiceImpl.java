@@ -65,6 +65,7 @@ public class MemberServiceImpl implements MemberService{
 	
 	// 5.MY ACCOUNT-MODIFY 수정 설계
 	public void postMyAccMod(MemberDTO mdto) {
+		System.out.println("service");
 		mmapper.postMyAccMod(mdto);
 	}
 }

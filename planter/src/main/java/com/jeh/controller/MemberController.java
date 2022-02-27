@@ -219,15 +219,14 @@ public class MemberController {
 	
 	// 6-2.MY ACCOUNT-MODIFY 화면
 	@GetMapping("myAccountModify")
-	public void myAccountModify(MemberDTO mdto) {
+	public void myAccountModify(MemberDTO mdto, Model model) {
 		System.out.println("myAccountModify.jsp");
 	}
-
 
 	
 	// 6-3.MY ACCOUNT-MODIFY 수정 실행
 	@PostMapping("myAccountModify")
-	public String postMyAccMod(MemberDTO mdto, Model model) {
+	public String postMyAccMod(MemberDTO mdto) {
 		System.out.println("post 회원정보수정 진입");
 		mservice.postMyAccMod(mdto);
 		

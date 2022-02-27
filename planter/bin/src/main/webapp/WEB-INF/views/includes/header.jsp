@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>planter</title>
+	<title>Insert title here</title>
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,7 +60,7 @@
 	                   </ul><!--.shop_list-->
 	
 	                   <div class="list_title">
-	                       <a href="/board/list">NOTICE</a>
+	                       <a href="#">NOTICE</a>
 	                   </div><!--list_title-->
 	
 	                   <div class="list_title">
@@ -90,20 +90,10 @@
 	                   	   		</c:otherwise>
 	                   	   </c:choose>
 
-						   <!-- login 여부에 따른 분기(JOIN/MODIFY) -->
-	                   	   <c:choose>
-	                   	   		<c:when test="${login!=null}">
-									<li>
-										<a href="/member/myAccountModify">MODIFY</a>
-									</li>
-	                   	   		</c:when>
-	                   	   		<c:otherwise>
-			                        <li>
-			                            <a href="/member/join">JOIN</a>
-			                        </li>
-	                   	   		</c:otherwise>
-	                   	   </c:choose>
-
+	
+	                       <li>
+	                           <a href="/member/join">JOIN</a>
+	                       </li>
 	
 	                       <li>
 	                           <a href="#">ORDER</a>
