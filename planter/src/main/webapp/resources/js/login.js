@@ -32,16 +32,6 @@ function login(){
 	return false;
 }
 $(document).ready(function(){
-
-
-	$("#login_submit").on("click", function(){
-		
-		
-
-		
-			
-		
-	})// $("#login_submit").on("click", function() 끝
 	
 })//$(document).ready(function() 끝
 

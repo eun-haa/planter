@@ -1,6 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../includes/header.jsp" %>
+
+<script type="text/javascript">
+	
+	function noticeDelete(nno) {
+	
+		if (confirm(nno + "번 게시글을 삭제할까요?")) {
+			var uri = "/notice/delete?nno=";
+			var html = "";
+	
+			html += '<form name="dataForm" action="' + uri + nno + '" method="post">';
+			html += '<input type="hidden" name="nno" value="' + nno + '" />';
+			html += '</form>';
+	
+			$("body").append(html);
+			document.dataForm.submit();
+		}
+	}
+</script>
 		<!-- #contents 부분만 본문에 넣기-->
 			<div id="contents">
                 <div class="titleArea">
@@ -40,7 +58,8 @@
                                 <ul>
                                 
                                     <li class="d_del_btn">
-                                        <a href="/notice/delete?nno=${detail.nno}">DELETE</a>
+                                    	<button onclick="noticeDelete([[${detail.nno}]])">DELETE</button>
+                                        <!-- <a href="/notice/delete?nno=${detail.nno}" onclick="delOk()">DELETE</a> -->
                                     </li><!--.d_del_btn-->
                                     
                                     
@@ -61,5 +80,4 @@
                 </div><!--.notice_detail_in-->
 
             </div><!--#contents-->
-		
 <%@ include file="../includes/footer.jsp" %>

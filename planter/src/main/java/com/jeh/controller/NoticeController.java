@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jeh.domain.NoticeDTO;
+import com.jeh.domain.PageDTO;
+import com.jeh.domain.Search;
 import com.jeh.service.NoticeService;
 
 @Controller
@@ -33,16 +35,15 @@ public class NoticeController {
 	
 	// 2.글 목록
 	@GetMapping("list")
-	public void list(Model model) {
-		nservice.list();
-		model.addAttribute("list", nservice.list());
+	public void list(Model model, Search sc) {
+		model.addAttribute("list", nservice.list(sc));
+		model.addAttribute("pager", new PageDTO(sc, 199));
 		System.out.println("notice/list.jsp");
 	}
 	
 	// 3.글 상세
 	@GetMapping("detail")
 	public void detail(NoticeDTO notice, Model model) {
-		nservice.detail(notice);
 		
 		model.addAttribute("detail", nservice.detail(notice));
 		System.out.println("notice/detail.jsp");
@@ -70,5 +71,13 @@ public class NoticeController {
 		System.out.println("글 수정 완료");
 		
 		return "redirect:/notice/detail";
+	}
+	
+	// 5.글 삭제
+	@PostMapping("delete")
+	public String delete(NoticeDTO notice, Model model) {
+		nservice.delete(notice);
+		System.out.println("글 삭제 완료");
+		return "redirect:/notice/list";
 	}
 }

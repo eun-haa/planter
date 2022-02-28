@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.jeh.domain.NoticeDTO;
+import com.jeh.domain.Search;
 import com.jeh.mapper.NoticeMapper;
 
 @Service
@@ -19,12 +21,16 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 	
 	// 2.글 목록 구현
-	public ArrayList<NoticeDTO> list(){
-		return nmapper.list();
+	public ArrayList<NoticeDTO> list(Search sc){
+		return nmapper.list(sc);
 	}
 	
 	// 3.글 상세 구현
+	@Transactional
 	public NoticeDTO detail(NoticeDTO notice) {
+		// notice 테이블 - hit(조회수) 속성에  +1
+		nmapper.hitUpdate(notice);
+		
 		return nmapper.detail(notice);
 	}
 	
