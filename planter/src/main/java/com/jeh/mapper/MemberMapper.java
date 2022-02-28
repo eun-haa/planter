@@ -31,5 +31,4 @@ public interface MemberMapper {
 	// 5.MY ACCOUNT-MODIFY 수정 설계
 	public void postMyAccMod(MemberDTO mdto);
 	
-	//public MemberDTO detail(MemberDTO mdto);
 }

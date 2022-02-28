@@ -45,7 +45,7 @@ $(document).ready(function(){
 	var emailCheck = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
 	
 	// 유효성 검사 - ajax
-	// 2.비밀번호 유효성 검사
+	// 1.비밀번호 유효성 검사
 	$("#passwd").blur(function(){
 	  if(!pwCheck.test($("#passwd").val())){
 		  $("#pwMsg").html("비밀번호는 영문 소문자/숫자/특수문자 조합으로 8-16글자로 입력해 주세요.")
@@ -67,7 +67,7 @@ $(document).ready(function(){
 	  }
 	});
 		
-	// 3.비밀번호 확인 유효성 검사
+	// 2.비밀번호 확인 유효성 검사
 	$("#passwd_confirm").blur(function(){
 	  if($("#passwd_confirm").val() == ""){
 		  $("#pwConfirmMsg").html("비밀번호 확인을 입력해주세요.")
@@ -103,7 +103,7 @@ $(document).ready(function(){
 	});
 	
 	
-	// 5.번호 유효성 검사	
+	// 3.번호 유효성 검사	
 	// 번호 input 값이 변경될 때마다 #phone(input)에 담아서 저장
 	$(".phone").on("propertychange change keyup paste input", function(){
 
@@ -146,7 +146,7 @@ $(document).ready(function(){
 
 	
 	
-	// 7.최종(전체) 유효성 검사
+	// 3.최종(전체) 유효성 검사
 	$("#j_submit").on("click", function(){
 	
 		// * 최종 유효성 ck *

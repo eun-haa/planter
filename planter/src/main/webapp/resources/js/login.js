@@ -1,6 +1,4 @@
-/**
- * 
- */
+// login submit 하기전에 확인
 function login(){
 	$.ajax({
 	    url: "/member/login",

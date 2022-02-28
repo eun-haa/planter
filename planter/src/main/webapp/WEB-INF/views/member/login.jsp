@@ -30,12 +30,6 @@
 								
 	                            <input type="submit" value="LOGIN" id="login_submit">
 	
-	                            <!-- <ul class="sns_login">
-	                                <li class="displaynone"><a href="#none" onclick="" class="btn_facebook">FACEBOOK LOGIN</a></li>
-	                                <li class="displaynone"><a href="#none" onclick="" class="btn_naver">NAVER LOGIN</a></li>    
-	                                <li class="displaynone"><a href="#none" onclick="" class="btn_google">GOOGLE LOGIN</a></li>
-	                                <li class="displaynone"><a href="#none" onclick="" class="btn_kakao">KAKAOTALK LOGIN</a></li>
-	                            </ul> -->
 	                        </div>
 	                    </fieldset>
                     </form>

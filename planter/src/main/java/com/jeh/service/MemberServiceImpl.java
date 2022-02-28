@@ -35,9 +35,6 @@ public class MemberServiceImpl implements MemberService{
     public MemberDTO getLogin(MemberDTO mdto) {
     	return mmapper.getLogin(mdto);
     }
-	/*public int loginCheck(MemberDTO mdto) {
-		return mmapper.loginCheck(mdto);
-	}*/
     @Override
     public int loginCheck(String mid, String passwd) {
     	int data = mmapper.loginCheck(mid, passwd);
@@ -69,7 +66,4 @@ public class MemberServiceImpl implements MemberService{
 		mmapper.postMyAccMod(mdto);
 	}
 	
-	//public MemberDTO detail(MemberDTO mdto) {
-	//	return mmapper.detail(mdto);
-	//}
 }

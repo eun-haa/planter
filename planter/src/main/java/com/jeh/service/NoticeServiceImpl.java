@@ -24,6 +24,10 @@ public class NoticeServiceImpl implements NoticeService{
 	public ArrayList<NoticeDTO> list(Search sc){
 		return nmapper.list(sc);
 	}
+	// 2-2.게시판 페이징 - 글 전체 갯수
+	public int getTotalCount(Search sc) {
+		return nmapper.getTotalCount(sc);
+	}
 	
 	// 3.글 상세 구현
 	@Transactional

@@ -80,10 +80,6 @@
 		
 	</update>
 	
-	<select id="detail" resultType="com.jeh.domain.MemberDTO">
-		SELECT * FROM member
-		WHERE mid=#{mid}
-	</select>
     
 
     

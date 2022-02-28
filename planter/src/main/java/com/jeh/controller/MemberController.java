@@ -73,7 +73,7 @@ public class MemberController {
 	@PostMapping("login")
 	@ResponseBody
 	public int postLogin(MemberDTO mdto, HttpSession session) {
-		/* mservice.postLogin(mdto)을 MemberDTO login에 저장해서 session에 이용 */
+		/* mservice.getLogin(mdto)을 MemberDTO getLogin에 저장  */
 		MemberDTO getLogin = mservice.getLogin(mdto);
 		System.out.println("login = " + getLogin);
 		
@@ -215,12 +215,14 @@ public class MemberController {
 	// 6-1.MY ACCOUNT 화면
 	@GetMapping("myAccount")
 	public void myAccount() {
+		// 콘솔 확인용
 		System.out.println("myAccount.jsp");
 	}
 	
 	// 6-2.MY ACCOUNT-MODIFY 화면
 	@GetMapping("myAccountModify")
-	public void postmyAccMod(MemberDTO mdto, Model model) {
+	public void myAccMod() {
+		// 콘솔 확인용
 		System.out.println("myAccountModify.jsp");		
 	}
 	
@@ -239,7 +241,6 @@ public class MemberController {
 		return "redirect:/member/login";
 	}
 	
-	// 6-4.MY ACCOUNT-MODIFY 실행
 
 
 		

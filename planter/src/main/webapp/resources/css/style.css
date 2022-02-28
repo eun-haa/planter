@@ -675,13 +675,9 @@ legend{
 }
 
 .myshop_orderstate .order li{
-    /*background-color: beige;
-    height: 70px;
-    padding: 0 50px;
-    border-right: 1px solid #ddd;
-    line-height: 70px;*/
     display: list-item;
     float: left;
+    text-align: center;
     width: 20%;
     border-right: 1px solid #ddd;
     margin-left: -1px;
@@ -917,7 +913,9 @@ tbody .n_title{
 
 .boardSearch input{
     border: 1px solid #ddd;
-    height: 28px;
+    height: 30px;
+
+ 
 }
 
 .board_footer a{
@@ -933,6 +931,11 @@ tbody .n_title{
     padding: 5px 15px;
     background-color: #fff;
     color: #444;
+}
+
+#n_keyword{
+	padding-left: 5px;
+    box-sizing: border-box;
 }
 
 #n_search{
@@ -953,10 +956,18 @@ tbody .n_title{
     margin: 10px;
 }
 
+
+
 .notice_list_pager li a{
-    color: #333;;
-    font-weight: 500;
+    color: #555;
 }
+
+.active{
+	font-weight: bold;
+	
+	
+}
+
 /* ----------------------------------------------------------- */
 /* NOTICE - DETAIL */
 .board_wrap{

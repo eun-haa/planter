@@ -59,7 +59,6 @@
                                 
                                     <li class="d_del_btn">
                                     	<button onclick="noticeDelete([[${detail.nno}]])">DELETE</button>
-                                        <!-- <a href="/notice/delete?nno=${detail.nno}" onclick="delOk()">DELETE</a> -->
                                     </li><!--.d_del_btn-->
                                     
                                     
