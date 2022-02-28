@@ -20,7 +20,7 @@
 	                        <tbody>
 	                            <tr>
 	                                <th scope="row">ID</th>
-	                                <td><input id="mid" name="mid" class="inputTypeText" value="${login.mid}" type="text" disabled>
+	                                <td><input id="mid" name="mid" class="inputTypeText" value="${login.mid}" type="text" readonly>
 		                                <div id="idMsg" class="text_guide error"></div> 
 		                                <!-- <p class="text_guide">영문 소문자/숫자를 조합, 4-16자</p> -->
 	                                </td>
@@ -44,7 +44,7 @@
 	                            <tr>
 	                                <th scope="row" id="nameTitle">NAME</th>
 	                                <td>
-	                                	<span id="nameContents"><input type="text" value="${login.name}" name="name" id="name" maxlength="20" disabled></span>
+	                                	<span id="nameContents"><input type="text" value="${login.name}" name="name" id="name" maxlength="20" readonly></span>
 	                                	<div id="nameMsg" class="text_guide error"></div>  
 	                                </td>
 	                            </tr>
@@ -75,7 +75,7 @@
 	
 	                            <tr>
 	                                <th scope="row">EMAIL</th>
-	                                <td><input id="email" name="email" value="${login.email}" type="text" disabled> 
+	                                <td><input id="email" name="email" value="${login.email}" type="text" readonly> 
 	                                	<div id="emailMsg" class="text_guide error"></div>
 	                                </td>
 	                            </tr>

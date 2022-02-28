@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jeh.domain.MemberDTO;
 import com.jeh.service.MemberService;
@@ -219,20 +220,26 @@ public class MemberController {
 	
 	// 6-2.MY ACCOUNT-MODIFY 화면
 	@GetMapping("myAccountModify")
-	public void myAccountModify(MemberDTO mdto, Model model) {
-		System.out.println("myAccountModify.jsp");
+	public void postmyAccMod(MemberDTO mdto, Model model) {
+		System.out.println("myAccountModify.jsp");		
 	}
-
 	
-	// 6-3.MY ACCOUNT-MODIFY 수정 실행
+	// 6-3.MY ACCOUNT-MODIFY 실행
 	@PostMapping("myAccountModify")
-	public String postMyAccMod(MemberDTO mdto) {
-		System.out.println("post 회원정보수정 진입");
+	public String postMyAccMod(MemberDTO mdto, HttpSession session) {
+		System.out.println(mdto);
 		mservice.postMyAccMod(mdto);
+
 		
-		return "redirect:/member/myAccountModify";
+		// 로그아웃 처리
+		session.invalidate();
+		// 콘솔 확인용
+		System.out.println("회원정보 수정 후 logout");
+		// login 페이지로 이동
+		return "redirect:/member/login";
 	}
 	
+	// 6-4.MY ACCOUNT-MODIFY 실행
 
 
 		

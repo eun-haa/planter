@@ -70,12 +70,20 @@
 	<!-- 5.MY ACCOUNT-MODIFY 수정 -->
 	<update id="postMyAccMod">
 		UPDATE member
-		SET passwd = #{passwd}, phone = #{phone}, 
-			postcode=#{postcode}, address1 = #{address1}, 
-			address2 = #{address2}, address3 = #{address3}
+		SET passwd = #{passwd}, 
+			phone = #{phone}, 
+			postcode=#{postcode}, 
+			address1 = #{address1}, 
+			address2 = #{address2}, 
+			address3 = #{address3}
 		WHERE mid = #{mid}
 		
 	</update>
+	
+	<select id="detail" resultType="com.jeh.domain.MemberDTO">
+		SELECT * FROM member
+		WHERE mid=#{mid}
+	</select>
     
 
     

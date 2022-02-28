@@ -68,4 +68,8 @@ public class MemberServiceImpl implements MemberService{
 		System.out.println("service");
 		mmapper.postMyAccMod(mdto);
 	}
+	
+	//public MemberDTO detail(MemberDTO mdto) {
+	//	return mmapper.detail(mdto);
+	//}
 }

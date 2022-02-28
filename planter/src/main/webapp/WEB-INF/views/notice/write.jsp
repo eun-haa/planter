@@ -8,17 +8,16 @@
                 </div><!--.titleArea-->
 
                 <div class="write">
-                    <form role="form" action="/board/modify" method="post">
+                    <form role="form" action="/notice/write" method="post">
                         <div class="w_box">
-                        	
-                        	<input type="text" name="bno" value="${detail.bno}">
-                            <input type="hidden" name="writer" value="${detail.writer}">
+                        
+                            <input type="hidden" name="writer" value="${login.name}">
                             <div class="w_title">
-                                <input type="text" name="title" placeholder="TITLE" value="${detail.title}">
+                                <input type="text" name="title" placeholder="TITLE">
                             </div><!--.w_title--> 
         
                             <div class="w_content">
-                                <textarea name="content" id="" cols="100" rows="40" placeholder="CONTENTS">${detail.content}</textarea>
+                                <textarea name="content" id="" cols="100" rows="40" placeholder="CONTENTS"></textarea>
                                 <div class="w_content_file">
                                     <input id="board_write_file" type="file" name="uploadFile" class="uploadFile" multiple>
                                         <div id="uploadResult">

@@ -24,13 +24,13 @@
 
                             <tbody class="">
 
-                            	<c:forEach items="${list}" var="board">
+                            	<c:forEach items="${list}" var="notice">
 	                            	<tr class="xans-record-">
-	                                    <td class="n_no">${board.bno}</td>
-	                                    <td class="n_title"><a href="/board/detail?bno=${board.bno}">${board.title}</a></td>
-	                                    <td class="n_writer">${board.writer}</td>
-	                                    <td class="n_date">${board.regdate}</td>
-	                                    <td class="n_hits">${board.hit}</td>
+	                                    <td class="n_no">${notice.nno}</td>
+	                                    <td class="n_title"><a href="/notice/detail?nno=${notice.nno}">${notice.title}</a></td>
+	                                    <td class="n_writer">${notice.writer}</td>
+	                                    <td class="n_date">${notice.regdate}</td>
+	                                    <td class="n_hits">${notice.hit}</td>
 	                                </tr>
                             	</c:forEach>
 
@@ -77,7 +77,7 @@
                             </div><!--.board_footer-->
 
                             <div class="nl_write_btn">
-                                <a href="/board/write">WRITE</a>
+                                <a href="/notice/write">WRITE</a>
                             </div>
 
                         </div><!--sw-->

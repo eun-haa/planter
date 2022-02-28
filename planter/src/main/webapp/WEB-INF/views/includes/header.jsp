@@ -60,7 +60,7 @@
 	                   </ul><!--.shop_list-->
 	
 	                   <div class="list_title">
-	                       <a href="/board/list">NOTICE</a>
+	                       <a href="/notice/list">NOTICE</a>
 	                   </div><!--list_title-->
 	
 	                   <div class="list_title">

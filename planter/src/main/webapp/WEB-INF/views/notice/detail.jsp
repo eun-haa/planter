@@ -11,7 +11,7 @@
                     <div class="board_wrap">
                         <div class="board_top">
                             <div class="d_title">
-                                <input type="hidden" id="bno" name="bno" value="${detail.bno}" readonly>
+                                <input type="hidden" id="bno" name="nno" value="${detail.nno}" readonly>
             
                                 <div class="d_title_name">
                                    	 ${detail.title}
@@ -40,17 +40,17 @@
                                 <ul>
                                 
                                     <li class="d_del_btn">
-                                        <a href="/board/remove?bno=${detail.bno}">DELETE</a>
+                                        <a href="/notice/delete?nno=${detail.nno}">DELETE</a>
                                     </li><!--.d_del_btn-->
                                     
                                     
                                     <li class="d_write_btn">
-                                        <a href="/board/modify?bno=${detail.bno}">MODIFY</a>
+                                        <a href="/notice/modify?nno=${detail.nno}">MODIFY</a>
                                     </li><!--.d_write_btn-->
             
             
                                     <li class="d_list_btn">
-                                        <a href="/board/list">LIST</a>
+                                        <a href="/notice/list">LIST</a>
                                     </li><!--.d_list_btn-->
                                 </ul>
                             </div><!--.d_btns-->

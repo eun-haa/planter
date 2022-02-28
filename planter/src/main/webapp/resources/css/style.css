@@ -879,6 +879,7 @@ table{
 
 tbody .n_title{
     text-align: left;
+    padding-left: 50px;
 }
 
 .n_title a{
@@ -930,6 +931,7 @@ tbody .n_title{
     border: 1px solid #ddd;
     padding: 5px 15px;
     background-color: #fff;
+    color: #444;
 }
 
 #n_search{
