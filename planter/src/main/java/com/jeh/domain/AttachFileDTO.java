@@ -11,7 +11,10 @@ public class AttachFileDTO {
 	private boolean image;
 	// notice table과 연결을 위해서
 	private int nno;
+	// product table과 연결을 위해서
+	private int pno;
 	
+
 	public String getFileName() {
 		return fileName;
 	}
@@ -42,11 +45,17 @@ public class AttachFileDTO {
 	public void setNno(int nno) {
 		this.nno = nno;
 	}
+	public int getPno() {
+		return pno;
+	}
+	public void setPno(int pno) {
+		this.pno = pno;
+	}
 	
 	@Override
 	public String toString() {
 		return "AttachFileDTO [fileName=" + fileName + ", uploadPath=" + uploadPath + ", uuid=" + uuid + ", image="
-				+ image + ", nno=" + nno + "]";
+				+ image + ", nno=" + nno + ", pno=" + pno + "]";
 	}
 	
 	

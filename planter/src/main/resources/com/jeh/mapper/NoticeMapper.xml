@@ -13,7 +13,7 @@
 	<insert id="insertSelectKey">
 		<selectKey keyProperty="nno" order="BEFORE" resultType="int">
 			<!-- 제일 큰 nno 값에 +1을 해주어 새로운 new max bno -->
-			SELECT MAX(nno)+1 bno FROM notice
+			SELECT MAX(nno)+1 nno FROM notice
 		</selectKey>
 		INSERT INTO notice(nno,title,content,writer)
 		VALUES (#{nno},#{title},#{content},#{writer})

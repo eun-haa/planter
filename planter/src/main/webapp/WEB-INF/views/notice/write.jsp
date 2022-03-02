@@ -33,7 +33,7 @@
         
                         </div><!--.w_box-->
         
-
+						
                        	<input id="board_write_submit" type="submit" value="SUBMIT" >
 
                     </form>

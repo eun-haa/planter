@@ -66,12 +66,13 @@
 	                   <div class="list_title">
 	                       <a href="#">Q&amp;A</a>
 	                   </div><!--list_title-->
-	
-	                   <ul class="shop_list">
-	                       <li class="list_title">
-	                           <a href="#">ADMIN</a>
-	                       </li><!--list_title-->
-	                   </ul>
+	                   
+	                   <!-- 관리자(login.role==true)인 경우만 ADMIN 메뉴 볼 수 있게 c:if문 작성 -->
+						<c:if test="${login.role==true}">
+							<ul class="shop_list"><li class="list_title"><a href="/admin/main">ADMIN</a></li></ul>
+						</c:if>	                   
+
+	                   
 	               </div><!--.menu_list-->
 	
 	               <div class="membership_list">
@@ -85,7 +86,7 @@
 	                   	   		</c:when>
 	                   	   		<c:otherwise>
 	                   	   			<li>
-	                            		<a href="/member/login">LOGIN</a>
+	                            		<a href="/member/login">LOG-IN</a>
 	                       			</li>
 	                   	   		</c:otherwise>
 	                   	   </c:choose>
@@ -110,18 +111,21 @@
 	                       </li>
 	                       
 	                       <!-- login 여부에 따른 분기(MY ACCOUNT를 눌렀을 때 이동하는 페이지) -->
-	                   	   <c:choose>
+	                       <c:choose>
 	                   	   		<c:when test="${login!=null}">
-	                   	   			<li>
-	                           			<a href="/member/myAccount">MY ACCOUNT</a>
-	                       			</li>
+	                   	   			<li><a href="/member/myAccount">MY ACCOUNT</a></li>
 	                   	   		</c:when>
 	                   	   		<c:otherwise>
-	                   	   			<li>
-	                            		<a href="/member/login">MY ACCOUNT</a>
-	                       			</li>
+	                   	   			<li><a href="/member/login">MY ACCOUNT</a></li>
 	                   	   		</c:otherwise>
 	                   	   </c:choose>
+	                   	   
+	                   	   
+	                   	   
+	                   	   
+	                   	   
+	                   	   
+
 							
 	                   </ul>
 	               </div><!--.membership_list-->

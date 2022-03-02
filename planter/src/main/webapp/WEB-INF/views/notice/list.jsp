@@ -75,10 +75,14 @@
                                     </form>
             
                             </div><!--.board_footer-->
+                            
+		                    <!-- 관리자(login.role==true)인 경우만 WRITE 버튼을 통해 글을 작성할 수 있게 c:if문 작성 -->
+							<c:if test="${login.role==true}">
+								<div class="nl_write_btn">
+                                	<a href="/notice/write">WRITE</a>
+                            	</div>
+							</c:if>
 
-                            <div class="nl_write_btn">
-                                <a href="/notice/write">WRITE</a>
-                            </div>
 
                         </div><!--sw-->
 
