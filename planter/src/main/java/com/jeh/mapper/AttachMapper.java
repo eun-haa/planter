@@ -11,4 +11,7 @@ public interface AttachMapper {
 	// 게시판 상세페이지에 업로드 된 이미지를 뿌리기 위한 데이터 list
 	// 게시판 번호를 AttachFileDTO에 실어서 controller에 넘겨주기
 	public ArrayList<AttachFileDTO> fileList(int nno);
+	
+	
+
 }

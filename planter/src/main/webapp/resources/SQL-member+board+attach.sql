@@ -69,6 +69,7 @@ CREATE TABLE product(
     pmemo TEXT,							-- 상품 설명
 	pregdate DATETIME DEFAULT NOW(),	-- 상품 업로드 날짜
     pupdate	DATETIME DEFAULT NOW(),		-- 상품 수정 날짜
+    phit INT DEFAULT 0,					-- 상품 조회수
 	cid INT NOT NULL					-- 카테고리 코드(아이디)
 );
 

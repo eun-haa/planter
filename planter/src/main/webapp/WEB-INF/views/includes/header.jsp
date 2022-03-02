@@ -38,7 +38,7 @@
 	                           <a href="#">SHOP</a>
 	                       </li><!--.list_title-->
 	                       <li class="shop_record">
-	                           <a href="#">ALL</a>
+	                           <a href="/shop/list">ALL</a>
 	                       </li><!--.shop_record-->
 	
 	                       <li class="shop_record">

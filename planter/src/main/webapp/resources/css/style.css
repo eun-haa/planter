@@ -670,7 +670,68 @@ legend{
 	line-height: 30px;
 	font-weight: 500;
 }
+/* ----------------------------------------------------------- */
+/* ADMIN - LIST */
 
+.product_list_table table{
+	position: relative;
+    border-left: 0px;
+    border-right: 0px;
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.product_list_table{
+    margin-bottom: 30px;
+}
+
+.product_list_table thead, .product_list_table tbody{
+    border: none;
+}
+
+.product_list_table tr{
+    text-align: center;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.product_list_table th, .product_list_table td{
+    border: none;
+    padding: 15px;
+}
+
+.p_no{width: 5%;}
+.p_cate{width: 5%;}
+.p_image{width: 10%;}
+.p_name{width: 20%;}
+.p_stock{width: 5%;}
+.p_hit{width: 5%;}
+.p_regdate{width: 15%;}
+.p_update{width: 15%;}
+.p_modify{width: 5%;}
+.p_delete{width: 10%;}
+
+.p_modify a{
+	color: #444;
+	padding: 5px 10px;
+	border: 1px solid #ddd;
+}
+
+.p_delete a{
+	background-color: #aaa;
+	color: #fff;
+	padding: 5px 10px;
+}
+
+.product_sw{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
 /* ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */
 /* MY ACCOUNT */
@@ -903,7 +964,7 @@ legend{
 
 
 
-table{
+.notice_list_table table{
     position: relative;
     border-left: 0px;
     border-right: 0px;
@@ -1009,6 +1070,12 @@ tbody .n_title{
     background-color: #fff;
     height: 30px;
     width: 100px;
+}
+
+#n_search:hover{
+	background-color: #111;
+	border: none;
+	color: #fff;
 }
 
 
@@ -1181,11 +1248,13 @@ tbody .n_title{
 /* SHOP - LIST */
 .prd_list{
     width: 100%;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
 }
 
 .prd_item{
+	background-color: #ddd;
     width: 30%;
     display: inline-block;
     /* margin-bottom: 70px; */
@@ -1198,6 +1267,11 @@ tbody .n_title{
 
 .thumbnail{
     margin-bottom: 10px;
+}
+
+.prd_item .thumbnail a{
+	display: block;
+	background-color: #ddd;
 }
 
 .description a{
@@ -1218,6 +1292,74 @@ tbody .n_title{
 }
 
 /* ----------------------------------------------------------- */
+/* SHOP - DETAIL */
+.prod_detail_in{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.prod_detail{
+    display: flex;
+    justify-content: space-between;
+}
+
+.prod_detail .left{
+    width: 47%;
+}
+
+.prod_detail .right{
+    width: 47%;
+}
+
+.prod_name{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.prod_memo{
+    margin-bottom: 20px;
+}
+
+.prod_price{
+    font-size: 17px;
+    margin-bottom: 50px;
+}
+
+.prod_btns{
+    display: flex;
+}
+
+.prod_btn_bag {
+    margin-right: 20px;
+}
+
+.prod_btn_bag a{
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #555;
+    padding: 10px 75px;
+}
+
+.prod_btn_wish a{
+    display: inline-block;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #555;
+    padding: 10px 75px;
+}
+
+.prod_btn_bag a:hover{
+    background-color: #111;
+    border: none;
+    color: #fff;
+}
+
+.prod_btn_wish a:hover{
+    background-color: #111;
+    border: none;
+    color: #fff;
+}
 /* ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */

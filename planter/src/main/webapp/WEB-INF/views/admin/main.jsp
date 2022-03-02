@@ -15,7 +15,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><strong>PRODUCT LIST</strong>상품 관리</a>
+                            <a href="/admin/list"><strong>PRODUCT LIST</strong>상품 관리</a>
                         </li>
                     </ul>
                     <ul>
