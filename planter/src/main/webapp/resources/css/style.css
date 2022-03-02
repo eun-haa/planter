@@ -302,11 +302,20 @@ select {
     background: #fff;
 }
 
+
+
+
 .check{
     border: 1px solid #ddd;
     border-top: none;
     padding: 10px 20px;
 }
+
+input[type=checkbox] { 
+	margin:-4px 2px 0 0; 
+	vertical-align:middle; 
+}
+
 
 #email{
 	width: 300px;
@@ -333,16 +342,14 @@ select {
 
 .postcode_btn{
     display: inline-block;
+    padding-right: 5px;
     vertical-align: top;
-    background-color: #fff;
+    background-color: #aaa;
     width: 100px;
     text-align: center;
-    color: #555;
-}
-
-.postcode_btn:hover{
-	background-color: #aaa;
 	color: #fff;
+	border: none;
+	font-size: 12px;
 }
 
 .address1{
@@ -778,7 +785,7 @@ legend{
     margin: 0 auto;
 }
 
-.w_box input, .w_box textarea{
+.w_title input, .w_box textarea{
     border: 1px solid #ddd;
     width: 100%;
     font-family: 'Montserrat', sans-serif;
@@ -793,7 +800,6 @@ legend{
 }
 
 .w_content{
-
     margin-bottom: 10px;
 }
 
@@ -816,6 +822,61 @@ legend{
 /*#board_write_file{
 	font-family: 'Noto Sans KR', sans-serif;
 }*/
+
+.w_content_file{
+	border: 1px solid #ddd;
+	padding: 7px 7px;
+}
+
+#uploadResult ul{
+	display: flex;
+}
+
+#uploadResult ul li{
+	margin-top: 7px;
+	margin-right: 7px;
+}
+
+/* 파일 커스텀 */
+
+.w_content_file label {
+	/*font-family: 'Noto Sans KR', sans-serif;*/
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+	padding: 0 12px;
+    background-color: #aaa;
+    color: #fff;
+    cursor: pointer;
+    vertical-align: center;
+    font-size: 12px;
+}
+
+
+
+.w_content_file .upload-name {
+	/*font-family: 'Noto Sans KR', sans-serif;*/
+	border: none;
+    display: inline-block;
+    height: 35px;
+    line-height: 35px;
+    padding: 0 10px;
+    vertical-align: center;
+    width: 78%;
+    color: #999999;
+    font-size: 12px;
+}
+
+
+
+.w_content_file input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
 
 #board_write_submit{
 	width: 102.2%;
@@ -993,6 +1054,11 @@ tbody .n_title{
     padding-bottom: 100px;
 }
 
+.d_content img{
+	max-width: 80%;
+	height: auto;
+}
+
 .board_footer .d_btns ul{
     display: flex;
     justify-content: right;
@@ -1021,6 +1087,10 @@ tbody .n_title{
 	background-color: #fff;
 	line-height: 30px;
 	color: #333;
+}
+
+#uploadResultDetail ul li{
+	margin: 5px 0;
 }
 /* ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+	<mapper namespace="com.jeh.mapper.AttachMapper">
+		<!-- attach 테이블에 insert -->
+		<insert id="insert">
+			INSERT INTO attach(uuid,uploadPath,fileName,image,nno)
+			VALUES (#{uuid},#{uploadPath},#{fileName},#{image},#{nno})
+		</insert>
+		
+		<select id="fileList" resultType="com.jeh.domain.AttachFileDTO">
+			SELECT *
+			FROM attach
+			WHERE nno=#{nno}
+		</select>
+	</mapper>

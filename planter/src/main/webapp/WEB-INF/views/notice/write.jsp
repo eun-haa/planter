@@ -8,7 +8,7 @@
                 </div><!--.titleArea-->
 
                 <div class="write">
-                    <form role="form" action="/notice/write" method="post">
+                    <form role="form" action="/notice/write" method="post" enctype="multipart/form-data" >
                         <div class="w_box">
                         
                             <input type="hidden" name="writer" value="${login.name}">
@@ -19,11 +19,15 @@
                             <div class="w_content">
                                 <textarea name="content" id="" cols="100" rows="40" placeholder="CONTENTS"></textarea>
                                 <div class="w_content_file">
-                                    <input id="board_write_file" type="file" name="uploadFile" class="uploadFile" multiple>
-                                        <div id="uploadResult">
-                                            <!-- 업로드한 파일의 썸네일이 들어갈 공간 -->
-                                            <ul></ul>
-                                        </div>
+                                    <!-- <input id="board_write_file" type="file" name="uploadFile" class="uploadFile" multiple> -->
+                                    <label for="file">파일 선택</label>
+                                    <input type="file" id="file" name="uploadFile" multiple>
+                                    <input class="upload-name" value="선택된 파일없음" placeholder="" readonly>
+
+                                    <div id="uploadResult">
+                                        <!-- 업로드한 파일의 썸네일이 들어갈 공간 -->
+                                        <ul></ul>
+                                    </div>
                                 </div><!--.w_content_file-->
                             </div><!--.w_content-->
         
@@ -38,5 +42,5 @@
                     
 
             </div><!--#contents-->
-		
+	<script type="text/javascript" src="../resources/js/uploadAjax.js"></script>
 <%@ include file="../includes/footer.jsp" %>

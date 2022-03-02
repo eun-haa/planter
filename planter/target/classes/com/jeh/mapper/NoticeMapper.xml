@@ -3,10 +3,20 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jeh.mapper.NoticeMapper">
-	<!-- 1.글 쓰기 -->
+	<!-- 1-1.글 쓰기 -->
 	<insert id="write">
 		INSERT INTO notice(title, content, writer)
 		VALUES(#{title}, #{content}, #{writer})
+	</insert>
+	
+	<!-- 1-2.파일 첨부 -->
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="nno" order="BEFORE" resultType="int">
+			<!-- 제일 큰 nno 값에 +1을 해주어 새로운 new max bno -->
+			SELECT MAX(nno)+1 bno FROM notice
+		</selectKey>
+		INSERT INTO notice(nno,title,content,writer)
+		VALUES (#{nno},#{title},#{content},#{writer})
 	</insert>
     
 	<!-- 2-1.글 목록 + 페이징-->

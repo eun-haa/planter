@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../includes/header.jsp" %>
-
+	<script src="../resources/js/notice/detail.js"></script>
 <script type="text/javascript">
 	
 	function noticeDelete(nno) {
@@ -29,7 +29,7 @@
                     <div class="board_wrap">
                         <div class="board_top">
                             <div class="d_title">
-                                <input type="hidden" id="bno" name="nno" value="${detail.nno}" readonly>
+                                <input type="hidden" id="nno" name="nno" value="${detail.nno}" readonly>
             
                                 <div class="d_title_name">
                                    	 ${detail.title}
@@ -46,7 +46,7 @@
                         <div class="board_detail">
                             <div class="d_content">
                                 	${detail.content}
-                                <div id="uploadResult">
+                                <div id="uploadResultDetail">
                                 <!-- 업로드한 파일이 들어갈 공간 -->
                                     <ul></ul>
                                 </div>
@@ -79,4 +79,5 @@
                 </div><!--.notice_detail_in-->
 
             </div><!--#contents-->
+
 <%@ include file="../includes/footer.jsp" %>

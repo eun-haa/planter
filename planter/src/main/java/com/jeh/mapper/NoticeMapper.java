@@ -6,8 +6,10 @@ import com.jeh.domain.NoticeDTO;
 import com.jeh.domain.Search;
 
 public interface NoticeMapper {
-	// 1.글 쓰기 설계
+	// 1-1.글 쓰기 설계
 	public void write(NoticeDTO notice);
+	// 1-2.글 쓰기 파일 첨부 설계
+	public void insertSelectKey(NoticeDTO notice);
 	
 	// 2-1.글 목록 설계
 	public ArrayList<NoticeDTO> list(Search sc);

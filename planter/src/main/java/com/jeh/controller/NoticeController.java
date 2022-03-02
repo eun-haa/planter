@@ -1,13 +1,20 @@
 package com.jeh.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.jeh.domain.AttachFileDTO;
 import com.jeh.domain.NoticeDTO;
 import com.jeh.domain.PageDTO;
 import com.jeh.domain.Search;
@@ -55,7 +62,7 @@ public class NoticeController {
 		System.out.println("notice/list.jsp");
 	}
 	
-	// 3.글 상세
+	// 3-1.글 상세
 	@GetMapping("detail")
 	public void detail(NoticeDTO notice, Model model) {
 		// nservice.detail(notice)를 "detail"이라는 이름의 모델에 담아서 화면에 보여줄 수 있게
@@ -63,6 +70,15 @@ public class NoticeController {
 		// 확인용
 		System.out.println("notice/detail.jsp");
 	}
+	// 3-2.파일 업로드 관련
+	// 게시판 상세페이지에서 이미지를 클릭하기 위한 select된 결과를 javascript로
+	@GetMapping(value="fileList/{nno}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public ResponseEntity<ArrayList<AttachFileDTO>> fileList(@PathVariable int nno){
+		// 통신 상태가 정상적이면 select된 결과를 보내라
+		System.out.println("fileList");
+		return new ResponseEntity<>(nservice.fileList(nno), HttpStatus.OK);
+	}
+
 	
 	// 4-1.글 수정 화면
 	@GetMapping("modify")
