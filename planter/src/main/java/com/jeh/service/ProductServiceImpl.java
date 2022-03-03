@@ -57,4 +57,14 @@ public class ProductServiceImpl implements ProductService{
 	public ArrayList<AttachFileDTO> detailFile(int pno){
 		return amapper.detailFile(pno);
 	}
+	
+	// 4.상품 수정 설계
+	public void postModify(ProductDTO prod) {
+		pmapper.postModify(prod);
+	}
+	
+	// 5.글 삭제 설계
+	public void delete(ProductDTO prod) {
+		pmapper.delete(prod);
+	}
 }

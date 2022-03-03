@@ -106,8 +106,8 @@ public class NoticeController {
 	}
 	
 	// 5.글 삭제
-	@PostMapping("delete")
-	public String delete(NoticeDTO notice, Model model) {
+	@GetMapping("delete")
+	public String delete(NoticeDTO notice) {
 		// delete 실행
 		nservice.delete(notice);
 		

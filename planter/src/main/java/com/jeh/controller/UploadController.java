@@ -167,7 +167,7 @@ public class UploadController {
 					// 썸네일 파일을 생성하기 전에 썸네일 파일 이름을 수정(기존 파일명에 "s_" 추가)
 					FileOutputStream thumbnail = new FileOutputStream(new File(uploadPath, "s_" + uploadFileName));
 					
-					Thumbnailator.createThumbnail(multipartFile.getInputStream(), thumbnail, 100, 100);
+					Thumbnailator.createThumbnail(multipartFile.getInputStream(), thumbnail, 70, 70);
 					
 					// 썸네일 종료(메모리 공간 환수)
 					thumbnail.close();

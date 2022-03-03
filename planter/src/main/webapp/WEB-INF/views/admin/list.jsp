@@ -31,14 +31,14 @@
 	                            	<tr>	                                    
 	                                    <td scope="col" class="p_no">${product.pno}</td>
 	                                    <td scope="col" class="p_cate">${product.cid}</td>
-	                                    <td scope="col" class="p_image">IMAGE</td>
+	                                    <td scope="col" class="p_image prodUploadList"></td>
 	                                    <td scope="col" class="p_name"><a href="/shop/detail?pno=${product.pno}">${product.pname}</a></td>
 	                                    <td scope="col" class="p_stock">${product.pstock}</td>
 	                                    <td scope="col" class="p_hit">${product.phit}</td>
 	                                    <td scope="col" class="p_regdate">${product.pregdate}</td>
 	                                    <td scope="col" class="p_update">${product.pupdate}</td>
-	                                    <td scope="col" class="p_modify"><a href="#">MODIFY</a></td>
-                                    	<td scope="col" class="p_delete"><a href="#">DELETE</a></td>
+	                                    <td scope="col" class="p_modify"><a href="/admin/modify?pno=${product.pno}">MODIFY</a></td>
+                                    	<td scope="col" class="p_delete"><a href="/admin/delete?pno=${product.pno}">DELETE</a></td>
 	                                </tr>
                             	</c:forEach>
 
@@ -83,13 +83,7 @@
                                     </form>
             
                             </div><!--.board_footer-->
-                            
-		                    <!-- 관리자(login.role==true)인 경우만 WRITE 버튼을 통해 글을 작성할 수 있게 c:if문 작성 -->
-							<c:if test="${login.role==true}">
-								<div class="nl_write_btn">
-                                	<a href="/notice/write">WRITE</a>
-                            	</div>
-							</c:if>
+                           
                         </div><!--sw-->
                     </div>
 
@@ -121,5 +115,5 @@
                     </div><!--.notice_list_pager-->
                 </div><!--.notice_list_in-->
             </div><!--#contents-->
-    <script src="../resources/js/notice/list.js"></script>
+    <script src="../resources/js/admin/list.js"></script>
 <%@ include file="../includes/footer.jsp" %>

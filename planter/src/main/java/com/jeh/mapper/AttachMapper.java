@@ -26,5 +26,5 @@ public interface AttachMapper {
 	public ProductDTO shopDetail(ProductDTO prod);
 	public ArrayList<AttachFileDTO> detailFile(int pno);
 	
-
+	
 }

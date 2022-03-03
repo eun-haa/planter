@@ -1,7 +1,7 @@
 /**
  * 
  */
-// shop - list
+// admin - list
 $(document).ready(function(){
 	// * uploaded file 보여주기 *
 	// 상품 목록 페이지가 시작되자마자 이미지를 출력하기 위한 ajax
@@ -30,7 +30,7 @@ $(document).ready(function(){
 							// 원화표시(\) -> / 로 바꿔서 경로가 제대로 뜨게 만들기(uuid도 포함)
 							// pno 값
 							
-							var fileCallPath = encodeURIComponent(obj.uploadPath + "/" + obj.uuid + "_" + obj.fileName)
+							var fileCallPath = encodeURIComponent(obj.uploadPath + "/s_" + obj.uuid + "_" + obj.fileName)
 							console.log(fileCallPath); // 콘솔 확인
 							
 							

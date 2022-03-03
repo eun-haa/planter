@@ -33,16 +33,21 @@ AND mid = 'admin';
 USE planter;
 
 CREATE TABLE notice(
-	nno INT AUTO_INCREMENT PRIMARY KEY,
-	title VARCHAR(30),
-	content TEXT,
-	writer VARCHAR(10),
-	regdate DATETIME DEFAULT NOW(),
-	hit INT DEFAULT 0
+	nno INT AUTO_INCREMENT PRIMARY KEY, -- 글 번호
+	title VARCHAR(30),					-- 글 제목
+	content TEXT,						-- 글 내용
+	writer VARCHAR(10),					-- 글 작성자
+	regdate DATETIME DEFAULT NOW(),		-- 글 작성일
+	hit INT DEFAULT 0					-- 글 조회수
 );
 
 SELECT * FROM planter.notice;
 
-UPDATE member
-SET passwd = '1111'
-WHERE mid = 'admin';
+
+SELECT * 
+FROM(
+	SELECT @rownum:=@rownum+1 AS rownum, n.*
+	FROM (SELECT @rownum:=0) AS rnt,
+	notice AS n
+) AS noticeList
+;

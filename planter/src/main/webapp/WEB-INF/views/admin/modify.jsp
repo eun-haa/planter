@@ -10,9 +10,15 @@
 
 
                 <div class="product_reg_table">
-                	<form role="form" action="/admin/productReg" method="post" enctype="multipart/form-data" >
+                	<form role="form" action="/admin/modify" method="post" enctype="multipart/form-data" >
 	                    <table border="1" summary="">
 	                        <tbody>
+	                        	<tr class="displaynone">
+	                                <th scope="row">PNO</th>
+	                                <td>
+	                                    <input type="text" name="pno" value="${detail.pno}" class="prod_reg_input">
+	                                </td>
+	                            </tr>
 	                            <tr>
 	                                <th scope="row">CATEGORY</th>
 	                                <td>
@@ -24,42 +30,41 @@
 	                                    </select>
 	                                    
 	                                </td>
-	                                <td><input id="cid" type="text" name="cid" value="" class="prod_reg_input"></td>
+	                                <td><input id="cid" type="text" name="cid" value="${detail.cid}" class="prod_reg_input"></td>
 	                            </tr>
 	
 	                            <tr>
 	                                <th scope="row">NAME</th>
 	                                <td>
-	                                    <input type="text" id="pname" name="pname" value="" class="prod_reg_input">
-	                                    <div id="nameMsg"></div>
+	                                    <input type="text" name="pname" value="${detail.pname}" class="prod_reg_input">
 	                                </td>
 	                            </tr>
 	
 	                            <tr>
 	                                <th scope="row">PRICE</th>
 	                                <td>
-	                                    <input type="text" name="pprice" value="" class="prod_reg_input">
+	                                    <input type="text" name="pprice" value="${detail.pprice}" class="prod_reg_input">
 	                                </td>
 	                            </tr>
 	
 	                            <tr>
 	                                <th scope="row">DISCOUNT</th>
 	                                <td>
-	                                    <input type="text" name="pdiscount" value="" class="prod_reg_input">
+	                                    <input type="text" name="pdiscount" value="${detail.pdiscount}" class="prod_reg_input">
 	                                </td>
 	                            </tr>
 	
 	                            <tr>
 	                                <th scope="row">STOCK</th>
 	                                <td>
-	                                    <input type="text" name="pstock" value="" class="prod_reg_input">
+	                                    <input type="text" name="pstock" value="${detail.pstock}" class="prod_reg_input">
 	                                </td>
 	                            </tr>
 	
 	                            <tr>
 	                                <th scope="row">MEMO</th>
 	                                <td>
-	                                    <textarea name="pmemo" id="" cols="30" rows="10"></textarea>
+	                                    <textarea name="pmemo" id="" cols="30" rows="10">${detail.pmemo}</textarea>
 	                                </td>
 	                            </tr>
 	                            
@@ -86,5 +91,5 @@
                 </div><!--.product_reg_table-->
             </div><!--#contents-->
 	<script type="text/javascript" src="../resources/js/uploadAjax.js"></script>
-	<script type="text/javascript" src="../resources/js/admin/productReg.js"></script>
+	<script type="text/javascript" src="../resources/js/admin/modify.js"></script>
 <%@ include file="../includes/footer.jsp" %>

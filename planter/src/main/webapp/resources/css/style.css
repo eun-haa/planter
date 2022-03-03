@@ -1322,6 +1322,10 @@ tbody .n_title{
     margin-bottom: 20px;
 }
 
+.p_name a{
+	color: #555;
+}
+
 .prod_memo{
     margin-bottom: 20px;
 }

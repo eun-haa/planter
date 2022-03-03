@@ -35,4 +35,5 @@
 			WHERE pno=#{pno}
 		</select>
 		
+
 	</mapper>
