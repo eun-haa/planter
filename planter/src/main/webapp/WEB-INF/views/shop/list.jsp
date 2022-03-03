@@ -11,11 +11,10 @@
                 <ul class="prd_list">
                 	<c:forEach items="${list}" var="product">
 	                	<li class="prd_item">
-	                		
 	                		<input type="text" value="${product.pno}" id="pno" class="pno" name="pno">
 	                        <div class="thumbnail">
 	                            <a href="/shop/detail?pno=${product.pno}">
-									<span class="prodUploadList"></span>
+									<div class="prodUploadList"></div>
 	                            </a>
 	                        </div>
 	                        

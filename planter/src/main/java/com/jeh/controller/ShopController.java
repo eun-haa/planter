@@ -62,7 +62,6 @@ public class ShopController {
 		/* 상품 목록 보여주기 */
 		model.addAttribute("list", pservice.shopList());
 		
-		model.addAttribute("list2", pservice.fileList2());
 		
 		// 확인용
 		System.out.println("shop/list.jsp");
@@ -71,9 +70,16 @@ public class ShopController {
 	// 상품 목록 화면에 이미지 파일 가져오기
 	@GetMapping(value="/shop/fileList2", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<ArrayList<AttachFileDTO>> fileList(){
-		// 통신 상태가 정상적이면 select된 결과를 보내라
+		// 통신 상태가 정상적이면 select된 결과를 보내기
 		System.out.println("fileList2");
 		return new ResponseEntity<>(pservice.fileList2(), HttpStatus.OK);
+	}
+	
+	@GetMapping(value="/shop/fileList3", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public ResponseEntity<ArrayList<ProductDTO>> fileList2(){
+		// 통신 상태가 정상적이면 select된 결과를 보내기
+		System.out.println("shopList");
+		return new ResponseEntity<>(pservice.shopList(), HttpStatus.OK);
 	}
 	
 	// 4.shop 상품 상세 화면
