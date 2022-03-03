@@ -10,9 +10,13 @@
                 
                 <ul class="prd_list">
                 	<c:forEach items="${list}" var="product">
-	                	<li id="anchorBoxId_01" class="prd_item">
+	                	<li class="prd_item">
+	                		
+	                		<input type="text" value="${product.pno}" id="pno" class="pno" name="pno">
 	                        <div class="thumbnail">
-	                            <a href="/shop/detail?pno=${product.pno}"></a>
+	                            <a href="/shop/detail?pno=${product.pno}">
+									<span class="prodUploadList"></span>
+	                            </a>
 	                        </div>
 	                        
 	                        <div class="description">
@@ -30,5 +34,5 @@
 
 
             </div><!--#contents-->
-		
+<script src="../resources/js/shop/list.js"></script>	
 <%@ include file="../includes/footer.jsp" %>

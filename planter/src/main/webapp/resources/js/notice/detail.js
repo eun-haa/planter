@@ -5,7 +5,7 @@
 $(document).ready(function(){
 
 	
-	// bno 값
+	// nno 값
 	var nno = $("#nno").val();
 	// * uploaded file 보여주기 *
 	// 상세페이지가 시작되자마자 이미지를 출력하기 위한 ajax

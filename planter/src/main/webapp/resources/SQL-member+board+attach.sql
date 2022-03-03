@@ -61,7 +61,7 @@ SELECT * FROM planter.attach;
 
 -- 상품 테이블
 CREATE TABLE product(
-	pid INT AUTO_INCREMENT PRIMARY KEY, -- 상품 아이디
+	pno INT AUTO_INCREMENT PRIMARY KEY, -- 상품 아이디
     pname VARCHAR(100) NOT NULL,		-- 상품 이름
     pprice INT NOT NULL, 				-- 상품 가격
     pdiscount INT DEFAULT 0,			-- 상품 할인가
@@ -88,3 +88,14 @@ INSERT INTO planter.catagory VALUES(01, 'PLANT');
 INSERT INTO planter.catagory VALUES(02, 'FLOWER');
 INSERT INTO planter.catagory VALUES(03, 'GARDENING');
 INSERT INTO planter.catagory VALUES(04, 'PLANTERIOR');
+
+-- product 파일 첨부 기능 테이블
+CREATE TABLE prod_attach(
+	uuid VARCHAR(100) PRIMARY KEY,
+    uploadpath VARCHAR(100),
+    filename VARCHAR(100),
+    image INT,
+    pno INT
+);
+
+SELECT * FROM prod_attach;

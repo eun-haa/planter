@@ -7,6 +7,7 @@ import com.jeh.domain.ProductDTO;
 public interface ProductMapper {
 	// 1.상품 등록 설계
 	public void productReg(ProductDTO prod);
+	public void insertSelectKey(ProductDTO prod);
 	
 	// 2.상품 목록 설계
 	public ArrayList<ProductDTO> shopList();

@@ -71,7 +71,6 @@ public class NoticeController {
 		System.out.println("notice/detail.jsp");
 	}
 	// 3-2.파일 업로드 관련
-	// 게시판 상세페이지에서 이미지를 클릭하기 위한 select된 결과를 javascript로
 	@GetMapping(value="fileList/{nno}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<ArrayList<AttachFileDTO>> fileList(@PathVariable int nno){
 		// 통신 상태가 정상적이면 select된 결과를 보내라

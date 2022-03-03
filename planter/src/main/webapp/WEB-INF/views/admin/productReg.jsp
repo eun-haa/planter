@@ -66,7 +66,7 @@
 	                                <td>
 	                                    <div class="w_content_file">
 	                                    	<label for="file">파일 선택</label>
-                                    		<input type="file" id="file" name="uploadFile" multiple>
+                                    		<input type="file" id="file" name="uploadFile">
                                     		<input class="upload-name" value="선택된 파일없음" placeholder="" readonly>
                                             <div id="uploadResult">
                                                 <!-- 업로드한 파일의 썸네일이 들어갈 공간 -->
@@ -83,6 +83,6 @@
                     
                 </div><!--.product_reg_table-->
             </div><!--#contents-->
-	<!-- <script type="text/javascript" src="../resources/js/uploadAjax.js"></script> -->
-	<script type="text/javascript" src="../resources/js/productReg.js"></script>
+	<script type="text/javascript" src="../resources/js/uploadAjax.js"></script>
+	<!-- <script type="text/javascript" src="../resources/js/productReg.js"></script> -->
 <%@ include file="../includes/footer.jsp" %>

@@ -3,10 +3,19 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jeh.mapper.ProductMapper">
-	<!-- 1.상품 등록 -->
+	<!-- 1-1.상품 등록 -->
 	<insert id="productReg">
 		INSERT INTO product(pname, pprice, pstock, pmemo, cid)
 		VALUES(#{pname}, #{pprice}, #{pstock}, #{pmemo}, #{cid})
+	</insert>
+	<!-- 1-2.파일 첨부 -->
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="pno" order="BEFORE" resultType="int">
+			<!-- 제일 큰 pno 값에 +1을 해주어 새로운 new max pno -->
+			SELECT MAX(pno)+1 pno FROM product
+		</selectKey>
+		INSERT INTO product(pno, pname, pprice, pstock, pmemo, cid)
+		VALUES(#{pno}, #{pname}, #{pprice}, #{pstock}, #{pmemo}, #{cid})
 	</insert>
 	
 	<!-- 2.상품 목록 -->
