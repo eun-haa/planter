@@ -54,11 +54,14 @@ CREATE TABLE attach(
     uploadpath VARCHAR(100),
     filename VARCHAR(100),
     image INT,
-    nno INT
+    nno INT,
+    pno INT
 );
 
 SELECT * FROM planter.attach;
 
+SELECT * FROM attach
+WHERE pno IS NOT NULL;
 -- 상품 테이블
 CREATE TABLE product(
 	pno INT AUTO_INCREMENT PRIMARY KEY, -- 상품 아이디
@@ -72,30 +75,37 @@ CREATE TABLE product(
     phit INT DEFAULT 0,					-- 상품 조회수
 	cid INT NOT NULL					-- 카테고리 코드(아이디)
 );
-
-SELECT * FROM planter.attach;
+SELECT * FROM planter.product;
 
 CREATE TABLE catagory(
-	cid INT PRIMARY KEY, -- 카테고리 코드(아이디)
+	cid INT PRIMARY KEY, 				-- 카테고리 코드(아이디)
     cname VARCHAR(20) NOT NULL			-- 카테고리 이름
 );
 
 
 
-SELECT * FROM planter.product;
+
 
 INSERT INTO planter.catagory VALUES(01, 'PLANT');
 INSERT INTO planter.catagory VALUES(02, 'FLOWER');
 INSERT INTO planter.catagory VALUES(03, 'GARDENING');
 INSERT INTO planter.catagory VALUES(04, 'PLANTERIOR');
 
--- product 파일 첨부 기능 테이블
-CREATE TABLE prod_attach(
-	uuid VARCHAR(100) PRIMARY KEY,
-    uploadpath VARCHAR(100),
-    filename VARCHAR(100),
-    image INT,
-    pno INT
-);
+INSERT INTO planter.product(pname, pprice, pstock, pmemo, cid) 
+VALUES('DD', 20000, 20, 'DDSDF', 5);
 
-SELECT * FROM prod_attach;
+SELECT * FROM planter.attach;
+SELECT * FROM planter.product;
+
+select *
+from attach a,
+     product p
+where a.pno = p.pno
+;
+
+
+
+
+SELECT *
+FROM attach
+WHERE pno IS NOT NULL;
