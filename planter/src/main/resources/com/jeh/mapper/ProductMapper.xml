@@ -5,8 +5,8 @@
 <mapper namespace="com.jeh.mapper.ProductMapper">
 	<!-- 1-1.상품 등록 -->
 	<insert id="productReg">
-		INSERT INTO product(pname, pprice, pstock, pmemo, cid, pregdate)
-		VALUES(#{pname}, #{pprice}, #{pstock}, #{pmemo}, #{cid}, NOW())
+		INSERT INTO product(pname, pprice, pstock, pmemo, cid)
+		VALUES(#{pname}, #{pprice}, #{pstock}, #{pmemo}, #{cid})
 	</insert>
 	<!-- 1-2.파일 첨부 -->
 	<insert id="insertSelectKey">
@@ -15,8 +15,8 @@
 			SELECT MAX(pno)+1 pno FROM product
 			
 		</selectKey>
-		INSERT INTO product(pno, pname, pprice, pstock, pmemo, cid, pregdate)
-		VALUES(#{pno}, #{pname}, #{pprice}, #{pstock}, #{pmemo}, #{cid}, NOW())
+		INSERT INTO product(pno, pname, pprice, pstock, pmemo, cid)
+		VALUES(#{pno}, #{pname}, #{pprice}, #{pstock}, #{pmemo}, #{cid})
 	</insert>
 	
 	<!-- 2.상품 목록 -->

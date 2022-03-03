@@ -24,7 +24,7 @@
 	                                    </select>
 	                                    
 	                                </td>
-	                                <td><input id="cid" type="text" name="cid" value="" class="prod_reg_input"></td>
+	      
 	                            </tr>
 	
 	                            <tr>
@@ -86,5 +86,5 @@
                 </div><!--.product_reg_table-->
             </div><!--#contents-->
 	<script type="text/javascript" src="../resources/js/uploadAjax.js"></script>
-	<script type="text/javascript" src="../resources/js/admin/productReg.js"></script>
+	
 <%@ include file="../includes/footer.jsp" %>
