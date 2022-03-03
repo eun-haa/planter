@@ -74,7 +74,6 @@ public class ShopController {
 		System.out.println("fileList2");
 		return new ResponseEntity<>(pservice.fileList2(), HttpStatus.OK);
 	}
-	
 	@GetMapping(value="/shop/fileList3", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<ArrayList<ProductDTO>> fileList2(){
 		// 통신 상태가 정상적이면 select된 결과를 보내기
@@ -90,6 +89,12 @@ public class ShopController {
 		
 		// 확인용
 		System.out.println("shop/detail.jsp");
+	}
+	@GetMapping(value="/shop/detailFile/{pno}", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public ResponseEntity<ArrayList<AttachFileDTO>> fileList(@PathVariable int pno){
+		// 통신 상태가 정상적이면 select된 결과를 보내라
+		System.out.println("fileList");
+		return new ResponseEntity<>(pservice.detailFile(pno), HttpStatus.OK);
 	}
 	
 }

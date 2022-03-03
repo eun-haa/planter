@@ -29,4 +29,10 @@
 			WHERE pno IS NOT NULL
 		</select>
 		
+		<select id="detailFile" resultType="com.jeh.domain.AttachFileDTO">
+			SELECT *
+			FROM attach
+			WHERE pno=#{pno}
+		</select>
+		
 	</mapper>

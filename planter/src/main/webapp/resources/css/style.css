@@ -1307,6 +1307,12 @@ tbody .n_title{
     width: 47%;
 }
 
+
+.left div img{
+	width: 100%;
+	height: auto;
+}
+
 .prod_detail .right{
     width: 47%;
 }

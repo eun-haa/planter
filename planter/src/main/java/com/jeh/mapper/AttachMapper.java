@@ -3,6 +3,7 @@ package com.jeh.mapper;
 import java.util.ArrayList;
 
 import com.jeh.domain.AttachFileDTO;
+import com.jeh.domain.ProductDTO;
 
 public interface AttachMapper {
 	/* notice */
@@ -21,6 +22,9 @@ public interface AttachMapper {
 	// 게시판 번호를 AttachFileDTO에 실어서 controller에 넘겨주기
 	public ArrayList<AttachFileDTO> fileList2();
 	
+	// 3.상품 상세 설계
+	public ProductDTO shopDetail(ProductDTO prod);
+	public ArrayList<AttachFileDTO> detailFile(int pno);
 	
 
 }

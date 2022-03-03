@@ -16,4 +16,5 @@ public interface ProductService {
 	
 	// 3.상품 상세 설계
 	public ProductDTO shopDetail(ProductDTO prod);
+	public ArrayList<AttachFileDTO> detailFile(int pno);
 }

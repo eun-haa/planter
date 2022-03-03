@@ -53,4 +53,8 @@ public class ProductServiceImpl implements ProductService{
 	public ProductDTO shopDetail(ProductDTO prod) {
 		return pmapper.shopDetail(prod);
 	}
+	// 3-2.상세페이지에 업로드 된 이미지를 화면에 보여주기 위한 데이터 list 구현
+	public ArrayList<AttachFileDTO> detailFile(int pno){
+		return amapper.detailFile(pno);
+	}
 }

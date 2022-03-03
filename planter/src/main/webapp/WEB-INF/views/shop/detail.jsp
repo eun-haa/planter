@@ -11,10 +11,10 @@
                     
                     <div class="prod_detail">
                         <div class="left">
-                            <img src="./img/shop/p1-1.png" alt="">
+                            
                         </div><!--.left-->
                         <div class="right">
-                        	<input type="text" value="${detail.pno}" name="pno">
+                        	<input type="text" id="pno" value="${detail.pno}" name="pno">
                             <div class="prod_name">${detail.pname}</div>
                             <div class="prod_memo">${detail.pmemo}</div>
                             <div class="prod_price">${detail.pprice}원</div>
@@ -26,5 +26,5 @@
                     </div><!--.prod_detail-->
                 </div><!--.prod_detail_in-->
             </div><!--#contents-->
-		
+<script src="../resources/js/shop/detail.js"></script>			
 <%@ include file="../includes/footer.jsp" %>
