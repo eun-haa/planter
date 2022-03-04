@@ -7,7 +7,7 @@
                 <div class="titleArea">
                     <h2>ALL</h2>
                 </div><!--.titleArea-->
-                <input type="text" name="cid" value="${cata.cid}">
+                <input type="text" name="cid" value="${product.cid}">
 
                 <ul class="prd_list">
                 	<c:forEach items="${list}" var="product">

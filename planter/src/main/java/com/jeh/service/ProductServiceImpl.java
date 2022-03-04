@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jeh.domain.AttachFileDTO;
-import com.jeh.domain.Category;
+
 import com.jeh.domain.ProductDTO;
 import com.jeh.domain.Search;
 import com.jeh.domain.ShopSearch;

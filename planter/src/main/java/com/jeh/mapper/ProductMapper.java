@@ -2,7 +2,6 @@ package com.jeh.mapper;
 
 import java.util.ArrayList;
 
-import com.jeh.domain.Category;
 import com.jeh.domain.ProductDTO;
 import com.jeh.domain.Search;
 import com.jeh.domain.ShopSearch;

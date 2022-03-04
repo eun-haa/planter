@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jeh.domain.AttachFileDTO;
-import com.jeh.domain.Category;
+
 import com.jeh.domain.PageDTO;
 import com.jeh.domain.ProductDTO;
 import com.jeh.domain.Search;
@@ -83,6 +83,7 @@ public class ShopController {
 		// 확인용
 		System.out.println("shop/list.jsp");
 	}
+	
 	// 4-2.파일 업로드 관련
 	// 상품 목록 화면에 이미지 파일 가져오기
 	@GetMapping(value="/shop/prodFileList", produces=MediaType.APPLICATION_JSON_UTF8_VALUE)
