@@ -31,8 +31,8 @@
                     
                 </ul><!--.prd_list-->
                 <div class="notice_list_pager">
-                	<input type="text" name="pageNum" value="${pager.ssc.pageNum}">
-                	<input type="text" name="amount" value="${pager.ssc.amount}">
+                	<input type="hidden" name="pageNum" value="${pager.ssc.pageNum}">
+                	<input type="hidden" name="amount" value="${pager.ssc.amount}">
                     <ul>
                      	<c:if test="${pager.prev}">
                       	<li class="pager_button">

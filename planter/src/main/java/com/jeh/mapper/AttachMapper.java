@@ -26,5 +26,6 @@ public interface AttachMapper {
 	public ProductDTO shopDetail(ProductDTO prod);
 	public ArrayList<AttachFileDTO> detailFile(int pno);
 	
-	
+	// 4.상품 수정 설계
+	public ArrayList<AttachFileDTO> updateFile(AttachFileDTO attach);
 }

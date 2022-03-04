@@ -29,6 +29,7 @@ public interface ProductService {
 	
 	// 4.상품 수정 설계
 	public void postModify(ProductDTO prod);
+	//public ArrayList<AttachFileDTO> updateFile(AttachFileDTO attach);
 	
 	// 5.글 삭제 설계
 	public void delete(ProductDTO prod);

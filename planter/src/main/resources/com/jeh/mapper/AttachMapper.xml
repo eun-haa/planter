@@ -35,5 +35,12 @@
 			WHERE pno=#{pno}
 		</select>
 		
+		<!-- 상품 수정 설계 -->
+		<update id="updateFile">
+			UPDATE attach
+	    	SET uuid=#{uuid}, uploadpath=#{uploadPath},
+	    		filename=#{fileName}, image=#{image}
+	    	WHERE pno=#{pno}
+		</update>
 
 	</mapper>

@@ -21,4 +21,7 @@ $(document).ready(function(){
 		 
 		$("#cid").val(cid);  //hidden value set
 	})
+	
+	
+	
 })

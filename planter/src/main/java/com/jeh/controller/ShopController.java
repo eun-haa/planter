@@ -121,21 +121,20 @@ public class ShopController {
 		// 확인용
 		System.out.println("admin/modify.jsp");
 	}
+
 	// 6-2.admin 상품 수정 실행
 	@PostMapping("admin/modify")
-	public String postModify(ProductDTO prod, RedirectAttributes rttr) {
+	public String postModify(ProductDTO prod, AttachFileDTO attach) {
 		pservice.postModify(prod);
-		
-		// 수정 후 내가 수정한 글 상세페이지를 보여주기 위해서
-		rttr.addAttribute("pno", prod.getPno());
-		
+		//pservice.updateFile(attach);
 		
 		// 확인용
 		System.out.println("상품 수정 완료");
 		
-		// /admin/detail로 redirect
+		// /admin/list로 redirect
 		return "redirect:/admin/list";
 	}
+
 	
 	// 7.admin 상품 삭제
 	@GetMapping("admin/delete")

@@ -16,13 +16,12 @@
 	                            <tr>
 	                                <th scope="row">CATEGORY</th>
 	                                <td>
-	                                    <select class="cid_selected">
+	                                    <select class="cid_selected" name="cid">
 	                                        <option value="1">PLANT</option>
 	                                        <option value="2">FLOWER</option>
 	                                        <option value="3">GARDENING</option>
 	                                        <option value="4">PLANTERIOR</option>
 	                                    </select>
-	                                    
 	                                </td>
 	      
 	                            </tr>

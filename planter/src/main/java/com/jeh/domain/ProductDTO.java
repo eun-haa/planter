@@ -24,7 +24,7 @@ public class ProductDTO {
 	// 카테고리 코드
 	private int cid;
 	
-	// file upload를 위해 AttachFileDTO를 NoticeDTO에 포함관계 설정
+	// file upload를 위해 AttachFileDTO를 ProductDTO에 포함관계 설정
 	private ArrayList<AttachFileDTO> attachList;
 
 	public int getPno() {

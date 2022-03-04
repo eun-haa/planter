@@ -5,7 +5,7 @@
 $(document).ready(function(){
 
 	
-	// nno 값
+	// pno 값
 	var pno = $("#pno").val();
 	// * uploaded file 보여주기 *
 	// 상세페이지가 시작되자마자 이미지를 출력하기 위한 ajax

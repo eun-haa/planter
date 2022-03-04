@@ -50,8 +50,8 @@
 
                             <div class="board_footer">  
                                 <form id="adminSearchForm" action="/admin/list" method="get">
-                                		<input type="text" name="pageNum" value="${pager.sc.pageNum}">
-                                		<input type="text" name="amount" value="${pager.sc.amount}">
+                                		<input type="hidden" name="pageNum" value="${pager.sc.pageNum}">
+                                		<input type="hidden" name="amount" value="${pager.sc.amount}">
                                         <div class="xans-element- xans-board xans-board-search-1002 xans-board-search xans-board-1002 ">
                                             <fieldset class="boardSearch">
                                                 <legend>게시물 검색</legend>

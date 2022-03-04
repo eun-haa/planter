@@ -26,6 +26,7 @@ public interface ProductMapper {
 	
 	// 4.상품 수정 설계
 	public void postModify(ProductDTO prod);
+	public void updateSelectKey(ProductDTO prod);
 	
 	// 5.글 삭제 설계
 	public void delete(ProductDTO prod);

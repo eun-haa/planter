@@ -101,6 +101,20 @@
     		pupdate=NOW()
     	WHERE pno=#{pno}
 	</update>
+
+	<!-- 1-2.파일 첨부 -->
+	<update id="updateSelectKey">
+		<selectKey keyProperty="pno" order="BEFORE" resultType="int">
+			
+			SELECT pno FROM product
+			
+		</selectKey>
+		UPDATE product
+    	SET cid=#{cid}, pname=#{pname}, pprice=#{pprice},
+    		pdiscount=#{pdiscount}, pstock=#{pstock}, pmemo=#{pmemo},
+    		pupdate=NOW()
+    	WHERE pno=#{pno}
+	</update>
 	
 	<!-- 5.상품 삭제 -->
     <delete id="delete">
