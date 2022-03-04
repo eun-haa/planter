@@ -3,6 +3,12 @@
 <%@ include file="../includes/header.jsp" %>
 		<!-- #contents 부분만 본문에 넣기-->
             <div id="contents">
+               <div class="adminMenu">
+                	<h2><a href="/admin/main">ADMIN MAIN</a></h2>
+                    <h2><a href="/admin/productReg">PRODUCT REGISTER</a></h2>
+                    <h2><a href="#">REVIEW</a></h2>
+                    <h2><a href="#">MEMBER</a></h2>
+                </div><!--.titleArea-->
                 <div class="titleArea">
                     <h2>PRODUCT LIST</h2>
                 </div><!--.titleArea-->
@@ -31,7 +37,7 @@
 	                            	<tr>	                                    
 	                                    <td scope="col" class="p_no">${product.pno}</td>
 	                                    <td scope="col" class="p_cate">${product.cid}</td>
-	                                    <td scope="col" class="p_image prodUploadList"></td>
+	                                    <td scope="col" class="p_image prodUploadList"><a href="/shop/detail?pno=${product.pno}"></a></td>
 	                                    <td scope="col" class="p_name"><a href="/shop/detail?pno=${product.pno}">${product.pname}</a></td>
 	                                    <td scope="col" class="p_stock">${product.pstock}</td>
 	                                    <td scope="col" class="p_hit">${product.phit}</td>

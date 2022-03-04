@@ -92,6 +92,12 @@
 		SELECT * FROM product
 		WHERE pno=#{pno}
 	</select>
+	<!-- 상품 조회수 업데이트 -->
+	<update id="hitUpdate">
+		UPDATE product
+		SET phit = phit + 1
+		WHERE pno = #{pno}
+	</update>
 	
 	<!-- 4.상품 수정 -->
 	<update id="postModify">
@@ -102,19 +108,6 @@
     	WHERE pno=#{pno}
 	</update>
 
-	<!-- 1-2.파일 첨부 -->
-	<update id="updateSelectKey">
-		<selectKey keyProperty="pno" order="BEFORE" resultType="int">
-			
-			SELECT pno FROM product
-			
-		</selectKey>
-		UPDATE product
-    	SET cid=#{cid}, pname=#{pname}, pprice=#{pprice},
-    		pdiscount=#{pdiscount}, pstock=#{pstock}, pmemo=#{pmemo},
-    		pupdate=NOW()
-    	WHERE pno=#{pno}
-	</update>
 	
 	<!-- 5.상품 삭제 -->
     <delete id="delete">

@@ -11,7 +11,7 @@
                 <div class="admin_in">
                     <ul>
                         <li>
-                            <a href="/admin/productReg"><strong>REGISTER</strong>상품 등록</a>
+                            <a href="/admin/productReg"><strong>PRODUCT REGISTER</strong>상품 등록</a>
                         </li>
 
                         <li>

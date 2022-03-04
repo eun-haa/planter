@@ -124,7 +124,7 @@ public class ShopController {
 
 	// 6-2.admin 상품 수정 실행
 	@PostMapping("admin/modify")
-	public String postModify(ProductDTO prod, AttachFileDTO attach) {
+	public String postModify(ProductDTO prod) {
 		pservice.postModify(prod);
 		//pservice.updateFile(attach);
 		

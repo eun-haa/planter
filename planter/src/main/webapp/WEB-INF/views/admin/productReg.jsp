@@ -4,8 +4,14 @@
 <%@ include file="../includes/header.jsp" %>
 		<!-- #contents 부분만 본문에 넣기-->
             <div id="contents">
+                <div class="adminMenu">
+                	<h2><a href="/admin/main">ADMIN MAIN</a></h2>
+                    <h2><a href="/admin/list">PRODUCT LIST</a></h2>
+                    <h2><a href="#">REVIEW</a></h2>
+                    <h2><a href="#">MEMBER</a></h2>
+                </div><!--.titleArea-->
                 <div class="titleArea">
-                    <h2>PRODUCT</h2>
+                    <h2>PRODUCT REGISTER</h2>
                 </div><!--.titleArea-->
 
 

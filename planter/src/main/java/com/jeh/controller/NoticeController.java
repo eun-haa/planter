@@ -92,11 +92,10 @@ public class NoticeController {
 	// 4-2.글 수정 실행
 	@PostMapping("modify")
 	public String postModify(NoticeDTO notice, RedirectAttributes rttr) {
-		nservice.modify(notice);
+		nservice.postModify(notice);
 		
 		// 수정 후 내가 수정한 글 상세페이지를 보여주기 위해서
 		rttr.addAttribute("nno", notice.getNno());
-		
 		
 		// 확인용
 		System.out.println("글 수정 완료");

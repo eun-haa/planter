@@ -20,7 +20,7 @@ $(document).ready(function(){
 		$(data).each(function(i,obj){ // data : select된 결과
 
 			// 원화표시(\) -> / 로 바꿔서 경로가 제대로 뜨게 만들기(uuid도 포함)
-			var fileCallPath = encodeURIComponent(obj.uploadPath + "/" + obj.uuid + "_" + obj.fileName)
+			var fileCallPath = encodeURIComponent(obj.uploadPath + "/s_" + obj.uuid + "_" + obj.fileName)
 			console.log(fileCallPath); // 콘솔 확인
 			
 			// img 태그를 사용해서 웹브라우저에 이미지 출력

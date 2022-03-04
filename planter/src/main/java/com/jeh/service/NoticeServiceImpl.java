@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.jeh.domain.AttachFileDTO;
 import com.jeh.domain.NoticeDTO;
+import com.jeh.domain.ProductDTO;
 import com.jeh.domain.Search;
 import com.jeh.mapper.AttachMapper;
 import com.jeh.mapper.NoticeMapper;
@@ -64,8 +65,22 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 	
 	// 4.글 수정 구현
-	public void modify(NoticeDTO notice) {
-		nmapper.modify(notice);
+	@Transactional
+	public void postModify(NoticeDTO notice) {
+		if(notice.getAttachList() != null) {
+			// 제목과 내용을 product 테이블에 insert
+			//pmapper.updateSelectKey(prod);
+			amapper.deleteNoticeFile(notice.getNno());
+			// 파일명,파일경로,파일타입,uuid 값을 attach 테이블에 insert
+			// BoardDTO에 있는 attachList를 가져와서 반복문으로 실행하여 attach 변수에 저장
+			notice.getAttachList().forEach(attach->{
+				attach.setNno(notice.getNno());
+				System.out.println("attach 테이블의 pno = " + notice.getNno());
+				amapper.insert(attach);
+			});
+		}else {
+			nmapper.postModify(notice);
+		}
 	}
 	
 	// 5.글 삭제 구현

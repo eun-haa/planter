@@ -42,7 +42,7 @@ $(document).ready(function(){
 							str[i1] += "<img src='/display?fileName=" + fileCallPath + "'></div>"
 
 							console.log(str[i1])
-							$(".prodUploadList").eq(i1).html(str[i1]);
+							$(".prodUploadList a").eq(i1).html(str[i1]);
 						}
 						
 					}

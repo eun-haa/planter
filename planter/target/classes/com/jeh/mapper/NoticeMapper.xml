@@ -87,7 +87,7 @@
 	</update>
     
     <!-- 4.글 수정 -->
-    <update id="modify">
+    <update id="postModify">
     	UPDATE notice
     	SET title=#{title},
     		content=#{content},

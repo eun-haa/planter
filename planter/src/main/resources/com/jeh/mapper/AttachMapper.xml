@@ -4,7 +4,7 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
 	<mapper namespace="com.jeh.mapper.AttachMapper">
-	<!-- notice -->
+		<!-- notice -->
 		<!-- attach 테이블에 insert -->
 		<insert id="insert">
 			INSERT INTO attach(uuid,uploadPath,fileName,image,nno)
@@ -16,6 +16,12 @@
 			FROM attach
 			WHERE nno=#{nno}
 		</select>
+		
+		<!-- notice 수정 -> 기존 파일 삭제 -->
+		<delete id="deleteNoticeFile">
+		    DELETE FROM attach
+    		WHERE nno=#{nno}
+		</delete>
 		
 		<!-- product -->
 		<!-- attach 테이블에 insert -->
@@ -35,12 +41,11 @@
 			WHERE pno=#{pno}
 		</select>
 		
-		<!-- 상품 수정 설계 -->
-		<update id="updateFile">
-			UPDATE attach
-	    	SET uuid=#{uuid}, uploadpath=#{uploadPath},
-	    		filename=#{fileName}, image=#{image}
-	    	WHERE pno=#{pno}
-		</update>
+		<!-- pruduct 수정 -> 기존 파일 삭제 -->
+		<delete id="deleteFile">
+		    DELETE FROM attach
+    		WHERE pno=#{pno}
+		</delete>
+		
 
 	</mapper>

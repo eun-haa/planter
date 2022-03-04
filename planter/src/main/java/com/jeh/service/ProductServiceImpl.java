@@ -67,7 +67,11 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	// 3.상품 상세 구현
+	@Transactional
 	public ProductDTO shopDetail(ProductDTO prod) {
+		// 상품 조회수 업데이트
+		pmapper.hitUpdate(prod);
+		
 		return pmapper.shopDetail(prod);
 	}
 	// 3-2.상세페이지에 업로드 된 이미지를 화면에 보여주기 위한 데이터 list 구현
@@ -75,34 +79,29 @@ public class ProductServiceImpl implements ProductService{
 		return amapper.detailFile(pno);
 	}
 	
-	// 4.상품 수정 설계
-	/*public void postModify(ProductDTO prod) {
-		pmapper.postModify(prod);
-	}
-	public ArrayList<AttachFileDTO> updateFile(AttachFileDTO attach){
-		return amapper.updateFile(attach);
-	}*/
-	
+	// 4.상품 수정 구현
 	@Transactional
 	public void postModify(ProductDTO prod) {
 		if(prod.getAttachList() != null) {
 			// 제목과 내용을 product 테이블에 insert
-			pmapper.updateSelectKey(prod);
-			
+			//pmapper.updateSelectKey(prod);
+			amapper.deleteFile(prod.getPno());
 			// 파일명,파일경로,파일타입,uuid 값을 attach 테이블에 insert
 			// BoardDTO에 있는 attachList를 가져와서 반복문으로 실행하여 attach 변수에 저장
 			prod.getAttachList().forEach(attach->{
 				attach.setPno(prod.getPno());
 				System.out.println("attach 테이블의 pno = " + prod.getPno());
-				amapper.updateFile(attach);
+				amapper.insert2(attach);
 			});
 		}else {
 			pmapper.postModify(prod);
 		}
 	}
 	
-	// 5.글 삭제 설계
+	// 5.글 삭제 구현
 	public void delete(ProductDTO prod) {
 		pmapper.delete(prod);
 	}
+	
+	
 }

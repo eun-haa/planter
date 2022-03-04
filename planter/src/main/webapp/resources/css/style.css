@@ -212,7 +212,7 @@ input, select, option, textarea{
 /* ----------------------------------------------------------- */
 /* JOIN */
 .titleArea{
-    padding: 50px;
+    padding: 40px;
 }
 
 .titleArea h2{
@@ -671,7 +671,45 @@ legend{
 	font-weight: 500;
 }
 /* ----------------------------------------------------------- */
+/* ADMIN - 네비게이션 */
+
+.adminMenu{
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	border-bottom: 1px solid #ddd;
+}
+
+
+.adminMenu h2 a{
+	display: inline-block;
+	font-weight: 500;
+	width: 130px;
+	height: 50px;
+	line-height: 50px;
+	margin: 0 10px;
+	font-size: 14px;
+	color: #777;
+}
+
+.adminMenu h2 a:hover{
+	background-color: #111;
+	color: #fff;
+	font-weight: 400;
+}
+
+.admin_active{
+	background-color: #111;
+	color: #fff;
+	font-weight: 400;
+}
+
+/* ----------------------------------------------------------- */
 /* ADMIN - LIST */
+
+
+
+
 
 .product_list_table table{
 	position: relative;
@@ -712,6 +750,13 @@ legend{
 .p_modify{width: 5%;}
 .p_delete{width: 10%;}
 
+tbody .p_name{
+	cursor: pointer;
+}
+
+.p_name a:hover{
+	font-weight: bold;
+}
 .p_modify a{
 	color: #444;
 	padding: 5px 10px;
@@ -1127,8 +1172,13 @@ tbody .n_title{
     padding-bottom: 100px;
 }
 
-.d_content img{
-	max-width: 80%;
+#uploadResultDetail ul li{
+	width: 70%;
+	height: auto;
+}
+
+#uploadResultDetail img{
+	width: 100%;
 	height: auto;
 }
 

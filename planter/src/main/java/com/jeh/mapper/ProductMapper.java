@@ -23,6 +23,8 @@ public interface ProductMapper {
 	
 	// 3.상품 상세 설계
 	public ProductDTO shopDetail(ProductDTO prod);
+	// 조회수 업데이트
+	public void hitUpdate(ProductDTO prod);
 	
 	// 4.상품 수정 설계
 	public void postModify(ProductDTO prod);

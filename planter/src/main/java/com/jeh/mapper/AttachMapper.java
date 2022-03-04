@@ -14,6 +14,9 @@ public interface AttachMapper {
 	// 게시판 번호를 AttachFileDTO에 실어서 controller에 넘겨주기
 	public ArrayList<AttachFileDTO> fileList(int nno);
 	
+	// 게시판 글 첨부파일 수정시 기존 파일 삭제
+	public void deleteNoticeFile(int pno);
+	
 	/* product */
 	// 게시판 글쓰기할 때 파일과 관련이 되어있는 attach 테이블에 insert
 	public void insert2(AttachFileDTO prod);
@@ -22,10 +25,11 @@ public interface AttachMapper {
 	// 게시판 번호를 AttachFileDTO에 실어서 controller에 넘겨주기
 	public ArrayList<AttachFileDTO> fileList2();
 	
-	// 3.상품 상세 설계
+	// 상품 상세 설계
 	public ProductDTO shopDetail(ProductDTO prod);
 	public ArrayList<AttachFileDTO> detailFile(int pno);
 	
-	// 4.상품 수정 설계
-	public ArrayList<AttachFileDTO> updateFile(AttachFileDTO attach);
+	// 상품 수정 설계
+	// 기존 파일 삭제
+	public void deleteFile(int pno);
 }

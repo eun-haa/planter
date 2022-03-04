@@ -21,7 +21,7 @@ public interface NoticeMapper {
 	public void hitUpdate(NoticeDTO notice);
 	
 	// 4.글 수정 설계
-	public void modify(NoticeDTO notice);
+	public void postModify(NoticeDTO notice);
 	
 	// 5.글 삭제 설계
 	public void delete(NoticeDTO notice);
