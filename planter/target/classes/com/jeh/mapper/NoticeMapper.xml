@@ -25,6 +25,7 @@
 		FROM(SELECT @rownum:=@rownum+1 AS rownum, n.*
 			FROM (SELECT @rownum:=0) AS rnt,
 			notice AS n
+
 		) AS noticeList
 		<choose>
 			<when test="search == null">

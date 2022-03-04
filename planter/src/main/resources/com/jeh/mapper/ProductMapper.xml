@@ -19,8 +19,71 @@
 		VALUES(#{pno}, #{pname}, #{pprice}, #{pstock}, #{pmemo}, #{cid})
 	</insert>
 	
-	<!-- 2.상품 목록 -->
+	<!-- 2-1.SHOP 상품 목록 -->
 	<select id="shopList" resultType="com.jeh.domain.ProductDTO">
+		<!-- SELECT * FROM product -->
+		SELECT * 
+		FROM(SELECT @rownum:=@rownum+1 AS rownum, p.*
+			FROM (SELECT @rownum:=0) AS rnt,
+			product AS p
+
+		) AS productList
+	</select>
+	<!-- SHOP 상품 목록 페이징 - 상품 전체 갯수 -->
+	<!-- 검색에 적용되게 하기 위해 위의 SELECT문을 그대로 가져와서 수정 -->
+	<select id="getTotalCount1" resultType="int">
+		SELECT COUNT(*) FROM product
+	</select>
+	<!--  -->
+	<!-- 2-2.ADMIN 상품 목록 -->
+	<select id="adminList" resultType="com.jeh.domain.ProductDTO">
+		SELECT * 
+		FROM(SELECT @rownum:=@rownum+1 AS rownum, p.*
+			FROM (SELECT @rownum:=0) AS rnt,
+			product AS p
+
+		) AS productList
+		<choose>
+			<when test="search == null">
+				WHERE 1 = 1
+			</when>
+			<when test="search == 'I'.toString()">
+				WHERE pno like CONCAT('%', #{keyword}, '%')
+			</when>
+			<when test="search == 'C'.toString()">
+				WHERE cid like CONCAT('%', #{keyword}, '%')
+			</when>
+			<otherwise>
+				WHERE pname like CONCAT('%', #{keyword}, '%')
+			</otherwise>
+		</choose>
+
+		<![CDATA[
+				AND rownum > (#{pageNum}-1)*#{amount} AND rownum <= #{pageNum}*#{amount}
+		]]>
+	</select>
+	<!-- ADMIN 상품 목록 페이징 - 상품 전체 갯수 -->
+	<!-- 검색에 적용되게 하기 위해 위의 SELECT문을 그대로 가져와서 수정 -->
+	<select id="getTotalCount2" resultType="int">
+		SELECT COUNT(*) FROM product
+		<choose>
+			<when test="search == null">
+				WHERE 1 = 1
+			</when>
+			<when test="search == 'I'.toString()">
+				WHERE pno like CONCAT('%', #{keyword}, '%')
+			</when>
+			<when test="search == 'C'.toString()">
+				WHERE cid like CONCAT('%', #{keyword}, '%')
+			</when>
+			<otherwise>
+				WHERE pname like CONCAT('%', #{keyword}, '%')
+			</otherwise>
+		</choose>
+	</select>
+	
+	<!-- 파일 관련 상품 정보들 목록에 띄우기 위함 -->
+	<select id="prodInfoList" resultType="com.jeh.domain.ProductDTO">
 		SELECT * FROM product
 	</select>
 

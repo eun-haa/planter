@@ -49,9 +49,9 @@
 
 
                             <div class="board_footer">  
-                                <form id="boardSearchForm" action="/notice/list" method="get">
-                                		<input type="hidden" name="pageNum" value="${pager.sc.pageNum}">
-                                		<input type="hidden" name="amount" value="${pager.sc.amount}">
+                                <form id="adminSearchForm" action="/admin/list" method="get">
+                                		<input type="text" name="pageNum" value="${pager.sc.pageNum}">
+                                		<input type="text" name="amount" value="${pager.sc.amount}">
                                         <div class="xans-element- xans-board xans-board-search-1002 xans-board-search xans-board-1002 ">
                                             <fieldset class="boardSearch">
                                                 <legend>게시물 검색</legend>
@@ -64,10 +64,9 @@
                                                         <option value="all">전체</option>
                                                     </select>  -->
                                                     <select id="search_key" name="search">
-                                                        <option value="T" <c:out value="${pager.sc.search == 'T' ? 'selected' :''}"/>>제목</option>
-                                                        <option value="C" <c:out value="${pager.sc.search == 'C' ? 'selected' :''}"/>>내용</option>
-                                                        <option value="W" <c:out value="${pager.sc.search == 'W' ? 'selected' :''}"/>>글쓴이</option>
-                                                        <option value="TC" <c:out value="${pager.sc.search == 'TC' ? 'selected' :''}"/>>제목+내용</option>
+                                                    	<option value="C" <c:out value="${pager.sc.search == 'C' ? 'selected' :''}"/>>카테고리</option>
+                                                        <option value="I" <c:out value="${pager.sc.search == 'I' ? 'selected' :''}"/>>상품 아이디</option>
+                                                        <option value="N" <c:out value="${pager.sc.search == 'N' ? 'selected' :''}"/>>상품 이름</option>
                                                     </select> 
                                                     <input id="n_keyword" name="keyword" class="inputTypeText" placeholder="" value="${pager.sc.keyword}" type="text">
                                                     <input id="n_search" type="submit" value="SEARCH">

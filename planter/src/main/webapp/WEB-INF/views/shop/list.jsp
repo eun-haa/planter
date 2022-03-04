@@ -30,7 +30,31 @@
                 	</c:forEach>
                     
                 </ul><!--.prd_list-->
+                <div class="notice_list_pager">
+                	<input type="text" name="pageNum" value="${pager.ssc.pageNum}">
+                	<input type="text" name="amount" value="${pager.ssc.amount}">
+                    <ul>
+                     	<c:if test="${pager.prev}">
+                      	<li class="pager_button">
+                              <a href="${pager.startPage-1}">PREV</a>
+                          </li>
+                     	</c:if>
 
+                         
+                     	<c:forEach var="num" begin="${pager.startPage}" end="${pager.endPage}">
+                      	<li class="pager_button ${pager.ssc.pageNum == num ? 'active':''}">
+                              <a href="${num}">${num}</a>
+                          </li>
+                     	</c:forEach>
+                     	
+						<c:if test="${pager.next}">
+							<li class="pager_button">
+                            	<a href="${pager.endPage+1}">NEXT</a>
+                          	</li>
+						</c:if>
+
+                     </ul>
+                 </div><!--.notice_list_pager-->
 
             </div><!--#contents-->
 <script src="../resources/js/shop/list.js"></script>	

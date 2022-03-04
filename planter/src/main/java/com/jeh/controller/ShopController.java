@@ -11,14 +11,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jeh.domain.AttachFileDTO;
-import com.jeh.domain.NoticeDTO;
 import com.jeh.domain.PageDTO;
 import com.jeh.domain.ProductDTO;
 import com.jeh.domain.Search;
+import com.jeh.domain.ShopSearch;
 import com.jeh.service.ProductService;
 
 @Controller
@@ -51,19 +50,33 @@ public class ShopController {
 	
 	// 3-2.admin 상품 관리 화면
 	@GetMapping("admin/list")
-	public void adminList(Model model) {
+	public void adminList(Model model, Search sc) {
 		/* 상품 목록 보여주기 */
-		model.addAttribute("list", pservice.shopList());
+		model.addAttribute("list", pservice.adminList(sc));
+		
+		/* 페이징 */
+		// 전체 글 갯수 -> total이라는 새로운 변수를 만들어 count
+		int total = pservice.getTotalCount2(sc);
+		
+		model.addAttribute("pager", new PageDTO(sc, total));
+
+		
+		// 확인용
 		System.out.println("admin/list.jsp");
 	}
 
 	
 	// 4-1.shop 상품 목록 화면
 	@GetMapping("shop/list")
-	public void shopList(Model model) {
+	public void shopList(Model model, ShopSearch ssc) {
 		/* 상품 목록 보여주기 */
-		model.addAttribute("list", pservice.shopList());
+		model.addAttribute("list", pservice.shopList(ssc));
 		
+		/* 페이징 */
+		// 전체 글 갯수 -> total이라는 새로운 변수를 만들어 count
+		int total = pservice.getTotalCount1(ssc);
+		
+		model.addAttribute("pager", new PageDTO(ssc, total));
 		
 		// 확인용
 		System.out.println("shop/list.jsp");
@@ -80,7 +93,7 @@ public class ShopController {
 	public ResponseEntity<ArrayList<ProductDTO>> fileList2(){
 		// 통신 상태가 정상적이면 select된 결과를 보내기
 		System.out.println("prodInfoList");
-		return new ResponseEntity<>(pservice.shopList(), HttpStatus.OK);
+		return new ResponseEntity<>(pservice.prodInfoList(), HttpStatus.OK);
 	}
 	
 	// 5.shop 상품 상세 화면

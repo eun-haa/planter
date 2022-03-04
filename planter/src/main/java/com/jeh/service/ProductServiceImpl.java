@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.jeh.domain.AttachFileDTO;
 import com.jeh.domain.ProductDTO;
+import com.jeh.domain.Search;
+import com.jeh.domain.ShopSearch;
 import com.jeh.mapper.AttachMapper;
 import com.jeh.mapper.ProductMapper;
 
@@ -41,12 +43,27 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	// 2-1.상품 목록 구현
-	public ArrayList<ProductDTO> shopList(){
-		return pmapper.shopList();
+	public ArrayList<ProductDTO> shopList(ShopSearch ssc){
+		return pmapper.shopList(ssc);
+	}
+	public ArrayList<ProductDTO> prodInfoList(){
+		return pmapper.prodInfoList();
 	}
 	// 2-2.상품 이미지 구현
 	public ArrayList<AttachFileDTO> fileList2(){
 		return amapper.fileList2();
+	}
+	// SHOP 상품 목록 페이징 - 상품 전체 갯수
+	public int getTotalCount1(ShopSearch ssc) {
+		return pmapper.getTotalCount1(ssc);
+	}
+	// 2-3.ADMIN 상품 목록 설계
+	public ArrayList<ProductDTO> adminList(Search sc){
+		return pmapper.adminList(sc);
+	}
+	// ADMIN 상품 목록 페이징 - 상품 전체 갯수
+	public int getTotalCount2(Search sc) {
+		return pmapper.getTotalCount2(sc);
 	}
 	
 	// 3.상품 상세 구현
