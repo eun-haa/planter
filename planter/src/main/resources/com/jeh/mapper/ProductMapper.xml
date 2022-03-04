@@ -28,12 +28,20 @@
 			product AS p
 
 		) AS productList
+
 	</select>
 	<!-- SHOP 상품 목록 페이징 - 상품 전체 갯수 -->
 	<!-- 검색에 적용되게 하기 위해 위의 SELECT문을 그대로 가져와서 수정 -->
 	<select id="getTotalCount1" resultType="int">
 		SELECT COUNT(*) FROM product
 	</select>
+	
+	
+	
+
+	
+	
+	
 	<!--  -->
 	<!-- 2-2.ADMIN 상품 목록 -->
 	<select id="adminList" resultType="com.jeh.domain.ProductDTO">

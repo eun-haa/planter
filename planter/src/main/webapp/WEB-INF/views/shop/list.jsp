@@ -5,9 +5,10 @@
 		<!-- #contents 부분만 본문에 넣기-->
             <div id="contents">
                 <div class="titleArea">
-                    <h2>PLANT</h2>
+                    <h2>ALL</h2>
                 </div><!--.titleArea-->
-                
+                <input type="text" name="cid" value="${cata.cid}">
+
                 <ul class="prd_list">
                 	<c:forEach items="${list}" var="product">
 	                	<li class="prd_item">

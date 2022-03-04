@@ -11,9 +11,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.jeh.domain.AttachFileDTO;
+import com.jeh.domain.Category;
 import com.jeh.domain.PageDTO;
 import com.jeh.domain.ProductDTO;
 import com.jeh.domain.Search;

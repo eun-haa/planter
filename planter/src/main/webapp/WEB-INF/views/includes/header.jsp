@@ -42,19 +42,19 @@
 	                       </li><!--.shop_record-->
 	
 	                       <li class="shop_record">
-	                           <a href="#">PLANT</a>
+	                           <a href="/shop/list?cid=1">PLANT</a>
 	                       </li><!--.shop_record-->
 	
 	                       <li class="shop_record">
-	                           <a href="#">FLOWER</a>
+	                           <a href="/shop/list?cid=2">FLOWER</a>
 	                       </li><!--.shop_record-->
 	
 	                       <li class="shop_record">
-	                           <a href="#">GARDENING</a>
+	                           <a href="/shop/list?cid=3">GARDENING</a>
 	                       </li><!--.shop_record-->
 	
 	                       <li class="shop_record">
-	                           <a href="#">PLANTERIOR</a>
+	                           <a href="/shop/list?cid=4">PLANTERIOR</a>
 	                       </li><!--.shop_record-->
 	
 	                   </ul><!--.shop_list-->
