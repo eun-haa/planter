@@ -137,15 +137,15 @@
 	       <div id="header">
 	           <ul>
 	               <li class="top_search">
-	                   <form action="/shop/list" method="get">
+	                   <form action="/shop/list" method="get" id="headerSearchForm">
 	                   		<input type="text" class="header_sc" name="keyword" value="${pager.ssc.keyword}">
-	                    	<button type="submit" value="search"><img src="../resources/img/header/top_search.png" alt=""></button>
+	                    	<button type="submit" value="search" id="search_btn"><img src="../resources/img/header/top_search.png" alt=""></button>
 	                   </form>
 	               	   
 	               </li><!--.top_search-->
 	
 	               <li class="top_bag">
-	                   <a href="#">
+	                   <a href="/shop/cart">
 	                       <img src="../resources/img/header/top_bag.png" alt="">
 	                       <span class="bag_count_display">
 	                           <span class="bag_count">0</span><!--.bag_count-->

@@ -1443,6 +1443,92 @@ tbody .n_title{
     color: #fff;
 }
 /* ----------------------------------------------------------- */
+/* CART */
+.cart_msg{
+	text-align: center;
+	margin-top: 100px;
+}
+.cart_list_table table{
+	position: relative;
+    border-left: 0px;
+    border-right: 0px;
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 80%;
+    
+}
+
+.cart_list_table {
+    margin-bottom: 30px;
+}
+
+.cart_list_table thead, .cart_list_table tbody{
+    border: none;
+}
+
+.cart_list_table tr{
+    text-align: center;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart_list_table th, .cart_list_table td{
+    border: none;
+    padding: 15px;
+}
+
+.c_image{width: 15%;}
+.c_name{width: 35%;}
+.c_name a{
+	color: #555;
+}
+.c_price{width: 15%;}
+.c_qty{width: 5%;}
+.c_delivery{width: 10%;}
+.c_charge{width: 10%;}
+.c_choice{
+	width: 10%;
+
+}
+
+.c_choice a{
+	display: inline-block;
+	width: 80px;
+	height: 25px;
+	line-height: 25px;
+	border: 1px solid #ddd;
+	margin: 2px 0;
+	color: #555;
+	font-size: 12px;
+}
+
+.c_choice a:hover{
+	color:#fff;
+	background-color: #111;
+}
+
+.cart_btns{
+	text-align: center;
+}
+
+.cart_all_btn, .cart_sel_btn{
+	background-color: #fff;
+	border: 1px solid #ddd;
+	width: 170px;
+	height: 40px;
+	line-height: 40px;
+	
+}
+
+.cart_all_btn:hover, .cart_sel_btn:hover{
+	background-color: #111;
+	color: #fff;	
+}
+
+.cart_list_table tbody .c_name a{
+
+}
+
 /* ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */

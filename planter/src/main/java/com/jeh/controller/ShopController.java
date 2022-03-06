@@ -152,5 +152,9 @@ public class ShopController {
 		return "redirect:/admin/list";
 	}
 	
-	
+	// 8.장바구니 화면
+	@GetMapping("shop/cart")
+	public void cart() {
+		System.out.println("shop/cart.jsp");
+	}
 }
