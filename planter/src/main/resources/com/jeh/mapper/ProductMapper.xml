@@ -22,14 +22,13 @@
 	<!-- 2-1.SHOP 상품 목록 -->
 	<select id="shopList" resultType="com.jeh.domain.ProductDTO">
 		SELECT * FROM product
-		WHERE pname like CONCAT('%', #{keyword}, '%')
 		<choose>
-			<when test="search == null">
-				
-			</when>
-			<when test="search != null">
+			<when test="keyword != null">
 				WHERE pname like CONCAT('%', #{keyword}, '%')
 			</when>
+			<otherwise>
+				WHERE pno IS NOT NULL
+			</otherwise>
 		</choose>
 		
 	</select>
