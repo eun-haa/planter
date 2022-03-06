@@ -14,7 +14,7 @@
                             
                         </div><!--.left-->
                         <div class="right">
-                        	<input type="text" id="pno" value="${detail.pno}" name="pno">
+                        	<input type="hidden" id="pno" value="${detail.pno}" name="pno">
                             <div class="prod_name">${detail.pname}</div>
                             <div class="prod_memo">${detail.pmemo}</div>
                             <div class="prod_price">${detail.pprice}원</div>

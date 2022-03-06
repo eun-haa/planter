@@ -3,6 +3,9 @@
  */
 // shop - list
 $(document).ready(function(){
+	
+
+	
 	// * uploaded file 보여주기 *
 	// 상품 목록 페이지가 시작되자마자 이미지를 출력하기 위한 ajax
 	// 별도의 자바스크립트 파일로 만들어서 detail.jsp에 연결해도 됨 -> 여기서는 그냥 detail.js에 작성
@@ -48,5 +51,16 @@ $(document).ready(function(){
 				})
 			})
 		})
+	})
+	
+	/* 검색 버튼을 누르면 1페이지로 가서 전체 검색이 되게끔 검색 버튼에 클릭 이벤트를 적용 */
+	// input[='submit']인 것을 클릭하면
+	$("button[='submit']").on("click", function(e){
+		// submit 속성을 죽이고
+		e.preventDefault();
+		// pageNum의 값을 1로 변경하고
+		headerSearchForm.find("input[name='pageNum']").val("1");
+		// submit
+		headerSearchForm.submit();
 	})
 })

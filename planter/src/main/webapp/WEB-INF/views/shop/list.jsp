@@ -7,12 +7,11 @@
                 <div class="titleArea">
                     <h2>ALL</h2>
                 </div><!--.titleArea-->
-                <input type="text" name="cid" value="${product.cid}">
 
                 <ul class="prd_list">
                 	<c:forEach items="${list}" var="product">
 	                	<li class="prd_item">
-	                		<input type="text" value="${product.pno}" id="pno" class="pno" name="pno">
+	                		<input type="hidden" value="${product.pno}" id="pno" class="pno" name="pno">
 	                        <div class="thumbnail">
 	                            <a href="/shop/detail?pno=${product.pno}">
 									<div class="prodUploadList"></div>
@@ -24,7 +23,7 @@
 	                                <li class="item_name"><a href="/shop/detail?pno=${product.pno}"><span>${product.pname}</span></a></li>
 	                            </ul>
 	                            <ul class="prod_list_price">
-	                            	<li class=" xans-record-"><span>${product.pprice}</span></li>      
+	                            	<li class=" xans-record-"><span>${product.pprice}원</span></li>      
 	                            </ul>
 	                        </div>
 	                    </li>

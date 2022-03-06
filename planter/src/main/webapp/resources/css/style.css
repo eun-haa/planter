@@ -1327,7 +1327,6 @@ tbody .n_title{
 }
 
 .prd_item{
-	background-color: #ddd;
     width: 30%;
     display: inline-block;
     /* margin-bottom: 70px; */
@@ -1361,7 +1360,7 @@ tbody .n_title{
 }
 
 .item_name{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 /* ----------------------------------------------------------- */
