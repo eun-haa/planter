@@ -21,17 +21,19 @@
 	
 	<!-- 2-1.SHOP 상품 목록 -->
 	<select id="shopList" resultType="com.jeh.domain.ProductDTO">
-		<!-- SELECT * FROM product -->
-		SELECT * 
-		FROM(SELECT @rownum:=@rownum+1 AS rownum, p.*
-			FROM (SELECT @rownum:=0) AS rnt,
-			product AS p
-
-		) AS productList
-
+		SELECT * FROM product
+		WHERE pname like CONCAT('%', #{keyword}, '%')
+		<choose>
+			<when test="search == null">
+				
+			</when>
+			<when test="search != null">
+				WHERE pname like CONCAT('%', #{keyword}, '%')
+			</when>
+		</choose>
+		
 	</select>
-	
-
+		
 	<!-- SHOP 상품 목록 페이징 - 상품 전체 갯수 -->
 	<!-- 검색에 적용되게 하기 위해 위의 SELECT문을 그대로 가져와서 수정 -->
 	<select id="getTotalCount1" resultType="int">

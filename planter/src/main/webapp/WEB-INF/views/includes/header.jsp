@@ -137,7 +137,11 @@
 	       <div id="header">
 	           <ul>
 	               <li class="top_search">
-	                   <a href="#"><img src="../resources/img/header/top_search.png" alt=""></a>
+	                   <form action="/shop/list" method="get">
+	                   		<input type="text" class="header_sc" name="keyword" value="${pager.ssc.keyword}">
+	                    	<button type="submit" value="search"><img src="../resources/img/header/top_search.png" alt=""></button>
+	                   </form>
+	               	   
 	               </li><!--.top_search-->
 	
 	               <li class="top_bag">
@@ -150,3 +154,4 @@
 	               </li><!--.top_bag-->
 	           </ul>
 	       </div><!--#header-->
+    <script src="../resources/js/header.js"></script>

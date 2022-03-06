@@ -63,12 +63,6 @@
                                                 <legend>게시물 검색</legend>
                                                 <p class="category displaynone"></p>
                                                 <p>
-                                                    <!-- <select id="search_date" name="search_date" fw-filter="" fw-label="" fw-msg="">
-                                                        <option value="week">일주일</option>
-                                                        <option value="month">한달</option>
-                                                        <option value="month3">세달</option>
-                                                        <option value="all">전체</option>
-                                                    </select>  -->
                                                     <select id="search_key" name="search">
                                                     	<option value="C" <c:out value="${pager.sc.search == 'C' ? 'selected' :''}"/>>카테고리</option>
                                                         <option value="I" <c:out value="${pager.sc.search == 'I' ? 'selected' :''}"/>>상품 아이디</option>

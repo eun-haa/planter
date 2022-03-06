@@ -153,7 +153,11 @@ input, select, option, textarea{
 }
 
 #header ul li{
-    margin-left: 15px;
+    margin-left: 10px;
+}
+
+.top_bag{
+	padding-top: 3px;
 }
 
 .top_bag a{
@@ -169,6 +173,29 @@ input, select, option, textarea{
     top: 2px;
     left: 5px;
 }
+
+/* search */
+.top_search input{
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	height: 25px;
+	padding-left: 5px;
+}
+
+.top_search button{
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
+.top_search button img{
+	width: 95%;
+	height: auto;
+}
+
 
 /* container - contents */
 

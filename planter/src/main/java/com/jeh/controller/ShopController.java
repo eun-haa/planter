@@ -152,4 +152,5 @@ public class ShopController {
 		return "redirect:/admin/list";
 	}
 	
+	
 }
