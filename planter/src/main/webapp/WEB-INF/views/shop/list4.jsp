@@ -58,5 +58,5 @@
                  </div><!--.notice_list_pager-->
 
             </div><!--#contents-->
-<script src="../resources/js/shop/list4.js"></script>	
+<script src="../resources/js/shop/list.js"></script>	
 <%@ include file="../includes/footer.jsp" %>

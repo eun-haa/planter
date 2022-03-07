@@ -37,5 +37,5 @@ public interface AttachMapper {
 	// 파일 삭제
 	public void deleteFile2(int pno);
 	
-	public void updateFile(ArrayList<AttachFileDTO> arrayList);
+
 }

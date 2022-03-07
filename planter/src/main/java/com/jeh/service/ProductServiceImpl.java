@@ -98,16 +98,36 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	// 5.상품 수정 구현
-	@Transactional
+	/*@Transactional
 	public void postModify(ProductDTO prod) {
 		if(prod.getAttachList() != null) {
 			amapper.updateFile(prod.getAttachList());
-			
+			pmapper.postModify(prod);
 
 		}else {
 			pmapper.postModify(prod);
 		}
 
+	}*/
+	// 4.상품 수정 구현
+	
+	@Transactional
+	public void postModify(ProductDTO prod) {
+		if(prod.getAttachList() != null) {
+			// 제목과 내용을 product 테이블에 insert
+			//pmapper.updateSelectKey(prod);
+			System.out.println("amapper.deleteFile(prod.getPno());");
+			amapper.deleteFile(prod.getPno());
+			// 파일명,파일경로,파일타입,uuid 값을 attach 테이블에 insert
+			// BoardDTO에 있는 attachList를 가져와서 반복문으로 실행하여 attach 변수에 저장
+			prod.getAttachList().forEach(attach->{
+				attach.setPno(prod.getPno());
+				System.out.println("attach 테이블의 pno = " + prod.getPno());
+				amapper.insert2(attach);
+			});
+		}else {
+			pmapper.postModify(prod);
+		}
 	}
 	
 	// 6.글 삭제 구현

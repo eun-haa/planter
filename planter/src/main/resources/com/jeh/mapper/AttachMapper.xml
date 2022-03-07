@@ -53,10 +53,5 @@
     		WHERE pno=#{pno}
 		</delete>
 		
-		<update id="updateFile">
-			UPDATE attach
-			SET uuid=#{uuid}, uploadPath=#{uploadPath}, fileName=#{fileName},image=#{image}
-			WHERE pno=#{pno} 
-		</update>
 
 	</mapper>
