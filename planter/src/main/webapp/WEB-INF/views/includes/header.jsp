@@ -35,7 +35,7 @@
 	               <div class="menu_list">
 	                   <ul class="shop_list">
 	                       <li class="list_title">
-	                           <a href="#">SHOP</a>
+	                           <a href="#" class="shop_btn">SHOP</a>
 	                       </li><!--.list_title-->
 	                       <li class="shop_record">
 	                           <a href="/shop/list">ALL</a>

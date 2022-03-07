@@ -1507,16 +1507,18 @@ tbody .n_title{
 	background-color: #111;
 }
 
+
 .cart_btns{
-	text-align: center;
+	margin: 20px auto;
 }
 
 .cart_all_btn, .cart_sel_btn{
+	
 	background-color: #fff;
 	border: 1px solid #ddd;
 	width: 170px;
-	height: 40px;
-	line-height: 40px;
+	height: 45px;
+	line-height: 45px;
 	
 }
 
@@ -1525,9 +1527,7 @@ tbody .n_title{
 	color: #fff;	
 }
 
-.cart_list_table tbody .c_name a{
 
-}
 
 /* ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */

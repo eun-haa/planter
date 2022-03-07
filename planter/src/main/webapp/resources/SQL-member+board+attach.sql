@@ -77,7 +77,7 @@ CREATE TABLE product(
 );
 SELECT * FROM planter.product;
 
-CREATE TABLE catagory(
+CREATE TABLE category(
 	cid INT PRIMARY KEY, 				-- 카테고리 코드(아이디)
     cname VARCHAR(20) NOT NULL			-- 카테고리 이름
 );
@@ -86,10 +86,10 @@ CREATE TABLE catagory(
 
 
 
-INSERT INTO planter.catagory VALUES(01, 'PLANT');
-INSERT INTO planter.catagory VALUES(02, 'FLOWER');
-INSERT INTO planter.catagory VALUES(03, 'GARDENING');
-INSERT INTO planter.catagory VALUES(04, 'PLANTERIOR');
+INSERT INTO planter.category VALUES(01, 'PLANT');
+INSERT INTO planter.category VALUES(02, 'FLOWER');
+INSERT INTO planter.category VALUES(03, 'GARDENING');
+INSERT INTO planter.category VALUES(04, 'PLANTERIOR');
 
 INSERT INTO planter.product(pname, pprice, pstock, pmemo, cid) 
 VALUES('DD', 20000, 20, 'DDSDF', 5);
@@ -109,3 +109,21 @@ where a.pno = p.pno
 SELECT *
 FROM attach
 WHERE pno IS NOT NULL;
+
+-- ADMIN 상품 목록 페이징을 위한 rownum
+SELECT * 
+FROM(SELECT @rownum:=@rownum+1 AS rownum, p.*
+FROM (SELECT @rownum:=0) AS rnt,
+product AS p) AS productList;
+
+
+-- CART 테이블
+CREATE TABLE cart(
+	cartId INT AUTO_INCREMENT PRIMARY KEY, -- 카트 아이디
+	mid VARCHAR(16), 					   -- 회원 아이디
+    pid INT,					           -- 상품 아이디
+    pcount INT							   -- 상품 갯수
+);
+
+SELECT * FROM planter.cart;
+ALTER table cart ADD UNIQUE (mid, pid);
