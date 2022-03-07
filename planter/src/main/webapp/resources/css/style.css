@@ -62,6 +62,7 @@ input, select, option, textarea{
 }
 
 .LeftMenuIn h1{
+	cursor: pointer;
 	position: fixed;
 	top: 30px;
 	left: 30px;
@@ -69,6 +70,7 @@ input, select, option, textarea{
 
 
 .LeftMenuIn h1 img{
+	cursor: pointer;
     width: 170px;
     height: 100%;
 }

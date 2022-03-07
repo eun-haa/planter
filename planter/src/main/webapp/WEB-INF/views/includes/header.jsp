@@ -145,7 +145,7 @@
 	               </li><!--.top_search-->
 	
 	               <li class="top_bag">
-	                   <a href="/shop/cart">
+	                   <a href="/cart/list?mid=${login.mid}">
 	                       <img src="../resources/img/header/top_bag.png" alt="">
 	                       <span class="bag_count_display">
 	                           <span class="bag_count">0</span><!--.bag_count-->

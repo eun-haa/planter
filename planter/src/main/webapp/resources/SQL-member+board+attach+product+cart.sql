@@ -121,9 +121,9 @@ product AS p) AS productList;
 CREATE TABLE cart(
 	cartId INT AUTO_INCREMENT PRIMARY KEY, -- 카트 아이디
 	mid VARCHAR(16), 					   -- 회원 아이디
-    pid INT,					           -- 상품 아이디
+    pno INT,					           -- 상품 아이디
     pcount INT							   -- 상품 갯수
 );
 
 SELECT * FROM planter.cart;
-ALTER table cart ADD UNIQUE (mid, pid);
+ALTER table cart ADD UNIQUE (mid, pno);

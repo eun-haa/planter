@@ -3,5 +3,49 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jeh.mapper.CartMapper">
+	<!-- 카트 추가 -->
+	<insert id="addCart">
+	
+		INSERT INTO cart(mid, pno, pcount)
+		values(#{mid}, #{pno}, #{pcount}) 
+	
+	</insert>
+	
+	
+	<!-- 카트 삭제 -->
+	<delete id="deleteCart">
+	
+		DELETE FROM cart 
+		WHERE cartId = #{cartId}
+	
+	</delete>
+	
+	<!-- 카트 수량 수정 -->
+	<update id="modifyCount">
+	
+		UPDATE cart 
+		SET pcount=#{pcount} 
+		WHERE cartId = #{cartId}
+	
+	</update>
+	
+	
+	<!-- 카트 목록 -->
+	<select id="getCart" resultType="com.jeh.domain.CartDTO">
+	
+		SELECT cartId, mid, pno, pcount, pname, pprice, pdiscount
+		FROM cart
+		<!-- WHERE mid = #{mid}	 -->
+	
+	</select>
+	
+	<!-- 카트 확인 -->
+	<select id="checkCart" resultType="com.jeh.domain.CartDTO">
+	
+		SELECT * FROM cart 
+		WHERE mid = #{mid} AND pno = #{pno}
+	
+	</select>
+	
 
 </mapper>

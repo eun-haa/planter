@@ -10,19 +10,25 @@
                     </div><!--.titleArea-->
                     
                     <div class="prod_detail">
-                        <div class="left">
-                            
-                        </div><!--.left-->
-                        <div class="right">
-                        	<input type="hidden" id="pno" value="${detail.pno}" name="pno">
-                            <div class="prod_name">${detail.pname}</div>
-                            <div class="prod_memo">${detail.pmemo}</div>
-                            <div class="prod_price">${detail.pprice}원</div>
-                            <div class="prod_btns">
-                                <div class="prod_btn_bag"><a href="#">ADD TO BAG</a></div>
-                                <div class="prod_btn_wish"><a href="#">ADD TO WISH</a></div>
-                            </div>
-                        </div><!--.right-->
+                    	<form action="/cart/add" method="post">
+	                        <div class="left">
+	                            
+	                        </div><!--.left-->
+	                        <div class="right">
+	                        	<input type="hidden" id="pno" value="${detail.pno}" name="pno">
+	                            <div class="prod_name">${detail.pname}</div>
+	                            <div class="prod_memo">${detail.pmemo}</div>
+	                            <div class="prod_price">${detail.pprice}원</div>
+	                            
+		                            <div class="prod_btns">
+		                            	<input type="submit" value="ADD TO BAG">
+		                                <!-- <div class="prod_btn_bag"><a href="/cart/add">ADD TO BAG</a></div> -->
+		                                <div class="prod_btn_wish"><a href="#">ADD TO WISH</a></div>
+		                            </div>
+	                            </form>
+	
+	                        </div><!--.right-->
+                    	</form>
                     </div><!--.prod_detail-->
                 </div><!--.prod_detail_in-->
             </div><!--#contents-->

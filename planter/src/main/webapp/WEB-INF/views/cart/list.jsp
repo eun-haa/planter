@@ -10,9 +10,14 @@
                     <h2><a href="#">MEMBER</a></h2>
                 </div><!--.titleArea-->
                 <div class="titleArea">
-                    <h2>PRODUCT LIST</h2>
+                    <h2>CART LIST</h2>
                 </div><!--.titleArea-->
                 <div class="notice_list_in">
+                	<input type="text" value="${login.mid}">
+                	<input type="text" value="${cart.cartId}">
+                	<c:if test="">
+                		<div>장바구니가 비었습니다.</div>
+                	</c:if>
                     <div class="cart_list_table">
                         <table border="1" summary="">
                             <!-- <caption>상품 게시판 목록</caption> -->
@@ -48,11 +53,14 @@
 	                                </tr>
                             	</c:forEach>-->
                             	<tr>	                                    
-                                    <td scope="col" class="c_no displaynone">${product.pno}</td>
+                                    <td scope="col" class="c_no displaynone">${cart.pno}</td>
                                     <td scope="col" class="c_image prodUploadList"><a href="/shop/detail?pno=${product.pno}"></a></td>
-                                    <td scope="col" class="c_name"><a href="/shop/detail?pno=${product.pno}">${product.pname}</a></td>
-                                    <td scope="col" class="c_price">${product.pprice}</td>
-                                    <td scope="col" class="c_qty">1</td>
+                                    <td scope="col" class="c_name"><a href="/shop/detail?pno=${product.pno}">${cart.pname}</a></td>
+                                    <td scope="col" class="c_price">${cart.pprice}</td>
+                                    <td scope="col" class="c_qty">1
+                                    	<button class="plus_btn">+</button>
+                                    	<button class="minus_btn"> - </button>
+                                    </td>
                                     <td scope="col" class="c_delivery">기본배송</td>
                                     <td scope="col" class="c_charge">3000원</td>
                                     <td scope="col" class="c_choice">
@@ -71,9 +79,9 @@
                         		<th>결제예정금액</th>
                         	</tr>
                         	<tr>
-                        		<td>30000원</td>
+                        		<td>${cart.totalPrice}원</td>
                         		<td>3000원</td>
-                        		<td>33000원</td>
+                        		<td>${cart.totalPrice + 3000}원</td>
                         	</tr>
                         </table>
 
