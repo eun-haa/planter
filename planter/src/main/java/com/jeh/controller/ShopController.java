@@ -70,7 +70,7 @@ public class ShopController {
 	
 	// 4-1.shop 상품 목록 화면
 	@GetMapping("shop/list")
-	public void shopList(Model model, ShopSearch ssc) {
+	public void shopList(Model model, ShopSearch ssc, ProductDTO prod) {
 		/* 상품 목록 보여주기 */
 		model.addAttribute("list", pservice.shopList(ssc));
 		
@@ -99,7 +99,75 @@ public class ShopController {
 		return new ResponseEntity<>(pservice.prodInfoList(), HttpStatus.OK);
 	}
 	
-	// 5.shop 상품 상세 화면
+	// 5-1.shop 카테고리 1(PLANT)상품 목록 화면
+	@GetMapping("shop/list1")
+	public void shopList1(Model model, ShopSearch ssc, ProductDTO prod) {
+		/* 상품 목록 보여주기 */
+		model.addAttribute("list", pservice.shopList1(ssc));
+		
+		/* 페이징 */
+		// 전체 글 갯수 -> total이라는 새로운 변수를 만들어 count
+		int total = pservice.getTotalCount1(ssc);
+		
+		model.addAttribute("pager", new PageDTO(ssc, total));
+		
+		// 확인용
+		System.out.println("shop/list1.jsp");
+	}
+	// 5-2.shop 카테고리 2(FLOWER)상품 목록 화면
+	@GetMapping("shop/list2")
+	public void shopList2(Model model, ShopSearch ssc, ProductDTO prod) {
+		/* 상품 목록 보여주기 */
+		model.addAttribute("list", pservice.shopList2(ssc));
+		
+		/* 페이징 */
+		// 전체 글 갯수 -> total이라는 새로운 변수를 만들어 count
+		int total = pservice.getTotalCount1(ssc);
+		
+		model.addAttribute("pager", new PageDTO(ssc, total));
+		
+		// 확인용
+		System.out.println("shop/list1.jsp");
+	}
+	// 5-3.shop 카테고리 3(GARDENING)상품 목록 화면
+	@GetMapping("shop/list3")
+	public void shopList3(Model model, ShopSearch ssc, ProductDTO prod) {
+		/* 상품 목록 보여주기 */
+		model.addAttribute("list", pservice.shopList3(ssc));
+		
+		/* 페이징 */
+		// 전체 글 갯수 -> total이라는 새로운 변수를 만들어 count
+		int total = pservice.getTotalCount1(ssc);
+		
+		model.addAttribute("pager", new PageDTO(ssc, total));
+		
+		// 확인용
+		System.out.println("shop/list1.jsp");
+	}
+	// 5-3.shop 카테고리 3(GARDENING)상품 목록 화면
+	@GetMapping("shop/list4")
+	public void shopList4(Model model, ShopSearch ssc, ProductDTO prod) {
+		/* 상품 목록 보여주기 */
+		model.addAttribute("list", pservice.shopList4(ssc));
+		
+		/* 페이징 */
+		// 전체 글 갯수 -> total이라는 새로운 변수를 만들어 count
+		int total = pservice.getTotalCount1(ssc);
+		
+		model.addAttribute("pager", new PageDTO(ssc, total));
+		
+		// 확인용
+		System.out.println("shop/list1.jsp");
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	// 6.shop 상품 상세 화면
 	@GetMapping("shop/detail")
 	public void shopDetail(ProductDTO prod, Model model) {
 		/* 상품 목록 보여주기 */
@@ -115,7 +183,7 @@ public class ShopController {
 		return new ResponseEntity<>(pservice.detailFile(pno), HttpStatus.OK);
 	}
 	
-	// 6-1.admin 상품 수정 화면
+	// 7-1.admin 상품 수정 화면
 	@GetMapping("admin/modify")
 	public void modify(ProductDTO prod, Model model) {
 		pservice.shopDetail(prod);
@@ -125,7 +193,7 @@ public class ShopController {
 		System.out.println("admin/modify.jsp");
 	}
 
-	// 6-2.admin 상품 수정 실행
+	// 7-2.admin 상품 수정 실행
 	@PostMapping("admin/modify")
 	public String postModify(ProductDTO prod) {
 		pservice.postModify(prod);
@@ -139,7 +207,7 @@ public class ShopController {
 	}
 
 	
-	// 7.admin 상품 삭제
+	// 8.admin 상품 삭제
 	@GetMapping("admin/delete")
 	public String delete(ProductDTO prod) {
 		// delete 실행
@@ -152,9 +220,19 @@ public class ShopController {
 		return "redirect:/admin/list";
 	}
 	
-	// 8.장바구니 화면
-	@GetMapping("shop/cart")
-	public void cart() {
-		System.out.println("shop/cart.jsp");
+	// 9.search 결과 목록 화면
+	@GetMapping("shop/search")
+	public void searchList(Model model, ShopSearch ssc, ProductDTO prod) {
+		/* 상품 목록 보여주기 */
+		model.addAttribute("list", pservice.searchList(ssc));
+		
+		/* 페이징 */
+		// 전체 글 갯수 -> total이라는 새로운 변수를 만들어 count
+		int total = pservice.getTotalCount1(ssc);
+		
+		model.addAttribute("pager", new PageDTO(ssc, total));
+		
+		// 확인용
+		System.out.println("shop/search.jsp");
 	}
 }

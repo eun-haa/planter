@@ -42,19 +42,19 @@
 	                       </li><!--.shop_record-->
 	
 	                       <li class="shop_record">
-	                           <a href="/shop/list?cid=1">PLANT</a>
+	                           <a href="/shop/list1">PLANT</a>
 	                       </li><!--.shop_record-->
 	
 	                       <li class="shop_record">
-	                           <a href="/shop/list?cid=2">FLOWER</a>
+	                           <a href="/shop/list2">FLOWER</a>
 	                       </li><!--.shop_record-->
 	
 	                       <li class="shop_record">
-	                           <a href="/shop/list?cid=3">GARDENING</a>
+	                           <a href="/shop/list3">GARDENING</a>
 	                       </li><!--.shop_record-->
 	
 	                       <li class="shop_record">
-	                           <a href="/shop/list?cid=4">PLANTERIOR</a>
+	                           <a href="/shop/list4">PLANTERIOR</a>
 	                       </li><!--.shop_record-->
 	
 	                   </ul><!--.shop_list-->
@@ -137,7 +137,7 @@
 	       <div id="header">
 	           <ul>
 	               <li class="top_search">
-	                   <form action="/shop/list" method="get" id="headerSearchForm">
+	                   <form action="/shop/search" method="get" id="headerSearchForm">
 	                   		<input type="text" class="header_sc" name="keyword" value="${pager.ssc.keyword}">
 	                    	<button type="submit" value="search" id="search_btn"><img src="../resources/img/header/top_search.png" alt=""></button>
 	                   </form>

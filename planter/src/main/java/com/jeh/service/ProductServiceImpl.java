@@ -58,11 +58,6 @@ public class ProductServiceImpl implements ProductService{
 	public int getTotalCount1(ShopSearch ssc) {
 		return pmapper.getTotalCount1(ssc);
 	}
-	
-
-	
-	
-	
 	// 2-3.ADMIN 상품 목록 설계
 	public ArrayList<ProductDTO> adminList(Search sc){
 		return pmapper.adminList(sc);
@@ -72,7 +67,24 @@ public class ProductServiceImpl implements ProductService{
 		return pmapper.getTotalCount2(sc);
 	}
 	
-	// 3.상품 상세 구현
+	// 3-1.PLANT 카테고리 상품 목록 구현
+	public ArrayList<ProductDTO> shopList1(ShopSearch ssc){
+		return pmapper.shopList1(ssc);
+	}
+	// 3-2.FLOWER 카테고리 상품 목록 구현
+	public ArrayList<ProductDTO> shopList2(ShopSearch ssc){
+		return pmapper.shopList2(ssc);
+	}
+	// 3-2.GARDENING 카테고리 상품 목록 구현
+		public ArrayList<ProductDTO> shopList3(ShopSearch ssc){
+			return pmapper.shopList3(ssc);
+	}
+	// 3-2.PLANTERIOR 카테고리 상품 목록 구현
+	public ArrayList<ProductDTO> shopList4(ShopSearch ssc){
+		return pmapper.shopList4(ssc);
+	}
+	
+	// 4.상품 상세 구현
 	@Transactional
 	public ProductDTO shopDetail(ProductDTO prod) {
 		// 상품 조회수 업데이트
@@ -85,7 +97,7 @@ public class ProductServiceImpl implements ProductService{
 		return amapper.detailFile(pno);
 	}
 	
-	// 4.상품 수정 구현
+	// 5.상품 수정 구현
 	@Transactional
 	public void postModify(ProductDTO prod) {
 		if(prod.getAttachList() != null) {
@@ -104,10 +116,12 @@ public class ProductServiceImpl implements ProductService{
 		}
 	}
 	
-	// 5.글 삭제 구현
+	// 6.글 삭제 구현
 	public void delete(ProductDTO prod) {
 		pmapper.delete(prod);
 	}
-	
-	
+	// 7.검색 결과 구현
+	public ArrayList<ProductDTO> searchList(ShopSearch ssc){
+		return pmapper.searchList(ssc);
+	}
 }

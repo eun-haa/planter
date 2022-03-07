@@ -5,7 +5,7 @@
 		<!-- #contents 부분만 본문에 넣기-->
             <div id="contents">
                 <div class="titleArea">
-                    <h2>ALL</h2>
+                    <h2>SEARCH</h2>
                 </div><!--.titleArea-->
 
                 <ul class="prd_list">
@@ -19,7 +19,6 @@
 	                        </div>
 	                        
 	                        <div class="description">
-	                        	<div><input type="text" value="${product.cid}" name="cid"></div>
 	                            <ul class="prod_list_name">
 	                                <li class="item_name"><a href="/shop/detail?pno=${product.pno}"><span>${product.pname}</span></a></li>
 	                            </ul>

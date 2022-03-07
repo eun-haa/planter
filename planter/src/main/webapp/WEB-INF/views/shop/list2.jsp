@@ -5,7 +5,7 @@
 		<!-- #contents 부분만 본문에 넣기-->
             <div id="contents">
                 <div class="titleArea">
-                    <h2>ALL</h2>
+                    <h2>FLOWER</h2>
                 </div><!--.titleArea-->
 
                 <ul class="prd_list">
