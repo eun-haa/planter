@@ -55,10 +55,10 @@ $(document).ready(function(){
 			 console.log(obj);
 			 
 			 // data 선택자를 이용하여 input 태그로 value 값으로 세팅
-			 str += "<input type='text' name ='attachList[" + i + "].fileName' value='" + $(obj).data("name") + "'>"
-			 str += "<input type='text' name ='attachList[" + i + "].uuid' value='" + $(obj).data("uuid") + "'>"
-			 str += "<input type='text' name ='attachList[" + i + "].uploadPath' value='" + $(obj).data("path") + "'>"
-			 str += "<input type='text' name ='attachList[" + i + "].image' value='" + $(obj).data("type") + "'>"
+			 str += "<input type='hidden' name ='attachList[" + i + "].fileName' value='" + $(obj).data("name") + "'>"
+			 str += "<input type='hidden' name ='attachList[" + i + "].uuid' value='" + $(obj).data("uuid") + "'>"
+			 str += "<input type='hidden' name ='attachList[" + i + "].uploadPath' value='" + $(obj).data("path") + "'>"
+			 str += "<input type='hidden' name ='attachList[" + i + "].image' value='" + $(obj).data("type") + "'>"
 		 })
 		 formObj.append(str).submit();
 	})

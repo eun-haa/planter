@@ -127,7 +127,7 @@ public class ShopController {
 		model.addAttribute("pager", new PageDTO(ssc, total));
 		
 		// 확인용
-		System.out.println("shop/list1.jsp");
+		System.out.println("shop/list2.jsp");
 	}
 	// 5-3.shop 카테고리 3(GARDENING)상품 목록 화면
 	@GetMapping("shop/list3")
@@ -142,7 +142,7 @@ public class ShopController {
 		model.addAttribute("pager", new PageDTO(ssc, total));
 		
 		// 확인용
-		System.out.println("shop/list1.jsp");
+		System.out.println("shop/list3.jsp");
 	}
 	// 5-3.shop 카테고리 3(GARDENING)상품 목록 화면
 	@GetMapping("shop/list4")
@@ -157,7 +157,7 @@ public class ShopController {
 		model.addAttribute("pager", new PageDTO(ssc, total));
 		
 		// 확인용
-		System.out.println("shop/list1.jsp");
+		System.out.println("shop/list4.jsp");
 	}
 	
 	

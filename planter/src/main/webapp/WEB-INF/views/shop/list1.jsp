@@ -11,7 +11,7 @@
                 <ul class="prd_list">
                 	<c:forEach items="${list}" var="product">
 	                	<li class="prd_item">
-	                		<input type="hidden" value="${product.pno}" id="pno" class="pno" name="pno">
+	                		<input type="text" value="${product.pno}" id="pno" class="pno" name="pno">
 	                        <div class="thumbnail">
 	                            <a href="/shop/detail?pno=${product.pno}">
 									<div class="prodUploadList"></div>
@@ -58,5 +58,5 @@
                  </div><!--.notice_list_pager-->
 
             </div><!--#contents-->
-<script src="../resources/js/shop/list.js"></script>	
+<script src="../resources/js/shop/list1.js"></script>	
 <%@ include file="../includes/footer.jsp" %>

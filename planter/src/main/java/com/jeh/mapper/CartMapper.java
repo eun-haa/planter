@@ -1,11 +1,9 @@
 package com.jeh.mapper;
 
-import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
+import java.util.ArrayList;
 
 import com.jeh.domain.CartDTO;
-import com.jeh.domain.MemberDTO;
+
 
 public interface CartMapper {
 	/* 카트 추가 */
@@ -18,7 +16,7 @@ public interface CartMapper {
 	public int modifyCount(CartDTO cart);
 	
 	/* 카트 목록 */
-	public List<CartDTO> getCart();	
+	public ArrayList<CartDTO> getCart();	
 	
 	/* 카트 확인 */
 	public CartDTO checkCart(CartDTO cart);

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="../includes/header.jsp" %>
+
 		<!-- #contents 부분만 본문에 넣기-->
             <div id="contents">
                 <div class="titleArea">

@@ -32,4 +32,10 @@ public interface AttachMapper {
 	// 상품 수정 설계
 	// 기존 파일 삭제
 	public void deleteFile(int pno);
+	
+	// 상품 삭제 설계
+	// 파일 삭제
+	public void deleteFile2(int pno);
+	
+	public void updateFile(ArrayList<AttachFileDTO> arrayList);
 }

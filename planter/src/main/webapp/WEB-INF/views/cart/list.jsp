@@ -3,18 +3,12 @@
 <%@ include file="../includes/header.jsp" %>
 		<!-- #contents 부분만 본문에 넣기-->
             <div id="contents">
-               <div class="adminMenu">
-                	<h2><a href="/admin/main">ADMIN MAIN</a></h2>
-                    <h2><a href="/admin/productReg">REGISTER</a></h2>
-                    <h2><a href="#">REVIEW</a></h2>
-                    <h2><a href="#">MEMBER</a></h2>
-                </div><!--.titleArea-->
                 <div class="titleArea">
                     <h2>CART LIST</h2>
                 </div><!--.titleArea-->
                 <div class="notice_list_in">
                 	<input type="text" value="${login.mid}">
-                	<input type="text" value="${cart.cartId}">
+                	<input type="text" value="">
                 	<c:if test="">
                 		<div>장바구니가 비었습니다.</div>
                 	</c:if>
@@ -23,7 +17,7 @@
                             <!-- <caption>상품 게시판 목록</caption> -->
                             <thead class="">
                                 <tr>
-                                    <th scope="col" class="c_no displaynone">PNO</th>
+                                    <th scope="col" class="c_no">PNO</th>
                                     <th scope="col" class="c_image">IMAGE</th>
                                     <th scope="col" class="c_name">NAME</th>
                                     <th scope="col" class="c_price">PRICE</th>
@@ -35,13 +29,12 @@
                             </thead>
 
                             <tbody class="">
-
-                            	<!--<c:forEach items="${list}" var="product">
+                            	<c:forEach items="${list}" var="cart">
 	                            	<tr>	                                    
-	                                    <td scope="col" class="c_no displaynone">${product.pno}</td>
-	                                    <td scope="col" class="c_image prodUploadList"><a href="/shop/detail?pno=${product.pno}"></a></td>
-	                                    <td scope="col" class="c_name"><a href="/shop/detail?pno=${product.pno}">${product.pname}</a></td>
-	                                    <td scope="col" class="c_price">${product.pprice}</td>
+	                                    <td scope="col" class="c_no">${cart.pno}</td>
+	                                    <td scope="col" class="c_image prodUploadList"><a href="#"></a></td>
+	                                    <td scope="col" class="c_name"><a href="#">${cart.pname}</a></td>
+	                                    <td scope="col" class="c_price">${cart.pprice}</td>
 	                                    <td scope="col" class="c_qty">1</td>
 	                                    <td scope="col" class="c_delivery">기본배송</td>
 	                                    <td scope="col" class="c_charge">3000원</td>
@@ -51,24 +44,9 @@
 	                                    	<a href="#">DELETE</a>
 	                                    </td>
 	                                </tr>
-                            	</c:forEach>-->
-                            	<tr>	                                    
-                                    <td scope="col" class="c_no displaynone">${cart.pno}</td>
-                                    <td scope="col" class="c_image prodUploadList"><a href="/shop/detail?pno=${product.pno}"></a></td>
-                                    <td scope="col" class="c_name"><a href="/shop/detail?pno=${product.pno}">${cart.pname}</a></td>
-                                    <td scope="col" class="c_price">${cart.pprice}</td>
-                                    <td scope="col" class="c_qty">1
-                                    	<button class="plus_btn">+</button>
-                                    	<button class="minus_btn"> - </button>
-                                    </td>
-                                    <td scope="col" class="c_delivery">기본배송</td>
-                                    <td scope="col" class="c_charge">3000원</td>
-                                    <td scope="col" class="c_choice">
-                                    	<a href="#">BUY NOW</a>
-                                    	<a href="#">WISHLIST</a>
-                                    	<a href="#">DELETE</a>
-                                    </td>
-                                </tr>
+                            	</c:forEach>
+
+
                             </tbody>
                         </table>
                         

@@ -6,8 +6,8 @@
 	<!-- 카트 추가 -->
 	<insert id="addCart">
 	
-		INSERT INTO cart(mid, pno, pcount)
-		values(#{mid}, #{pno}, #{pcount}) 
+		INSERT INTO cart(mid, pno, pcount, pname, pprice)
+		values(#{mid}, #{pno}, #{pcount}, #{pname}, #{pprice}) 
 	
 	</insert>
 	
@@ -33,7 +33,7 @@
 	<!-- 카트 목록 -->
 	<select id="getCart" resultType="com.jeh.domain.CartDTO">
 	
-		SELECT cartId, mid, pno, pcount, pname, pprice, pdiscount
+		SELECT *
 		FROM cart
 		<!-- WHERE mid = #{mid}	 -->
 	

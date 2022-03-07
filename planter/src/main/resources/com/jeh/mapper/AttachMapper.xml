@@ -47,5 +47,16 @@
     		WHERE pno=#{pno}
 		</delete>
 		
+		<!-- pruduct 삭제 -> 파일 삭제 -->
+		<delete id="deleteFile2">
+		    DELETE FROM attach
+    		WHERE pno=#{pno}
+		</delete>
+		
+		<update id="updateFile">
+			UPDATE attach
+			SET uuid=#{uuid}, uploadPath=#{uploadPath}, fileName=#{fileName},image=#{image}
+			WHERE pno=#{pno} 
+		</update>
 
 	</mapper>
