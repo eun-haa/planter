@@ -20,7 +20,7 @@
 	                        </div>
 	                        
 	                        <div class="description">
-	                        	<div><input type="text" value="${product.cid}" name="cid"></div>
+	                        	<div><input type="hidden" value="${product.cid}" name="cid"></div>
 	                            <ul class="prod_list_name">
 	                                <li class="item_name"><a href="/shop/detail?pno=${product.pno}"><span>${product.pname}</span></a></li>
 	                            </ul>

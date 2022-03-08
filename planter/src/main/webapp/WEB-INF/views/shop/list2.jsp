@@ -11,7 +11,7 @@
                 <ul class="prd_list">
                 	<c:forEach items="${list}" var="product">
 	                	<li class="prd_item">
-	                		<input type="text" value="${product.pno}" id="pno" class="pno" name="pno">
+	                		<input type="hidden" value="${product.pno}" id="pno" class="pno" name="pno">
 	                        <div class="thumbnail">
 	                            <a href="/shop/detail?pno=${product.pno}">
 									<div class="prodUploadList"></div>
@@ -19,7 +19,7 @@
 	                        </div>
 	                        
 	                        <div class="description">
-	                        	<div><input type="text" value="${product.cid}" name="cid"></div>
+	                        	<div><input type="hidden" value="${product.cid}" name="cid"></div>
 	                            <ul class="prod_list_name">
 	                                <li class="item_name"><a href="/shop/detail?pno=${product.pno}"><span>${product.pname}</span></a></li>
 	                            </ul>
