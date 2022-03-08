@@ -122,7 +122,9 @@ CREATE TABLE cart(
 	cartId INT AUTO_INCREMENT PRIMARY KEY, -- 카트 아이디
 	mid VARCHAR(16), 					   -- 회원 아이디
     pno INT,					           -- 상품 아이디
-    pcount INT							   -- 상품 갯수
+    pcount INT, 					   	   -- 상품 갯수
+	FOREIGN KEY (mid) REFERENCES planter.member(mid),
+    FOREIGN KEY (pno) REFERENCES planter.product(pno)
 );
 
 SELECT * FROM planter.cart;

@@ -40,4 +40,64 @@ $(document).ready(function(){
 		
 		})
 	})
+	
+	
+	
+	
+	
+	
+	
+	/* 카트 담기 */
+	// 수량 버튼 조작
+	let quantity = $(".quantity").val();
+	$(".q_plus").on("click", function(){
+		$(".quantity").val(++quantity);
+	});
+	$(".q_minus").on("click", function(){
+		if(quantity > 1){
+			$(".quantity").val(--quantity);	
+		}
+	});
+	
+	// 서버로 전송할 데이터
+	let form = {
+			mid : $("#mid").val(),
+			pno : $("#pno").val(),
+			pcount : ''
+	}
+	
+	
+	// 카드 담기 버튼을 누르면
+	$(".prod_btn_bag").on("click", function(e){
+		// pcount에 최종 데이터 담기
+		form.pcount = $(".quantity").val();
+		console.log("ajax 진입 전");
+		console.log("form.mid = " + form.mid, "form.pno = " + form.pno, "form.pcount = " + form.pcount);
+		
+		$.ajax({
+			url: '/cart/add',			// 호출할 url
+			type: 'POST',				// 호출 할 방법(GET/POST/PUT 등)
+			data: form,					// 서버로 보낼 데이터
+			dataType: "json",
+			success: function(result){	// 서버가 요청을 성공적으로 수행했을 때 수행 될 메서드, 파라미터는 서버가 반환한 값
+				cartAlert(result);
+				console.log(result);
+				
+			}
+		})
+	});
+	
+	// 서버가 반환할 값에 따라 띄울 경고창 메서드
+	// 위 ajax문 내부 success 내부에 넣어도 되지만 따로 빼서 작성한 뒤 ajax에서 호출하는 방식으로 진행
+	function cartAlert(result){
+		if(result == '0'){
+			alert("장바구니에 추가에 실패했습니다.");
+		} else if(result == '1'){
+			alert("장바구니에 추가되었습니다.");
+		} else if(result == '2'){
+			alert("이미 장바구니에 추가된 상품입니다.");
+		} else if(result == '5'){
+			alert("로그인이 필요합니다.");	
+		}
+	}
 })

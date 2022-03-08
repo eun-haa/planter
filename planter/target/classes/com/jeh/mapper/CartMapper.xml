@@ -6,8 +6,8 @@
 	<!-- 카트 추가 -->
 	<insert id="addCart">
 	
-		INSERT INTO cart(mid, pno, pcount, pname, pprice)
-		values(#{mid}, #{pno}, #{pcount}, #{pname}, #{pprice}) 
+		INSERT INTO cart(mid, pno, pcount)
+		values(#{mid}, #{pno}, #{pcount}) 
 	
 	</insert>
 	
@@ -33,9 +33,9 @@
 	<!-- 카트 목록 -->
 	<select id="getCart" resultType="com.jeh.domain.CartDTO">
 	
-		SELECT *
-		FROM cart
-		<!-- WHERE mid = #{mid}	 -->
+		select a.cartId, a.mid, a.pno, a.pcount, b.pname, b.pprice, b.pdiscount
+		from cart a left outer join product b on a.pno = b.pno
+		where mid = #{mid}	
 	
 	</select>
 	

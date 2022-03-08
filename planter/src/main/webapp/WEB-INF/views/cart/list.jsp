@@ -7,11 +7,9 @@
                     <h2>CART LIST</h2>
                 </div><!--.titleArea-->
                 <div class="notice_list_in">
-                	<input type="text" value="${login.mid}">
-                	<input type="text" value="">
-                	<c:if test="">
-                		<div>장바구니가 비었습니다.</div>
-                	</c:if>
+                	<input type="text" name="mid" value="${login.mid}">
+                	
+
                     <div class="cart_list_table">
                         <table border="1" summary="">
                             <!-- <caption>상품 게시판 목록</caption> -->
@@ -35,7 +33,9 @@
 	                                    <td scope="col" class="c_image prodUploadList"><a href="#"></a></td>
 	                                    <td scope="col" class="c_name"><a href="#">${cart.pname}</a></td>
 	                                    <td scope="col" class="c_price">${cart.pprice}</td>
-	                                    <td scope="col" class="c_qty">1</td>
+	                                    <td scope="col" class="c_qty">
+											${cart.pcount}
+	                                    </td>
 	                                    <td scope="col" class="c_delivery">기본배송</td>
 	                                    <td scope="col" class="c_charge">3000원</td>
 	                                    <td scope="col" class="c_choice">

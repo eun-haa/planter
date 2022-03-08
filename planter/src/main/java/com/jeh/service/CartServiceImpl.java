@@ -20,13 +20,26 @@ public class CartServiceImpl implements CartService{
 	MemberMapper mmapper;
 	
 	@Override
-	public void addCart(CartDTO cart) {
-		cmapper.addCart(cart);
+	public int addCart(CartDTO cart) {
+		// 장바구니 데이터 체크
+		CartDTO checkCart = cmapper.checkCart(cart);
+		
+		if(checkCart != null) {
+			return 2;
+		}
+		
+		// 장바구니 등록 & 에러 시 0반환
+		try {
+			return cmapper.addCart(cart);
+		} catch (Exception e) {
+			return 0;
+		}
+
 	}
 	
 	/* 카트 목록 */
-	public ArrayList<CartDTO> getCart(){
-		return cmapper.getCart();
+	public ArrayList<CartDTO> getCart(String mid){
+		return cmapper.getCart(mid);
 	}
 	
 
