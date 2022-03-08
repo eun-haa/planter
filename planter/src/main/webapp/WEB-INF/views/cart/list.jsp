@@ -65,6 +65,12 @@ $(document).ready(function(){
 		
 		$(".quantity_update_form").submit();
 	});
+	
+	/* 장바구니 삭제 버튼 */
+	$(".cart_delete_btn").on("click", function(){
+		
+		$(".quantity_delete_form").submit();
+	});
 })
 </script>
 		<!-- #contents 부분만 본문에 넣기-->
@@ -124,7 +130,7 @@ $(document).ready(function(){
 	                                    <td scope="col" class="c_choice">
 	                                    	<a href="#">BUY NOW</a>
 	                                    	<a href="#">WISHLIST</a>
-	                                    	<a href="#">DELETE</a>
+	                                    	<a href="#" class="cart_delete_btn">DELETE</a>
 	                                    </td>
 	                                </tr>
 	                                
@@ -174,6 +180,14 @@ $(document).ready(function(){
 				<c:forEach items="${cart}" var="cart">
 					<input type="text" name="cartId" value="${cart.cartId}" class="update_cartId" placeholder="cartId">
 					<input type="text" name="pcount" value="${cart.pcount}" class="update_count" placeholder="pcount">
+				</c:forEach>
+				<input type="text" name="mid" value="${login.mid}">
+			</form>
+			
+			<!-- 상품 삭제 form -->
+			<form action="/cart/delete" method="post" class="quantity_delete_form">
+				<c:forEach items="${cart}" var="cart">
+					<input type="text" name="cartId" value="${cart.cartId}" class="update_cartId" placeholder="cartId">
 				</c:forEach>
 				<input type="text" name="mid" value="${login.mid}">
 			</form>

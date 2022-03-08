@@ -6,12 +6,13 @@
                 <div class="titleArea">
                     <h2>NOTICE</h2>
                 </div><!--.titleArea-->
+                <input type="text" value="${cartResult}" class="cartResult">
                 <div class="notice_list_in">
                     <div class="notice_list_table">
                         <table border="1" summary="">
                             <!-- <caption>상품 게시판 목록</caption> -->
 
-
+							
                             <thead class="">
                                 <tr>
                                     <th scope="col" class="n_no">NO</th>

@@ -46,9 +46,13 @@
 		WHERE mid = #{mid} AND pno = #{pno}
 	
 	</select>
+	
 	<!-- 
-	select count(pno)
-	from cart
-	where mid="admin"; -->
+	<select id="headerView" resultType="com.jeh.domain.CartDTO">
+		SELECT count(pno)
+		FROM cart
+		WHERE mid=#{mid}
+	</select> -->
+
 
 </mapper>

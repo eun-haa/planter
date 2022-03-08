@@ -49,4 +49,16 @@ public class CartServiceImpl implements CartService{
 		return cmapper.modifyCount(cart);
 	}
 
+	/* 헤더에 카트 수량 */ 
+	/*public int headerView(CartDTO cart) {
+		System.out.println("service" + cmapper.headerView(cart));
+		return cmapper.headerView(cart);
+		
+	}*/
+	
+	/* 카트 삭제 */
+	@Override
+	public int deleteCart(int cartId) {
+		return cmapper.deleteCart(cartId);
+	}
 }

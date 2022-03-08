@@ -24,6 +24,7 @@
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script><!-- join/다음 주소 api -->
 </head>
 <body>
+
 	<div id="wrap">
 	   <div id="LeftMenu">
 	       <div class="LeftMenuIn">
@@ -120,13 +121,6 @@
 	                   	   		</c:otherwise>
 	                   	   </c:choose>
 	                   	   
-	                   	   
-	                   	   
-	                   	   
-	                   	   
-	                   	   
-
-							
 	                   </ul>
 	               </div><!--.membership_list-->
 	           </div><!--.LeftFooter-->
@@ -135,6 +129,7 @@
 	
 	   <div id="container">
 	       <div id="header">
+
 	           <ul>
 	               <li class="top_search">
 	                   <form action="/shop/search" method="get" id="headerSearchForm">
@@ -151,7 +146,7 @@
 			                   <a href="/cart/list/${login.mid}">
 			                       <img src="/resources/img/header/top_bag.png" alt="">
 			                       <span class="bag_count_display">
-			                           <span class="bag_count">0</span><!--.bag_count-->
+			                           <span class="bag_count"></span><!--.bag_count-->
 			                       </span><!--.bag_count_display-->
 			                   </a>
 			               </li><!--.top_bag-->

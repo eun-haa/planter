@@ -21,5 +21,7 @@ public interface CartMapper {
 	/* 카트 확인 */
 	public CartDTO checkCart(CartDTO cart);
 	
+	/* 헤더에 카트 수량 */
+	//public int headerView(CartDTO cart);
 	
 }

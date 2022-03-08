@@ -75,7 +75,7 @@ $(document).ready(function(){
 		console.log("form.mid = " + form.mid, "form.pno = " + form.pno, "form.pcount = " + form.pcount);
 		
 		$.ajax({
-			url: '/cart/add',			// 호출할 url
+			url: '/cart/add',			// 호출 할 url
 			type: 'POST',				// 호출 할 방법(GET/POST/PUT 등)
 			data: form,					// 서버로 보낼 데이터
 			dataType: "json",

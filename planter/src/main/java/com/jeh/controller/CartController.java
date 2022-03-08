@@ -46,7 +46,7 @@ public class CartController {
 	
 	// 2.카트 목록
 	@GetMapping("list/{mid}")
-	public String cartPageGET(@PathVariable("mid") String mid, Model model) {
+	public String cartPageGET(@PathVariable("mid") String mid, Model model, CartDTO cart) {
 		
 		model.addAttribute("cart", cservice.getCart(mid));
 		
@@ -63,4 +63,17 @@ public class CartController {
 		return "redirect:/cart/list/" + cart.getMid();
 		
 	}
+	
+	// 4.카트 삭제
+	@PostMapping("delete")
+	public String deleteCartPOST(CartDTO cart) {
+		
+		cservice.deleteCart(cart.getCartId());
+		System.out.println("카트 삭제 완료");
+		
+		return "redirect:/cart/list/" + cart.getMid();
+		
+	}
+	
+
 }
