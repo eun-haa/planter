@@ -1388,7 +1388,7 @@ tbody .n_title{
 
 .prod_detail .right{
     width: 47%;
-    padding: 30px 0;
+    padding: 100px 0;
 }
 
 .prod_name{
@@ -1410,41 +1410,38 @@ tbody .n_title{
 }
 
 .detail_quantity{
-	position:reletive;
 	width: 100px;
+	padding-bottom: 5px;
+	font-weight: bold;
 	margin-bottom: 20px;
 }
 
 .detail_quantity .quantity{
-	width: 80px;
-	height: 45px;
-	padding-left: 25px;
+	width: 30px;
+	height: 30px;
 	box-sizing: border-box;
 	background-color:#fff;
-	border: 1px solid #ddd;
+	border: none;
+	text-align: center;
+	font-size: 18px;
 }
 
 
-
-.detail_quantity .q_plus{
+.detail_quantity .q_plus, .detail_quantity .q_minus{
+	width: 23px;
+	height: 23px;
+	line-height: 23px;
 	cursor: pointer;
 	background-color: #fff;
 	border:1px solid #ddd;
-	position:absolute;
-	right: 620px;
-	padding: 4px 5px;
+	border-radius: 30px;
 	color: #555;
 }
 
-.detail_quantity .q_minus{
-	cursor: pointer;
-	background-color: #fff;
-	border:1px solid #ddd;
-	position:absolute;
-	right: 620px;
-	bottom: 312px;
-	padding: 3px 7px;
-	color: #555;
+
+.q_modify:hover{
+	background-color: #111;
+	color: #fff;
 }
 
 .prod_btns{
@@ -1519,14 +1516,14 @@ tbody .n_title{
 }
 
 .c_image{width: 15%;}
-.c_name{width: 35%;}
+.c_name{width: 25%;}
 .c_name a{
 	color: #555;
 }
 .c_price{width: 15%;}
-.c_qty{width: 5%;}
+.c_qty{width: 10%;}
 .c_delivery{width: 10%;}
-.c_charge{width: 10%;}
+.c_charge{width: 15%;}
 .c_choice{
 	width: 10%;
 
@@ -1569,50 +1566,44 @@ tbody .n_title{
 }
 
 .list_quantity{
-	position:reletive;
 	width: 100px;
 	padding-bottom: 5px;
+	font-weight: bold;
 }
 
 .list_quantity .quantity{
-	width: 60px;
-	height: 39px;
-	padding-left: 20px;
+	width: 30px;
+	height: 30px;
 	box-sizing: border-box;
 	background-color:#fff;
-	border: 1px solid #ddd;
+	border: none;
+	text-align: center;
 }
 
 
 
-.list_quantity .q_plus{
+
+.list_quantity .q_plus, .list_quantity .q_minus{
+	width: 23px;
+	height: 23px;
+	line-height: 23px;
 	cursor: pointer;
 	background-color: #fff;
 	border:1px solid #ddd;
-	position:absolute;
-	right: 372px;
-	padding: 2px 5px;
+	border-radius: 30px;
 	color: #555;
 }
 
-.list_quantity .q_minus{
-	cursor: pointer;
-	background-color: #fff;
-	border:1px solid #ddd;
-	position:absolute;
-	right: 372px;
-	bottom: 58px;
-	padding: 1px 7px;
-	color: #555;
-}
 
 
 .q_modify{
-	width: 63px;
-	height: 25px;
+	display: inline-block;
+	width: 40px;
+	height: 20px;
+	line-height: 20px;
 	border: 1px solid #ddd;
 	background-color: #fff;
-	font-size: 12px;
+	font-size: 11px;
 }
 
 .q_modify:hover{

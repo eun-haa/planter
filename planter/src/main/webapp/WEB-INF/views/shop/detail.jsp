@@ -22,9 +22,9 @@
 	                            <div class="prod_memo">${detail.pmemo}</div>
 	                            <div class="prod_price">${detail.pprice}원</div>
 	                            <div class="detail_quantity">
-	                            	<input type="text" class="quantity" value="1">
-	                                <button class="q_plus">+</button>
-	                                <button class="q_minus">-</button>
+                               		<button class="q_minus">-</button>
+                               		<input type="text" class="quantity" value="1">
+                               		<button class="q_plus">+</button>
 	                            </div><!-- .detail_quantity -->
 	                            
 	                            <div class="prod_btns">

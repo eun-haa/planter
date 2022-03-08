@@ -100,17 +100,18 @@ $(document).ready(function(){
 	                                    <td scope="col" class="c_image prodUploadList"><a href="#"></a></td>
 	                                    <td scope="col" class="c_name"><a href="#">${cart.pname}</a></td>
 	                                    <td scope="col" class="c_price">${cart.pprice}</td>
-	                                    <td>
-	                                    	<input type="text" value="${cart.cartId}">
-	                                    </td>
 	                                    <td scope="col" class="c_qty">
 	                                    	<div class="list_quantity">
-				                            	<input type="text" class="quantity" value="${cart.pcount}">
-				                                <button class="q_plus">+</button>
-				                                <button class="q_minus">-</button>
+	                                    		
+	                                    		
+	                                    		<button class="q_minus">-</button>
+	                                    		<input type="text" class="quantity" value="${cart.pcount}">
+	                                    		<button class="q_plus">+</button>
+				                                	
+
 				                                
 				                            </div><!-- .list_quantity -->
-				                            <div><!-- 데이터 속성을 사용하여 cartId의 데이터를 심어놓기 -->
+				                            <div class="q_modify_div"><!-- 데이터 속성을 사용하여 cartId의 데이터를 심어놓기 -->
 				                            	<a class="q_modify">수정</a>
 				                            	<!-- <button class="q_modify" data-cartId="${cart.cartId}">
 				                            		수정
