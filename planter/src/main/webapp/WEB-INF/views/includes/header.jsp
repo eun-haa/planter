@@ -143,15 +143,32 @@
 	                   </form>
 	               	   
 	               </li><!--.top_search-->
-	
-	               <li class="top_bag">
-	                   <a href="/cart/list/${login.mid}">
-	                       <img src="/resources/img/header/top_bag.png" alt="">
-	                       <span class="bag_count_display">
-	                           <span class="bag_count">0</span><!--.bag_count-->
-	                       </span><!--.bag_count_display-->
-	                   </a>
-	               </li><!--.top_bag-->
+					
+				   <!-- 로그인 여부에 따른 카트 분기 -->
+                   <c:choose>
+               	   		<c:when test="${login!=null}"><!-- 로그인이 되어있는 경우 해당 카트로 이동 -->
+		               	   <li class="top_bag">
+			                   <a href="/cart/list/${login.mid}">
+			                       <img src="/resources/img/header/top_bag.png" alt="">
+			                       <span class="bag_count_display">
+			                           <span class="bag_count">0</span><!--.bag_count-->
+			                       </span><!--.bag_count_display-->
+			                   </a>
+			               </li><!--.top_bag-->
+               	   		</c:when>
+               	   		<c:otherwise><!-- 로그인이 안되어있는 경우 로그인 화면으로 이동 -->
+               	   			<li class="top_bag">
+			                   <a href="/member/login">
+			                       <img src="/resources/img/header/top_bag.png" alt="">
+			                       <span class="bag_count_display">
+			                           <span class="bag_count">0</span><!--.bag_count-->
+			                       </span><!--.bag_count_display-->
+			                   </a>
+			                </li><!--.top_bag-->
+               	   		</c:otherwise>
+               	   </c:choose>
+               	   
+
 	           </ul>
 	       </div><!--#header-->
     <script src="/resources/js/header.js"></script>
