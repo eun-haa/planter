@@ -1388,6 +1388,7 @@ tbody .n_title{
 
 .prod_detail .right{
     width: 47%;
+    padding: 30px 0;
 }
 
 .prod_name{
@@ -1408,6 +1409,44 @@ tbody .n_title{
     margin-bottom: 50px;
 }
 
+.detail_quantity{
+	position:reletive;
+	width: 100px;
+	margin-bottom: 20px;
+}
+
+.detail_quantity .quantity{
+	width: 80px;
+	height: 45px;
+	padding-left: 25px;
+	box-sizing: border-box;
+	background-color:#fff;
+	border: 1px solid #ddd;
+}
+
+
+
+.detail_quantity .q_plus{
+	cursor: pointer;
+	background-color: #fff;
+	border:1px solid #ddd;
+	position:absolute;
+	right: 620px;
+	padding: 4px 5px;
+	color: #555;
+}
+
+.detail_quantity .q_minus{
+	cursor: pointer;
+	background-color: #fff;
+	border:1px solid #ddd;
+	position:absolute;
+	right: 620px;
+	bottom: 312px;
+	padding: 3px 7px;
+	color: #555;
+}
+
 .prod_btns{
     display: flex;
 }
@@ -1416,8 +1455,9 @@ tbody .n_title{
     margin-right: 20px;
 }
 
-.prod_btn_bag a{
-    display: inline-block;
+
+
+.prod_btn_bag{
     background-color: #fff;
     border: 1px solid #ddd;
     color: #555;
@@ -1432,7 +1472,7 @@ tbody .n_title{
     padding: 10px 75px;
 }
 
-.prod_btn_bag a:hover{
+.prod_btn_bag:hover{
     background-color: #111;
     border: none;
     color: #fff;
@@ -1444,7 +1484,7 @@ tbody .n_title{
     color: #fff;
 }
 /* ----------------------------------------------------------- */
-/* CART */
+/* CART - LIST */
 .cart_msg{
 	text-align: center;
 	margin-top: 100px;
@@ -1528,8 +1568,57 @@ tbody .n_title{
 	color: #fff;	
 }
 
+.list_quantity{
+	position:reletive;
+	width: 100px;
+	padding-bottom: 5px;
+}
+
+.list_quantity .quantity{
+	width: 60px;
+	height: 39px;
+	padding-left: 20px;
+	box-sizing: border-box;
+	background-color:#fff;
+	border: 1px solid #ddd;
+}
 
 
+
+.list_quantity .q_plus{
+	cursor: pointer;
+	background-color: #fff;
+	border:1px solid #ddd;
+	position:absolute;
+	right: 372px;
+	padding: 2px 5px;
+	color: #555;
+}
+
+.list_quantity .q_minus{
+	cursor: pointer;
+	background-color: #fff;
+	border:1px solid #ddd;
+	position:absolute;
+	right: 372px;
+	bottom: 58px;
+	padding: 1px 7px;
+	color: #555;
+}
+
+
+.q_modify{
+	width: 63px;
+	height: 25px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	font-size: 12px;
+}
+
+.q_modify:hover{
+	background-color: #111;
+	color: #fff;
+}
 /* ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */

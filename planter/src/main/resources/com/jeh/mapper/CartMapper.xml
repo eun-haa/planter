@@ -46,6 +46,9 @@
 		WHERE mid = #{mid} AND pno = #{pno}
 	
 	</select>
-	
+	<!-- 
+	select count(pno)
+	from cart
+	where mid="admin"; -->
 
 </mapper>

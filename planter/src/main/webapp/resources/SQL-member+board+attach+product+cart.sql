@@ -122,10 +122,18 @@ CREATE TABLE cart(
 	cartId INT AUTO_INCREMENT PRIMARY KEY, -- 카트 아이디
 	mid VARCHAR(16), 					   -- 회원 아이디
     pno INT,					           -- 상품 아이디
-    pcount INT, 					   	   -- 상품 갯수
-	FOREIGN KEY (mid) REFERENCES planter.member(mid),
-    FOREIGN KEY (pno) REFERENCES planter.product(pno)
+    pcount INT	 					   	   -- 상품 갯수
+	-- FOREIGN KEY (mid) REFERENCES planter.member(mid),
+    -- FOREIGN KEY (pno) REFERENCES planter.product(pno)
 );
 
 SELECT * FROM planter.cart;
 ALTER table cart ADD UNIQUE (mid, pno);
+
+select a.cartId, a.mid, a.pno, a.pcount, b.pname, b.pprice, b.pdiscount
+from cart a left outer join product b on a.pno = b.pno
+where mid = "eee0";	
+
+select count(pno)
+from cart
+where mid="admin";

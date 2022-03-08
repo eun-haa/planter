@@ -20,6 +20,7 @@ import com.jeh.service.CartService;
 
 
 @Controller
+@RequestMapping("cart")
 public class CartController {
 	@Autowired
 	CartService cservice;
@@ -27,7 +28,7 @@ public class CartController {
 
 	
 	// 1.카트 추가
-	@PostMapping("/cart/add")
+	@PostMapping("add")
 	@ResponseBody
 	public int addCartPOST(CartDTO cart, HttpServletRequest request) {
 		// 로그인 체크
@@ -44,11 +45,22 @@ public class CartController {
 	}
 	
 	// 2.카트 목록
-	@GetMapping("/cart/list/{mid}")
+	@GetMapping("list/{mid}")
 	public String cartPageGET(@PathVariable("mid") String mid, Model model) {
 		
 		model.addAttribute("cart", cservice.getCart(mid));
 		
 		return "/cart/list";
+	}
+	
+	// 3.카트 수량 수정
+	@PostMapping("update")
+	public String updateCartPOST(CartDTO cart) {
+		
+		cservice.modifyCount(cart);
+		System.out.println("카트 수량 수정 완료");
+		
+		return "redirect:/cart/list/" + cart.getMid();
+		
 	}
 }

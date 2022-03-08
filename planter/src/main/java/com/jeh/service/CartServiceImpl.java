@@ -19,6 +19,7 @@ public class CartServiceImpl implements CartService{
 	@Autowired
 	MemberMapper mmapper;
 	
+	/* 카트 추가 */
 	@Override
 	public int addCart(CartDTO cart) {
 		// 장바구니 데이터 체크
@@ -42,6 +43,10 @@ public class CartServiceImpl implements CartService{
 		return cmapper.getCart(mid);
 	}
 	
-
+	/* 카트 수량 수정 */
+	@Override
+	public int modifyCount(CartDTO cart) {
+		return cmapper.modifyCount(cart);
+	}
 
 }

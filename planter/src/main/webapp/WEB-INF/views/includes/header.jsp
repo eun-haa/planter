@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
     
     <!-- css -->
-	<link rel="stylesheet" href="../resources/css/style.css">
+	<link rel="stylesheet" href="/resources/css/style.css">
 	
 	<!-- js -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!-- jquery -->
@@ -28,7 +28,7 @@
 	   <div id="LeftMenu">
 	       <div class="LeftMenuIn">
 	           <h1 class="logo">
-	               <a href="/main"><img src="../resources/img/header/logo.png" alt=""></a>
+	               <a href="/main"><img src="/resources/img/header/logo.png" alt=""></a>
 	           </h1><!--.logo-->
 	
 	           <div class="LeftFooter">
@@ -139,14 +139,14 @@
 	               <li class="top_search">
 	                   <form action="/shop/search" method="get" id="headerSearchForm">
 	                   		<input type="text" class="header_sc" name="keyword" value="${pager.ssc.keyword}">
-	                    	<button type="submit" value="search" id="search_btn"><img src="../resources/img/header/top_search.png" alt=""></button>
+	                    	<button type="submit" value="search" id="search_btn"><img src="/resources/img/header/top_search.png" alt=""></button>
 	                   </form>
 	               	   
 	               </li><!--.top_search-->
 	
 	               <li class="top_bag">
 	                   <a href="/cart/list/${login.mid}">
-	                       <img src="../resources/img/header/top_bag.png" alt="">
+	                       <img src="/resources/img/header/top_bag.png" alt="">
 	                       <span class="bag_count_display">
 	                           <span class="bag_count">0</span><!--.bag_count-->
 	                       </span><!--.bag_count_display-->
@@ -154,4 +154,4 @@
 	               </li><!--.top_bag-->
 	           </ul>
 	       </div><!--#header-->
-    <script src="../resources/js/header.js"></script>
+    <script src="/resources/js/header.js"></script>

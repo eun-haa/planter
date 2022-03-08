@@ -16,16 +16,16 @@
 	                            
 	                        </div><!--.left-->
 	                        <div class="right">
-	                        	<input type="text" id="mid" value="${login.mid}" name="mid">
-	                        	<input type="text" id="pno" value="${detail.pno}" name="pno">
+	                        	<input type="hidden" id="mid" value="${login.mid}" name="mid">
+	                        	<input type="hidden" id="pno" value="${detail.pno}" name="pno">
 	                            <div class="prod_name">${detail.pname}</div>
 	                            <div class="prod_memo">${detail.pmemo}</div>
 	                            <div class="prod_price">${detail.pprice}원</div>
-	                            <div>
+	                            <div class="detail_quantity">
 	                            	<input type="text" class="quantity" value="1">
 	                                <button class="q_plus">+</button>
 	                                <button class="q_minus">-</button>
-	                            </div>
+	                            </div><!-- .detail_quantity -->
 	                            
 	                            <div class="prod_btns">
 	                            	<input class="prod_btn_bag" type="submit" value="ADD TO BAG">
@@ -38,5 +38,5 @@
                     </div><!--.prod_detail-->
                 </div><!--.prod_detail_in-->
             </div><!--#contents-->
-<script src="../resources/js/shop/detail.js"></script>			
+<script src="/resources/js/shop/detail.js"></script>			
 <%@ include file="../includes/footer.jsp" %>

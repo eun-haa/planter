@@ -13,5 +13,7 @@ public interface CartService {
 	/* 카트 목록 */
 	public ArrayList<CartDTO> getCart(String mid);
 	
+	/* 카트 수량 수정 */
+	public int modifyCount(CartDTO cart);
 	
 }
