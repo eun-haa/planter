@@ -27,7 +27,7 @@
                             </thead>
 
                             <tbody class="">
-                            	<c:forEach items="${list}" var="cart">
+                            	<c:forEach items="${cart}" var="cart">
 	                            	<tr>	                                    
 	                                    <td scope="col" class="c_no">${cart.pno}</td>
 	                                    <td scope="col" class="c_image prodUploadList"><a href="#"></a></td>
@@ -57,9 +57,9 @@
                         		<th>결제예정금액</th>
                         	</tr>
                         	<tr>
-                        		<td>${cart.totalPrice}원</td>
+                        		<td>원</td>
                         		<td>3000원</td>
-                        		<td>${cart.totalPrice + 3000}원</td>
+                        		<td>원</td>
                         	</tr>
                         </table>
 
@@ -80,5 +80,4 @@
             
                 </div><!--.notice_list_in-->
             </div><!--#contents-->
-    <script src="../resources/js/admin/list.js"></script>
 <%@ include file="../includes/footer.jsp" %>

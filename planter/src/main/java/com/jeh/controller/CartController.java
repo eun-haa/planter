@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,7 +20,6 @@ import com.jeh.service.CartService;
 
 
 @Controller
-@RequestMapping("cart")
 public class CartController {
 	@Autowired
 	CartService cservice;
@@ -28,7 +27,7 @@ public class CartController {
 
 	
 	// 1.카트 추가
-	@PostMapping("/add")
+	@PostMapping("/cart/add")
 	@ResponseBody
 	public int addCartPOST(CartDTO cart, HttpServletRequest request) {
 		// 로그인 체크
@@ -39,11 +38,17 @@ public class CartController {
 		}
 		
 		// 카트 등록
-		
 		int result = cservice.addCart(cart);
 		
 		return result;
 	}
 	
-
+	// 2.카트 목록
+	@GetMapping("/cart/list/{mid}")
+	public String cartPageGET(@PathVariable("mid") String mid, Model model) {
+		
+		model.addAttribute("cart", cservice.getCart(mid));
+		
+		return "/cart/list";
+	}
 }

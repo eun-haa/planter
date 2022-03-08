@@ -97,7 +97,8 @@ $(document).ready(function(){
 		} else if(result == '2'){
 			alert("이미 장바구니에 추가된 상품입니다.");
 		} else if(result == '5'){
-			alert("로그인이 필요합니다.");	
+			alert("로그인이 필요합니다.");
+			
 		}
 	}
 })
