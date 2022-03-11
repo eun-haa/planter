@@ -44,7 +44,9 @@ $(document).ready(function(){
 	
 	
 	
-	
+	/* 상품 가격 세자리마다 콤마(,) 찍히게 표시 */
+	let productPrice = parseInt($(".p_priceInput").val()); // input 태그 value는 String이라 parseInt 사용해서 숫자로 바꾸기
+	$(".p_priceSpan").text(productPrice.toLocaleString()); // toLocaleString() 사용하여 콤마 찍기
 	
 	
 	/* 카트 담기 */
@@ -94,6 +96,7 @@ $(document).ready(function(){
 			alert("장바구니에 추가에 실패했습니다.");
 		} else if(result == '1'){
 			alert("장바구니에 추가되었습니다.");
+			location.reload();
 		} else if(result == '2'){
 			alert("이미 장바구니에 추가된 상품입니다.");
 		} else if(result == '5'){

@@ -52,7 +52,9 @@ $(document).ready(function(){
 		})
 	})
 	
-
+	/* 상품 가격 세자리마다 콤마(,) 찍히게 표시 */
+	let productPrice = parseInt($(".p_priceInput").val()); // input 태그 value는 String이라 parseInt 사용해서 숫자로 바꾸기
+	$(".p_priceSpan").text(productPrice.toLocaleString()); // toLocaleString() 사용하여 콤마 찍기
 	
 	// 검색
 	var headerSearchForm = $("#headerSearchForm");

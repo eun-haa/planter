@@ -25,7 +25,10 @@
 	                                <li class="item_name"><a href="/shop/detail?pno=${product.pno}"><span>${product.pname}</span></a></li>
 	                            </ul>
 	                            <ul class="prod_list_price">
-	                            	<li class=" xans-record-"><span>${product.pprice}원</span></li>      
+	                            	<li class=" xans-record-">
+	                            		<input type="hidden" class="p_priceInput" value="${product.pprice}">
+	                                    <span class="p_priceSpan"></span>원
+	                            	</li>      
 	                            </ul>
 	                        </div>
 	                    </li>

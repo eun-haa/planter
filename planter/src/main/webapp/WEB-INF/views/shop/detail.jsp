@@ -20,7 +20,10 @@
 	                        	<input type="hidden" id="pno" value="${detail.pno}" name="pno">
 	                            <div class="prod_name">${detail.pname}</div>
 	                            <div class="prod_memo">${detail.pmemo}</div>
-	                            <div class="prod_price">${detail.pprice}원</div>
+	                            <div class="prod_price">
+                            		<input type="hidden" class="p_priceInput" value="${detail.pprice}">
+                                    <span class="p_priceSpan"></span>원
+	                            </div>
 	                            <div class="detail_quantity">
                                		<button class="q_minus">-</button>
                                		<input type="text" class="quantity" value="1">
