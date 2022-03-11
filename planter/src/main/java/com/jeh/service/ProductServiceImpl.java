@@ -112,8 +112,7 @@ public class ProductServiceImpl implements ProductService{
 	@Transactional
 	public void postModify(ProductDTO prod) {
 		if(prod.getAttachList() != null) {
-			// 제목과 내용을 product 테이블에 insert
-			//pmapper.updateSelectKey(prod);
+			pmapper.postModify(prod);
 			System.out.println("amapper.deleteFile(prod.getPno());");
 			amapper.deleteFile(prod.getPno());
 			// 파일명,파일경로,파일타입,uuid 값을 attach 테이블에 insert
