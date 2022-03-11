@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../includes/header.jsp" %>
-    <script src="../resources/js/login.js"></script>
+    <script src="../resources/js/member/login.js"></script>
 		<!-- #contents 부분만 본문에 넣기-->
             <div id="contents">
                 <div class="login">

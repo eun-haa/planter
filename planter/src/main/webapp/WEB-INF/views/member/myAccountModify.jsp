@@ -120,6 +120,6 @@
 				</form>
 
             </div><!--#contents-->
-    <script src="../resources/js/myAccountModify.js"></script>
-    <script src="../resources/js/join-daum.js"></script>
+    <script src="../resources/js/member/myAccountModify.js"></script>
+    <script src="../resources/js/member/join-daum.js"></script>
 <%@ include file="../includes/footer.jsp" %>

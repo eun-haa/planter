@@ -266,6 +266,10 @@ table{
     border-bottom: 1px solid #ddd;
 }
 
+.join_table tr:last-child{
+	border-bottom: none;
+}
+
 .join_table th{
     text-align: left;
     font-family: 'Montserrat', sans-serif;
@@ -1388,7 +1392,7 @@ tbody .n_title{
 
 .prod_detail .right{
     width: 47%;
-    padding: 100px 0;
+    padding: 30px 0 0 0;
 }
 
 .prod_name{
@@ -1471,13 +1475,11 @@ tbody .n_title{
 
 .prod_btn_bag:hover{
     background-color: #111;
-    border: none;
     color: #fff;
 }
 
 .prod_btn_wish a:hover{
     background-color: #111;
-    border: none;
     color: #fff;
 }
 /* ----------------------------------------------------------- */
