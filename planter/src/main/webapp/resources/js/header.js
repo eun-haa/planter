@@ -23,7 +23,8 @@ $(document).ready(function(){
 	})
 	
 	//--------------------------------------------------//
-	let btn = true;
+	/* SHOP 버튼 누르면 전체 카테고리 슬라이딩으로 오픈되게 */
+	/*let btn = true;
 	
 	$(".shop_btn").show();
 	$(".shop_record").hide();
@@ -43,10 +44,7 @@ $(document).ready(function(){
             });
             btn = true;
     	}
-    	
 
-
-
-    });
+    });*/
 
 })

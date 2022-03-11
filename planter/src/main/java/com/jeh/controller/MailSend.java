@@ -23,14 +23,14 @@ public class MailSend {
 		prop.put("mail.smtp.ssl.enable","true");
 		prop.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 		
-		//Gmail 계정 및 Password 정보가 들어가는 곳
+		// Gmail 계정 및 Password 정보가 들어가는 곳
 		Session session = Session.getDefaultInstance(prop, new Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
 				return new PasswordAuthentication("deveunhatest@gmail.com", "eunha220223@");
 			}
 		});
 		
-		//실제 메일 작성
+		// 실제 메일 작성
 		MimeMessage msg = new MimeMessage(session);
 		try {
 			msg.setSentDate(new Date());  //보내는 시간

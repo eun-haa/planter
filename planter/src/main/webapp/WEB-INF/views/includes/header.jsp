@@ -146,8 +146,7 @@
 			                   <a href="/cart/list/${login.mid}">
 			                       <img src="/resources/img/header/top_bag.png" alt="">
 			                       <span class="bag_count_display">
-			                           <span class="bag_count">
-			                           </span><!--.bag_count-->
+			                           <span class="bag_count"></span><!--.bag_count-->
 			                       </span><!--.bag_count_display-->
 			                   </a>
 			               </li><!--.top_bag-->
@@ -158,7 +157,7 @@
 			                       <img src="/resources/img/header/top_bag.png" alt="">
 			                       <span class="bag_count_display">
 			                       	   
-			                           		<span class="bag_count">0</span><!--.bag_count-->
+			                           		<span class="bag_count"></span><!--.bag_count-->
 			                           
 			                       </span><!--.bag_count_display-->
 			                   </a>

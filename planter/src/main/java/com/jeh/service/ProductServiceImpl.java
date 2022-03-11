@@ -44,42 +44,52 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	// 2-1.상품 목록 구현
+	@Override
 	public ArrayList<ProductDTO> shopList(ShopSearch ssc){
 		return pmapper.shopList(ssc);
 	}
+	@Override
 	public ArrayList<ProductDTO> prodInfoList(){
 		return pmapper.prodInfoList();
 	}
 	// 2-2.상품 이미지 구현
+	@Override
 	public ArrayList<AttachFileDTO> fileList2(){
 		return amapper.fileList2();
 	}
 	// SHOP 상품 목록 페이징 - 상품 전체 갯수
+	@Override
 	public int getTotalCount1(ShopSearch ssc) {
 		return pmapper.getTotalCount1(ssc);
 	}
 	// 2-3.ADMIN 상품 목록 설계
+	@Override
 	public ArrayList<ProductDTO> adminList(Search sc){
 		return pmapper.adminList(sc);
 	}
+	@Override
 	// ADMIN 상품 목록 페이징 - 상품 전체 갯수
 	public int getTotalCount2(Search sc) {
 		return pmapper.getTotalCount2(sc);
 	}
 	
 	// 3-1.PLANT 카테고리 상품 목록 구현
+	@Override
 	public ArrayList<ProductDTO> shopList1(ShopSearch ssc){
 		return pmapper.shopList1(ssc);
 	}
 	// 3-2.FLOWER 카테고리 상품 목록 구현
+	@Override
 	public ArrayList<ProductDTO> shopList2(ShopSearch ssc){
 		return pmapper.shopList2(ssc);
 	}
 	// 3-2.GARDENING 카테고리 상품 목록 구현
-		public ArrayList<ProductDTO> shopList3(ShopSearch ssc){
+	@Override
+	public ArrayList<ProductDTO> shopList3(ShopSearch ssc){
 			return pmapper.shopList3(ssc);
 	}
 	// 3-2.PLANTERIOR 카테고리 상품 목록 구현
+	@Override
 	public ArrayList<ProductDTO> shopList4(ShopSearch ssc){
 		return pmapper.shopList4(ssc);
 	}
@@ -93,24 +103,12 @@ public class ProductServiceImpl implements ProductService{
 		return pmapper.shopDetail(prod);
 	}
 	// 3-2.상세페이지에 업로드 된 이미지를 화면에 보여주기 위한 데이터 list 구현
+	@Override
 	public ArrayList<AttachFileDTO> detailFile(int pno){
 		return amapper.detailFile(pno);
 	}
 	
-	// 5.상품 수정 구현
-	/*@Transactional
-	public void postModify(ProductDTO prod) {
-		if(prod.getAttachList() != null) {
-			amapper.updateFile(prod.getAttachList());
-			pmapper.postModify(prod);
-
-		}else {
-			pmapper.postModify(prod);
-		}
-
-	}*/
 	// 4.상품 수정 구현
-	
 	@Transactional
 	public void postModify(ProductDTO prod) {
 		if(prod.getAttachList() != null) {
@@ -131,6 +129,7 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	// 6.글 삭제 구현
+	@Override
 	public void delete(ProductDTO prod) {
 		if(prod.getAttachList() != null) {
 			amapper.deleteFile2(prod.getPno());
@@ -141,6 +140,7 @@ public class ProductServiceImpl implements ProductService{
 
 	}
 	// 7.검색 결과 구현
+	@Override
 	public ArrayList<ProductDTO> searchList(ShopSearch ssc){
 		return pmapper.searchList(ssc);
 	}

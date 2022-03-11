@@ -11,8 +11,6 @@ public class ShopSearch {
 	// 한 페이지당 게시물 갯수
 	private int amount;
 	
-
-	
 	// 기본 생성자
 	ShopSearch(){
 		this(1,9); // 1 페이지에 9개

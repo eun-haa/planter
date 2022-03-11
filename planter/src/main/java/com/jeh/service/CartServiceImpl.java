@@ -39,6 +39,7 @@ public class CartServiceImpl implements CartService{
 	}
 	
 	// 2.장바구니 목록
+	@Override
 	public ArrayList<CartDTO> getCart(String mid){
 		return cmapper.getCart(mid);
 	}

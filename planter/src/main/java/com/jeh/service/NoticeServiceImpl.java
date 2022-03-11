@@ -43,10 +43,12 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 	
 	// 2.글 목록 구현
+	@Override
 	public ArrayList<NoticeDTO> list(Search sc){
 		return nmapper.list(sc);
 	}
 	// 2-2.게시판 페이징 - 글 전체 갯수
+	@Override
 	public int getTotalCount(Search sc) {
 		return nmapper.getTotalCount(sc);
 	}
@@ -60,6 +62,7 @@ public class NoticeServiceImpl implements NoticeService{
 		return nmapper.detail(notice);
 	}
 	// 3-2.상세페이지에 업로드 된 이미지를 화면에 보여주기 위한 데이터 list 구현
+	@Override
 	public ArrayList<AttachFileDTO> fileList(int nno){
 		return amapper.fileList(nno);
 	}
@@ -84,6 +87,7 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 	
 	// 5.글 삭제 구현
+	@Override
 	public void delete(NoticeDTO notice) {
 		nmapper.delete(notice);
 	}

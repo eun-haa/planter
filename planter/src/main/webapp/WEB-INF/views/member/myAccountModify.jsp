@@ -5,7 +5,7 @@
 
             <div id="contents">
                 <div class="titleArea">
-                    <h2>PROFILE</h2>
+                    <h2>MY PROFILE</h2>
                 </div><!--.titleArea-->
                 <form id="joinForm" name="joinForm" method="post" action="/member/myAccountModify">
                 
@@ -104,12 +104,12 @@
 	                                	<td><input id="role" name="role" value="0" type="text">
 	                                </td>
 	                            </tr>
+	                            
 	                        </tbody>
 	                    </table>
 	
-	                    <!-- <div class="text-button-center">
-	                        <a href="" class="btn_1000">SUBMIT</a>
-	                    </div> -->
+
+	                    
 	                    <input id="j_submit" type="submit" value="MODIFY">
 	                    <!-- 
 	                    <div class="myAccModBtns">
