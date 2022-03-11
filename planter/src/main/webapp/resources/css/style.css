@@ -789,9 +789,14 @@ tbody .p_name{
 }
 
 .p_delete a{
-	background-color: #aaa;
-	color: #fff;
+	border: 1px solid #ddd;
+	color: #444;
 	padding: 5px 10px;
+}
+
+.p_modify a:hover, .p_delete a:hover{
+	color: #fff;
+	background-color: #111;
 }
 
 .product_sw{
