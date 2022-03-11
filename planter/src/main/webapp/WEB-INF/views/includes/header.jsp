@@ -33,6 +33,7 @@
 	
 	           <div class="LeftFooter">
 	               <div class="menu_list">
+	               		
 	                   <ul class="shop_list">
 	                       <li class="list_title">
 	                           <a href="#" class="shop_btn">SHOP</a>
@@ -145,7 +146,8 @@
 			                   <a href="/cart/list/${login.mid}">
 			                       <img src="/resources/img/header/top_bag.png" alt="">
 			                       <span class="bag_count_display">
-			                           <span class="bag_count"></span><!--.bag_count-->
+			                           <span class="bag_count">
+			                           </span><!--.bag_count-->
 			                       </span><!--.bag_count_display-->
 			                   </a>
 			               </li><!--.top_bag-->
@@ -155,7 +157,9 @@
 			                   <a href="/member/login">
 			                       <img src="/resources/img/header/top_bag.png" alt="">
 			                       <span class="bag_count_display">
-			                           <span class="bag_count">0</span><!--.bag_count-->
+			                       	   
+			                           		<span class="bag_count">0</span><!--.bag_count-->
+			                           
 			                       </span><!--.bag_count_display-->
 			                   </a>
 			                </li><!--.top_bag-->

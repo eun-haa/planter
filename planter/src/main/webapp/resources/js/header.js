@@ -21,5 +21,32 @@ $(document).ready(function(){
 			headerSearchForm.submit();
 		}
 	})
+	
+	//--------------------------------------------------//
+	let btn = true;
+	
+	$(".shop_btn").show();
+	$(".shop_record").hide();
+	
+	
+	
+    $(".shop_btn").on("click", function(e){
+    	e.preventDefault();
+    	if(btn == true){
+            $(".shop_record").show().animate({
+                bottom:0
+            });
+            btn = false;
+    	}else if(btn == false){
+            $(".shop_record").hide().animate({
+                bottom:0
+            });
+            btn = true;
+    	}
+    	
+
+
+
+    });
 
 })

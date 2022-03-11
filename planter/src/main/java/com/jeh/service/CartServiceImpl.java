@@ -19,10 +19,10 @@ public class CartServiceImpl implements CartService{
 	@Autowired
 	MemberMapper mmapper;
 	
-	/* 카트 추가 */
+	// 1.장바구니 추가
 	@Override
 	public int addCart(CartDTO cart) {
-		// 장바구니 데이터 체크
+		// 장바구니 정보 확인
 		CartDTO checkCart = cmapper.checkCart(cart);
 		
 		if(checkCart != null) {
@@ -38,25 +38,18 @@ public class CartServiceImpl implements CartService{
 
 	}
 	
-	/* 카트 목록 */
+	// 2.장바구니 목록
 	public ArrayList<CartDTO> getCart(String mid){
 		return cmapper.getCart(mid);
 	}
 	
-	/* 카트 수량 수정 */
+	// 3.장바구니 상품 수량 수정
 	@Override
 	public int modifyCount(CartDTO cart) {
 		return cmapper.modifyCount(cart);
 	}
-
-	/* 헤더에 카트 수량 */ 
-	/*public int headerView(CartDTO cart) {
-		System.out.println("service" + cmapper.headerView(cart));
-		return cmapper.headerView(cart);
-		
-	}*/
 	
-	/* 카트 삭제 */
+	// 4.장바구니 상품 삭제
 	@Override
 	public int deleteCart(int cartId) {
 		return cmapper.deleteCart(cartId);

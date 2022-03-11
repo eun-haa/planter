@@ -27,7 +27,7 @@ public class CartController {
 	
 
 	
-	// 1.카트 추가
+	// 1.장바구니 추가
 	@PostMapping("add")
 	@ResponseBody
 	public int addCartPOST(CartDTO cart, HttpServletRequest request) {
@@ -37,34 +37,34 @@ public class CartController {
 		if(mdto == null) {
 			return 5;
 		}
-		
 		// 카트 등록
 		int result = cservice.addCart(cart);
 		
 		return result;
 	}
 	
-	// 2.카트 목록
+	// 2.장바구니 목록
 	@GetMapping("list/{mid}")
 	public String cartPageGET(@PathVariable("mid") String mid, Model model, CartDTO cart) {
-		
+		// 해당 아이디가 가진 장바구니 정보를 "cart"라는 변수에 넣기
 		model.addAttribute("cart", cservice.getCart(mid));
 		
+		// cart/list 화면으로 이동
 		return "/cart/list";
 	}
 	
-	// 3.카트 수량 수정
+	// 3.장바구니 상품 수량 수정
 	@PostMapping("update")
 	public String updateCartPOST(CartDTO cart) {
-		
+		// 수량 수정
 		cservice.modifyCount(cart);
 		System.out.println("카트 수량 수정 완료");
 		
+		// 수량이 수정된 장바구니 화면으로 이동
 		return "redirect:/cart/list/" + cart.getMid();
 		
 	}
-	
-	// 4.카트 삭제
+	// 4.장바구니 상품 삭제
 	@PostMapping("delete")
 	public String deleteCartPOST(CartDTO cart) {
 		

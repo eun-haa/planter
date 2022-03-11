@@ -7,18 +7,18 @@
 	<insert id="addCart">
 	
 		INSERT INTO cart(mid, pno, pcount)
-		values(#{mid}, #{pno}, #{pcount}) 
+		VALUES(#{mid}, #{pno}, #{pcount}) 
 	
 	</insert>
 	
+	<!-- 카트 목록 -->
+	<select id="getCart" resultType="com.jeh.domain.CartDTO">
 	
-	<!-- 카트 삭제 -->
-	<delete id="deleteCart">
+		SELECT a.cartId, a.mid, a.pno, a.pcount, b.pname, b.pprice, b.pdiscount
+		FROM cart a LEFT OUTER JOIN product b on a.pno = b.pno
+		WHERE mid = #{mid}	
 	
-		DELETE FROM cart 
-		WHERE cartId = #{cartId}
-	
-	</delete>
+	</select>
 	
 	<!-- 카트 수량 수정 -->
 	<update id="modifyCount">
@@ -29,15 +29,13 @@
 	
 	</update>
 	
+	<!-- 카트 삭제 -->
+	<delete id="deleteCart">
 	
-	<!-- 카트 목록 -->
-	<select id="getCart" resultType="com.jeh.domain.CartDTO">
+		DELETE FROM cart 
+		WHERE cartId = #{cartId}
 	
-		select a.cartId, a.mid, a.pno, a.pcount, b.pname, b.pprice, b.pdiscount
-		from cart a left outer join product b on a.pno = b.pno
-		where mid = #{mid}	
-	
-	</select>
+	</delete>
 	
 	<!-- 카트 확인 -->
 	<select id="checkCart" resultType="com.jeh.domain.CartDTO">
@@ -46,13 +44,5 @@
 		WHERE mid = #{mid} AND pno = #{pno}
 	
 	</select>
-	
-	<!-- 
-	<select id="headerView" resultType="com.jeh.domain.CartDTO">
-		SELECT count(pno)
-		FROM cart
-		WHERE mid=#{mid}
-	</select> -->
-
 
 </mapper>
