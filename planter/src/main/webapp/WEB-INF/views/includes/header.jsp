@@ -24,9 +24,39 @@
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script><!-- join/다음 주소 api -->
 </head>
 <body>
+<script type="text/javascript">
+$(document).ready(function(){
+	$.ajax({
+	    url: "/cart/cartCount",
+	    type: "POST",
+	    data: {
+	    	"mid":$("#mid").val(),
+	    },
+	    dataType: "json",
+	    success:function(count){
+	    	console.log(count)
+	    	if(count == 0){
+	    		$(".bag_count").text(count);
+	    		$(".bag_count").css("left","30%");
+	        }
+	    	else{
+	        	$(".bag_count").text(count);
+	        	$(".bag_count").css("left","40%");
+	    	}
+	    	
+	        console.log("count : " + count);
+	    },
+	    error:function(){
+	    	console.log("error")
+	        alert("error");
+	    }
+	})// ajax 끝
+})
+</script>
 	<div id="wrap">
 	   <div id="LeftMenu">
 	       <div class="LeftMenuIn">
+	       	   <input type="hidden" value="${login.mid}" id="mid">
 	           <h1 class="logo">
 	               <a href="/main"><img src="/resources/img/header/logo.png" alt=""></a>
 	           </h1><!--.logo-->
@@ -36,7 +66,7 @@
 	               		
 	                   <ul class="shop_list">
 	                       <li class="list_title">
-	                           <a href="#" class="shop_btn">SHOP</a>
+	                           <a href="#" id="shop_btn" class="shop_btn">SHOP</a>
 	                       </li><!--.list_title-->
 	                       <li class="shop_record">
 	                           <a href="/shop/list">ALL</a>

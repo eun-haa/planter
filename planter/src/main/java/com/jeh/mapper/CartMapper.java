@@ -21,4 +21,5 @@ public interface CartMapper {
 	/* 장바구니 정보 확인 */
 	public CartDTO checkCart(CartDTO cart);
 	
+	public int cartCount(CartDTO cart);
 }

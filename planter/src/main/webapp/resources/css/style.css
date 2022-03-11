@@ -100,6 +100,9 @@ input, select, option, textarea{
     color: #222;
 }
 
+#shop_btn{
+	color: #629962;
+}
 .list_title a:hover{
     color: #629962;
 }
@@ -173,7 +176,6 @@ input, select, option, textarea{
 .top_bag .bag_count{
     position: absolute;
     top: 2px;
-    left: 5px;
 }
 
 /* search */

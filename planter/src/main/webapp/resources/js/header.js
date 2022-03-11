@@ -25,7 +25,7 @@ $(document).ready(function(){
 	//--------------------------------------------------//
 	/* SHOP 버튼 누르면 전체 카테고리 닫을 수 있고,다시 클릭하면 열 수 있음 */
 	// if문에 활용할 불린값 정의
-	let btn = false;
+	let btn = true;
 	
 	// 기본값 = 모두 보이게
 	$(".shop_btn").show();
@@ -34,19 +34,16 @@ $(document).ready(function(){
 	// SHOP 버튼을 클릭했을 때
     $(".shop_btn").on("click", function(e){
     	e.preventDefault();
-    	if(btn == false){// 불린값이 false이면
-    		// 메뉴를 접는다
+    	if(btn == true){
             $(".shop_record").slideUp(150);
-    		
-            btn = true;
-    	}else{// 불린값이 true이면(false가 아니면)
-    		// 메뉴를 다시 보여준다
-            $(".shop_record").slideDown(150);
+            
             btn = false;
+    	}else if(btn == false){
+    		$(".shop_record").slideDown(150);
+    		
+    		btn = true;
     	}
     	
-    	
-
     });
 
 })

@@ -44,5 +44,12 @@
 		WHERE mid = #{mid} AND pno = #{pno}
 	
 	</select>
+	
+	<!--  -->
+	<select id="cartCount" resultType="int">
+		SELECT COUNT(pno) 
+		FROM cart
+		WHERE mid = #{mid}
+	</select>
 
 </mapper>

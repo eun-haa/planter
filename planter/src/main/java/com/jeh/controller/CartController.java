@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jeh.domain.CartDTO;
@@ -73,6 +74,15 @@ public class CartController {
 		
 		return "redirect:/cart/list/" + cart.getMid();
 		
+	}
+	
+	@PostMapping("/cartCount")
+	@ResponseBody
+	public int cartCount(CartDTO cart){
+		System.out.println("cartCount 진입");
+	    int count = cservice.cartCount(cart);
+	    System.out.println("count 확인 결과:" + count);
+	    return count;
 	}
 	
 
