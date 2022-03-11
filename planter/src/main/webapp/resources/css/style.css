@@ -222,13 +222,12 @@ input, select, option, textarea{
 /* container - footer */
 
 #footer{
-
     font-family: 'Montserrat', sans-serif;
     clear: both;
     width: 100%;
     margin: 0 auto;
     vertical-align:top;
-    margin-top: 120px;
+    margin-top: 20px;
     padding-bottom: 40px;
     text-align: right;
     font-size: 10px;
@@ -733,9 +732,6 @@ legend{
 /* ADMIN - LIST */
 
 
-
-
-
 .product_list_table table{
 	position: relative;
     border-left: 0px;
@@ -808,6 +804,81 @@ tbody .p_name{
     margin-top: 10px;
 }
 /* ----------------------------------------------------------- */
+/* ADMIN - WRITE */
+.product_reg_table{
+    width: 600px;
+    margin: 0 auto 70px auto;
+    border: none;
+}
+
+.product_reg_table form{
+	width: 600px;
+	border-top: 1px solid #ddd;
+}
+
+.product_reg_table table{
+	width: 600px;
+    margin-bottom: 20px;
+}
+
+.product_reg_table tr, .product_reg_table th, .product_reg_table td{
+    border: none;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+.product_reg_table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.product_reg_table th{
+    padding: 0 30px;
+}
+
+.product_reg_table select {
+	width: 50%;
+	border: 1px solid #ddd;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+.prod_reg_input, .product_reg_table textarea{
+	width: 100%;
+    border: 1px solid #ddd;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+.product_reg_table select{
+	height: 32px;
+}
+
+.product_reg_table .prod_reg_input{
+    border: 1px solid #ddd;
+    height: 30px;
+    line-height: 30px;
+}
+
+.product_reg_table textarea{
+    border: 1px solid #ddd;
+    resize: none;
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+
+
+#prod_reg_submit{
+	width: 100%;
+	height: 45px;
+	border: 1px solid #ddd;
+	background-color: #fff;
+    box-sizing: border-box;
+}
+
+#prod_reg_submit:hover{
+	background-color: #111;
+	border: none;
+	color: #fff;
+}
 /* ----------------------------------------------------------- */
 /* MY ACCOUNT */
 
@@ -1248,81 +1319,7 @@ tbody .n_title{
 /* ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */
 /* ----------------------------------------------------------- */
-/* SHOP - WRITE */
-.product_reg_table{
-    width: 600px;
-    margin: 0 auto;
-    border: none;
-}
 
-.product_reg_table form{
-	width: 600px;
-	border-top: 1px solid #ddd;
-}
-
-.product_reg_table table{
-	width: 600px;
-    margin-bottom: 20px;
-}
-
-.product_reg_table tr, .product_reg_table th, .product_reg_table td{
-    border: none;
-    padding: 20px 0;
-    box-sizing: border-box;
-}
-.product_reg_table tr {
-    border-bottom: 1px solid #ddd;
-}
-
-.product_reg_table th{
-    padding: 0 30px;
-}
-
-.product_reg_table select {
-	width: 50%;
-	border: 1px solid #ddd;
-    padding-left: 5px;
-    box-sizing: border-box;
-}
-
-.prod_reg_input, .product_reg_table textarea{
-	width: 100%;
-    border: 1px solid #ddd;
-    padding-left: 5px;
-    box-sizing: border-box;
-}
-
-.product_reg_table select{
-	height: 32px;
-}
-
-.product_reg_table .prod_reg_input{
-    border: 1px solid #ddd;
-    height: 30px;
-    line-height: 30px;
-}
-
-.product_reg_table textarea{
-    border: 1px solid #ddd;
-    resize: none;
-    padding-top: 5px;
-    box-sizing: border-box;
-}
-
-
-#prod_reg_submit{
-	width: 100%;
-	height: 45px;
-	border: 1px solid #ddd;
-	background-color: #fff;
-    box-sizing: border-box;
-}
-
-#prod_reg_submit:hover{
-	background-color: #111;
-	border: none;
-	color: #fff;
-}
 
 /* ----------------------------------------------------------- */
 /* SHOP - LIST */
