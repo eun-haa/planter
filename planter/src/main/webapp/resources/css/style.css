@@ -609,27 +609,21 @@ legend{
 
 
 .find_texts{
-    font-family: 'Noto Sans KR', sans-serif;
     margin-bottom: 30px;
 }
 
 .find_text1{
-    font-weight: 500;
+    font-weight: bold;
     font-size: 18px;
     margin-bottom: 10px;
 }
 
 .find_text2{
-    font-size: 14px;
+    font-size: 13px;
     margin: 0;
 }
 
-.find_text3{
-    display: block;
-    font-size: 15px;
-    padding-top: 45px;
-    text-align: center;
-}
+
 
 .find_pw .find_text3{
     margin-top: 65px;
@@ -641,7 +635,7 @@ legend{
     padding-left: 5px;
     box-sizing: border-box;
     border: 1px solid #ddd;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .find_input_id{
@@ -1511,6 +1505,7 @@ tbody .n_title{
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
+
 
 .cart_list_table th, .cart_list_table td{
     border: none;

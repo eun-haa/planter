@@ -4,9 +4,15 @@
 <script type="text/javascript">
 $(document).ready(function(){
 
+	/* 상품 가격 세자리마다 콤마(,) 찍히게 표시 */
+	let productPrice = parseInt($(".c_priceInput").val()); // input 태그 value는 String이라 parseInt 사용해서 숫자로 바꾸기
+	$(".c_priceSpan").text(productPrice.toLocaleString()); // toLocaleString() 사용하여 콤마 찍기
+	
+	
 
 	/* 종합 정보 호출 */ 	
 	setTotalInfo();
+	
 	/* 체크여부에따른 종합 정보 변화 */
 	$(".individual_checkbox").on("change", function(){
 		/* 총 주문 정보 세팅(배송비, 총 가격, 마일리지, 물품 수, 종류) */
@@ -16,9 +22,9 @@ $(document).ready(function(){
 	$(".individual_checkbox_total").on("click", function(){
 		/* 체크박스 체크/해제 */
 		if($(".individual_checkbox_total").prop("checked")){
-			$(".individual_checkbox").attr("checked", true);
+			$(".individual_checkbox").prop("checked", true);
 		} else{
-			$(".individual_checkbox").attr("checked", false);
+			$(".individual_checkbox").prop("checked", false);
 		}
 		
 		/* 총 주문 정보 세팅 */
@@ -45,7 +51,7 @@ $(document).ready(function(){
 	/* 수량 수정 버튼 */
 	
 	$(".q_modify").on("click", function(){
-		
+		alert("수정되었습니다.")
 		$(".quantity_update_form").submit();
 	});
 	//-----------------------------------------//
@@ -54,6 +60,9 @@ $(document).ready(function(){
 		
 		$(".quantity_delete_form").submit();
 	});
+	
+
+	
 
 	
 })// document. 끝
@@ -95,13 +104,14 @@ function setTotalInfo() {
 	/* 값 삽입 */
 	// 총 가격
 	$(".totalPrice_span").text(totalPrice.toLocaleString());
-	
 	// 총 갯수
 	$(".totalCount_span").text(totalCount);
 	// 배송비
-	$(".totalDelivery_span").text(deliveryPrice);	
+	$(".totalDelivery_span").text(deliveryPrice.toLocaleString());	
 	// 최종 가격(총 가격 + 배송비)
 	$(".totalFinalPrice_span").text(finalTotalPrice.toLocaleString());
+	
+
 }
 </script>
 		<!-- #contents 부분만 본문에 넣기-->
@@ -147,8 +157,11 @@ function setTotalInfo() {
 											<input class="individual_checkbox" type="checkbox">
 	                           			</td>
 	                                    <td scope="col" class="c_image prodUploadList"><a href="/shop/detail?pno=${cart.pno}"></a></td>
-	                                    <td scope="col" class="c_name"><a href="#">${cart.pname}</a></td>
-	                                    <td scope="col" class="c_price">${cart.pprice}</td>
+	                                    <td scope="col" class="c_name"><a href="/shop/detail?pno=${cart.pno}">${cart.pname}</a></td>
+	                                    <td scope="col" class="c_price">
+	                                    	<input type="hidden" class="c_priceInput" value="${cart.pprice}">
+	                                    	<span class="c_priceSpan"></span>원
+	                                    </td>
 	                                    <td scope="col" class="c_qty">
 	                                    	<div class="list_quantity">
 	                                    		
@@ -169,7 +182,7 @@ function setTotalInfo() {
 				                            
 	                                    </td>
 	                                    <td scope="col" class="c_delivery">기본배송</td>
-	                                    <td scope="col" class="c_charge">3000원</td>
+	                                    <td scope="col" class="c_charge">3,000원</td>
 	                                    <td scope="col" class="c_choice">
 	                                    	<a href="#">BUY NOW</a>
 	                                    	<a href="#">WISHLIST</a>
