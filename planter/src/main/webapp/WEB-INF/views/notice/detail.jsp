@@ -56,20 +56,21 @@
                         <div class="board_footer">
                             <div class="d_btns">
                                 <ul>
-                                
-                                    <li class="d_del_btn">
-                                    	<button onclick="noticeDelete([[${detail.nno}]])">DELETE</button>
-                                    </li><!--.d_del_btn-->
-                                    
-                                    
-                                    <li class="d_write_btn">
-                                        <a href="/notice/modify?nno=${detail.nno}">MODIFY</a>
-                                    </li><!--.d_write_btn-->
-            
-            
+	                                <c:if test="${login.role==true}">
+	                                    <li class="d_del_btn">
+	                                    	<button onclick="noticeDelete([[${detail.nno}]])">DELETE</button>
+	                                    </li><!--.d_del_btn-->
+	                                    
+	                                    
+	                                    <li class="d_write_btn">
+	                                        <a href="/notice/modify?nno=${detail.nno}">MODIFY</a>
+	                                    </li><!--.d_write_btn-->
+	           						 </c:if>
+	            
                                     <li class="d_list_btn">
                                         <a href="/notice/list">LIST</a>
                                     </li><!--.d_list_btn-->
+	                                
                                 </ul>
                             </div><!--.d_btns-->
                         </div><!--.board_footer-->
