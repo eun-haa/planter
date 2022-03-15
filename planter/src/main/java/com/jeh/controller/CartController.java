@@ -59,7 +59,7 @@ public class CartController {
 	public String updateCartPOST(CartDTO cart) {
 		// 수량 수정
 		cservice.modifyCount(cart);
-		System.out.println("카트 수량 수정 완료");
+		System.out.println("장바구니 수량 수정 완료");
 		
 		// 수량이 수정된 장바구니 화면으로 이동
 		return "redirect:/cart/list/" + cart.getMid();
@@ -68,20 +68,25 @@ public class CartController {
 	// 4.장바구니 상품 삭제
 	@PostMapping("delete")
 	public String deleteCartPOST(CartDTO cart) {
-		
+		// 장바구니 삭제
 		cservice.deleteCart(cart.getCartId());
-		System.out.println("카트 삭제 완료");
+		System.out.println("장바구니 상품 삭제 완료");
 		
+		// 장바구니 상품 삭제 후 해당 회원의 장바구니 목록으로
 		return "redirect:/cart/list/" + cart.getMid();
 		
 	}
 	
+	// 5.header에 장바구니 상품 갯수
 	@PostMapping("/cartCount")
 	@ResponseBody
 	public int cartCount(CartDTO cart){
 		System.out.println("cartCount 진입");
+		// 장바구니 갯수
 	    int count = cservice.cartCount(cart);
 	    System.out.println("count 확인 결과:" + count);
+	    
+	    // 장바구니 갯수 리턴
 	    return count;
 	}
 	

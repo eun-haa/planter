@@ -5,11 +5,14 @@
 <mapper namespace="com.jeh.mapper.ProductMapper">
 	<!-- 1-1.상품 등록 -->
 	<insert id="productReg">
+	
 		INSERT INTO product(pname, pprice, pstock, pmemo, cid)
 		VALUES(#{pname}, #{pprice}, #{pstock}, #{pmemo}, #{cid})
+		
 	</insert>
 	<!-- 1-2.파일 첨부 -->
 	<insert id="insertSelectKey">
+	
 		<selectKey keyProperty="pno" order="BEFORE" resultType="int">
 			<!-- 제일 큰 pno 값에 +1을 해주어 새로운 new max pno -->
 			SELECT IFNULL(MAX(pno), 0)+1 pno FROM product
@@ -17,6 +20,7 @@
 		</selectKey>
 		INSERT INTO product(pno, pname, pprice, pstock, pmemo, cid)
 		VALUES(#{pno}, #{pname}, #{pprice}, #{pstock}, #{pmemo}, #{cid})
+		
 	</insert>
 	
 	<!-- 2-1.전체 상품 목록 -->
@@ -32,6 +36,7 @@
 		<![CDATA[
 				AND rownum > (#{pageNum}-1)*#{amount} AND rownum <= #{pageNum}*#{amount}
 		]]>
+		
 	</select>
 	
 	
@@ -39,19 +44,23 @@
 	<!-- SHOP 상품 목록 페이징 - 상품 전체 갯수 -->
 	<!-- 검색에 적용되게 하기 위해 위의 SELECT문을 그대로 가져와서 수정 -->
 	<select id="getTotalCount1" resultType="int">
+	
 		SELECT COUNT(*) FROM product
+		
 	</select>
 	
 
 	<!--  -->
 	<!-- 2-2.ADMIN 상품 목록 -->
 	<select id="adminList" resultType="com.jeh.domain.ProductDTO">
+	
 		SELECT * 
 		FROM(SELECT @rownum:=@rownum+1 AS rownum, p.*
 			FROM (SELECT @rownum:=0) AS rnt,
 			product AS p
 
 		) AS productList
+		
 		<choose>
 			<when test="search == null">
 				WHERE 1 = 1
@@ -70,10 +79,13 @@
 		<![CDATA[
 				AND rownum > (#{pageNum}-1)*#{amount} AND rownum <= #{pageNum}*#{amount}
 		]]>
+		
 	</select>
+	
 	<!-- ADMIN 상품 목록 페이징 - 상품 전체 갯수 -->
 	<!-- 검색에 적용되게 하기 위해 위의 SELECT문을 그대로 가져와서 수정 -->
 	<select id="getTotalCount2" resultType="int">
+	
 		SELECT COUNT(*) FROM product
 		<choose>
 			<when test="search == null">
@@ -89,15 +101,19 @@
 				WHERE pname like CONCAT('%', #{keyword}, '%')
 			</otherwise>
 		</choose>
+		
 	</select>
 	
 	<!-- 파일 관련 상품 정보들 목록에 띄우기 위함 -->
 	<select id="prodInfoList" resultType="com.jeh.domain.ProductDTO">
+	
 		SELECT * FROM product
+		
 	</select>
 	
 	<!-- 3-1.PLANT 카테고리 상품 목록 -->
 	<select id="shopList1" resultType="com.jeh.domain.ProductDTO">
+	
 		SELECT * 
 		FROM(SELECT @rownum:=@rownum+1 AS rownum, p.*
 			FROM (SELECT @rownum:=0) AS rnt,
@@ -105,12 +121,15 @@
 
 		) AS productList
 		WHERE cid = 1
+		
 		<![CDATA[
 				AND rownum > (#{pageNum}-1)*#{amount} AND rownum <= #{pageNum}*#{amount}
 		]]>
+		
 	</select>
 	<!-- 3-2.FLOWER 카테고리 상품 목록 -->
 	<select id="shopList2" resultType="com.jeh.domain.ProductDTO">
+	
 		SELECT * 
 		FROM(SELECT @rownum:=@rownum+1 AS rownum, p.*
 			FROM (SELECT @rownum:=0) AS rnt,
@@ -118,12 +137,15 @@
 
 		) AS productList
 		WHERE cid = 2
+		
 		<![CDATA[
 				AND rownum > (#{pageNum}-1)*#{amount} AND rownum <= #{pageNum}*#{amount}
 		]]>
+		
 	</select>
 	<!-- 3-3.GARDENING 카테고리 상품 목록 -->
 	<select id="shopList3" resultType="com.jeh.domain.ProductDTO">
+	
 		SELECT * 
 		FROM(SELECT @rownum:=@rownum+1 AS rownum, p.*
 			FROM (SELECT @rownum:=0) AS rnt,
@@ -131,12 +153,15 @@
 
 		) AS productList
 		WHERE cid = 3
+		
 		<![CDATA[
 				AND rownum > (#{pageNum}-1)*#{amount} AND rownum <= #{pageNum}*#{amount}
 		]]>
+		
 	</select>
 	<!-- 3-4.PLATERIOR 카테고리 상품 목록 -->
 	<select id="shopList4" resultType="com.jeh.domain.ProductDTO">
+	
 		SELECT * 
 		FROM(SELECT @rownum:=@rownum+1 AS rownum, p.*
 			FROM (SELECT @rownum:=0) AS rnt,
@@ -144,43 +169,54 @@
 
 		) AS productList
 		WHERE cid = 4
+		
 		<![CDATA[
 				AND rownum > (#{pageNum}-1)*#{amount} AND rownum <= #{pageNum}*#{amount}
 		]]>
+		
 	</select>
 	
 	
 	
 	<!-- 4.상품 상세 -->
 	<select id="shopDetail" resultType="com.jeh.domain.ProductDTO">
+	
 		SELECT * FROM product
 		WHERE pno=#{pno}
+		
 	</select>
 	<!-- 상품 조회수 업데이트 -->
 	<update id="hitUpdate">
+	
 		UPDATE product
 		SET phit = phit + 1
 		WHERE pno = #{pno}
+		
 	</update>
 	
 	<!-- 5.상품 수정 -->
 	<update id="postModify">
+	
 		UPDATE product
     	SET cid=#{cid}, pname=#{pname}, pprice=#{pprice},
     		pdiscount=#{pdiscount}, pstock=#{pstock}, pmemo=#{pmemo},
     		pupdate=NOW()
     	WHERE pno=#{pno}
+    	
 	</update>
 
 	
 	<!-- 6.상품 삭제 -->
     <delete id="delete">
+    
     	DELETE FROM product
     	WHERE pno=#{pno}
+    	
     </delete>
     
     <!-- 7.검색 결과 -->
 	<select id="searchList" resultType="com.jeh.domain.ProductDTO">
+	
 		<!-- SELECT * FROM product -->
 		SELECT * 
 		FROM(SELECT @rownum:=@rownum+1 AS rownum, p.*
@@ -199,5 +235,6 @@
 		<![CDATA[
 				AND rownum > (#{pageNum}-1)*#{amount} AND rownum <= #{pageNum}*#{amount}
 		]]>
+		
 	</select>
 </mapper>

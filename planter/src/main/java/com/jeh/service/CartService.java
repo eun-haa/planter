@@ -19,6 +19,6 @@ public interface CartService {
 	// 4.장바구니 상품 삭제
 	public int deleteCart(int cartId);
 	
-	//
+	// 5.header 장바구니 갯수
 	public int cartCount(CartDTO cart);
 }

@@ -5,22 +5,28 @@
 <mapper namespace="com.jeh.mapper.NoticeMapper">
 	<!-- 1-1.글 쓰기 -->
 	<insert id="write">
+	
 		INSERT INTO notice(title, content, writer)
 		VALUES(#{title}, #{content}, #{writer})
+		
 	</insert>
 	
 	<!-- 1-2.파일 첨부 -->
 	<insert id="insertSelectKey">
+	
 		<selectKey keyProperty="nno" order="BEFORE" resultType="int">
 			<!-- 제일 큰 nno 값에 +1을 해주어 새로운 new max bno -->
 			SELECT MAX(nno)+1 nno FROM notice
 		</selectKey>
+		
 		INSERT INTO notice(nno,title,content,writer)
 		VALUES (#{nno},#{title},#{content},#{writer})
+		
 	</insert>
     
 	<!-- 2-1.글 목록 + 페이징-->
 	<select id="list" resultType="com.jeh.domain.NoticeDTO">
+	
 		SELECT * 
 		FROM(SELECT @rownum:=@rownum+1 AS rownum, n.*
 			FROM (SELECT @rownum:=0) AS rnt,
@@ -48,12 +54,15 @@
 		<![CDATA[
 				AND rownum > (#{pageNum}-1)*#{amount} AND rownum <= #{pageNum}*#{amount}
 		]]>
+		
 	</select>
 	
 	<!-- 2-2.게시판 페이징 - 글 전체 갯수-->
 	<!-- 검색에 적용되게 하기 위해 위의 SELECT문을 그대로 가져와서 수정 -->
 	<select id="getTotalCount" resultType="int">
+	
 		SELECT COUNT(*) FROM notice
+		
 		<choose>
 			<when test="search == null">
 				WHERE 1 = 1
@@ -72,32 +81,42 @@
 				OR content like CONCAT('%', #{keyword}, '%')
 			</otherwise>
 		</choose>
+		
 	</select>
 	
 	<!-- 3-1.글 상세 -->
 	<select id="detail" resultType="com.jeh.domain.NoticeDTO">
+	
 		SELECT * FROM notice
 		WHERE nno=#{nno}
+		
 	</select>
+	
 	<!-- 3-2.글 조회수 업데이트 -->
 	<update id="hitUpdate">
+	
 		UPDATE notice
 		SET hit = hit + 1
 		WHERE nno = #{nno}
+		
 	</update>
     
     <!-- 4.글 수정 -->
     <update id="postModify">
+    
     	UPDATE notice
     	SET title=#{title},
     		content=#{content},
     		regdate=now()
     	WHERE nno=#{nno}
+    	
     </update>
     
     <!-- 5.글 삭제 -->
     <delete id="delete">
+    
     	DELETE FROM notice
     	WHERE nno=#{nno}
+    	
     </delete>
 </mapper>

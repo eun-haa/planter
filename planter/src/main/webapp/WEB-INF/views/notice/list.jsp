@@ -10,9 +10,8 @@
                 <div class="notice_list_in">
                     <div class="notice_list_table">
                         <table border="1" summary="">
-                            <!-- <caption>상품 게시판 목록</caption> -->
 
-							
+
                             <thead class="">
                                 <tr>
                                     <th scope="col" class="n_no">NO</th>
@@ -50,12 +49,6 @@
                                                 <legend>게시물 검색</legend>
                                                 <p class="category displaynone"></p>
                                                 <p>
-                                                    <!-- <select id="search_date" name="search_date" fw-filter="" fw-label="" fw-msg="">
-                                                        <option value="week">일주일</option>
-                                                        <option value="month">한달</option>
-                                                        <option value="month3">세달</option>
-                                                        <option value="all">전체</option>
-                                                    </select>  -->
                                                     <select id="search_key" name="search">
                                                         <option value="T" <c:out value="${pager.sc.search == 'T' ? 'selected' :''}"/>>제목</option>
                                                         <option value="C" <c:out value="${pager.sc.search == 'C' ? 'selected' :''}"/>>내용</option>
@@ -90,9 +83,6 @@
 
 
                     </div>
-
-
-
 
                     <div class="notice_list_pager">
                         <ul>

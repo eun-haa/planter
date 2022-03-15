@@ -161,12 +161,6 @@ public class ShopController {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
 	// 6.shop 상품 상세 화면
 	@GetMapping("shop/detail")
 	public void shopDetail(ProductDTO prod, Model model) {

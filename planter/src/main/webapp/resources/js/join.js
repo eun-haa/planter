@@ -42,27 +42,27 @@ $(document).ready(function(){
 		    success:function(data){
 
 		    	if(data != 0 && $("#mid").val() != ""){
-				      $("#idMsg").html("이미 존재하는 아이디입니다.")
-				      $("#idMsg").css("color","red")
+				      $("#idMsg").html("이미 존재하는 아이디입니다.");
+				      $("#idMsg").css("color","red");
 					  idCk = false;
-					  console.log("id fail")
+					  console.log("id fail");
 		        }
 		    	else if($("#mid").val() == ""){
-		    		  $("#idMsg").html("아이디를 입력해주세요.")
-		        	  //$("#idMsg").html("아이디는 영문소문자와 숫자를 조합하여 4-16자로 입력해 주세요.")
+		    		  $("#idMsg").html("아이디를 입력해주세요.");
+		        	  //$("#idMsg").html("아이디는 영문소문자와 숫자를 조합하여 4-16자로 입력해 주세요.");
 					  idCk = false;
-					  console.log("id fail")
+					  console.log("id fail");
 		    	}
 		        else if(!idCheck.test($("#mid").val())){
-		        	  $("#idMsg").html("아이디는 영문소문자와 숫자를 조합하여 4-16자로 입력해 주세요.")
+		        	  $("#idMsg").html("아이디는 영문소문자와 숫자를 조합하여 4-16자로 입력해 주세요.");
 					  idCk = false;
-					  console.log("id fail")
+					  console.log("id fail");
 		        }
 		        else if(data == 0){
-					  $("#idMsg").html("사용가능한 아이디입니다.")
-					  $("#idMsg").css("color","blue")
+					  $("#idMsg").html("사용가능한 아이디입니다.");
+					  $("#idMsg").css("color","blue");
 				      idCk = true;
-				      console.log("id ok")
+				      console.log("id ok");
 		        }
 
 		        console.log("data : " + data);
@@ -76,77 +76,77 @@ $(document).ready(function(){
 	// 2.비밀번호 유효성 검사
 	$("#passwd").blur(function(){
 		  if(!pwCheck.test($("#passwd").val())){
-			  $("#pwMsg").html("비밀번호는 영문 소문자/숫자/특수문자 조합으로 8-16글자로 입력해 주세요.")
-			  $("#pwMsg").css("color","red")
+			  $("#pwMsg").html("비밀번호는 영문 소문자/숫자/특수문자 조합으로 8-16글자로 입력해 주세요.");
+			  $("#pwMsg").css("color","red");
 			  pwCk = false;
-			  console.log('pwCk fail')
+			  console.log('pwCk fail');
 		  }
 		  else if($("#passwd").val() == ""){
-			  $("#pwMsg").text("비밀번호는 영문 소문자/숫자/특수문자 조합으로 8-16글자로 입력해 주세요.")
-			  $("#pwMsg").css("color","red")
+			  $("#pwMsg").text("비밀번호는 영문 소문자/숫자/특수문자 조합으로 8-16글자로 입력해 주세요.");
+			  $("#pwMsg").css("color","red");
 			  pwCk = false;
-			  console.log('pwCk fail')
+			  console.log('pwCk fail');
 		  }
 		  else{
-			  $("#pwMsg").html("적절한 비밀번호입니다.")
-			  $("#pwMsg").css("color","blue")
+			  $("#pwMsg").html("적절한 비밀번호입니다.");
+			  $("#pwMsg").css("color","blue");
 			  pwCk = true;
-		      console.log('pwCk ok')
+		      console.log('pwCk ok');
 		  }
 	});
 		
 	// 3.비밀번호 확인 유효성 검사
 	$("#passwd_confirm").blur(function(){
 	  if($("#passwd_confirm").val() == ""){
-		  $("#pwConfirmMsg").html("")
+		  $("#pwConfirmMsg").html("");
 		  pwcfCk = false;
-		  console.log('pwCk fail')
+		  console.log('pwCk fail');
 	  }
 	  else if($("#passwd_confirm").val() == $("#passwd").val()){
-		  $("#pwConfirmMsg").html("입력하신 비밀번호와 일치합니다.")
-		  $("#pwConfirmMsg").css("color","blue")
+		  $("#pwConfirmMsg").html("입력하신 비밀번호와 일치합니다.");
+		  $("#pwConfirmMsg").css("color","blue");
 		  pwcfCk = true;
-	      console.log('pwCk ok')
+	      console.log('pwCk ok');
 	  }
 	  else if($("#passwd_confirm").val() == ""){
-		  $("#pwConfirmMsg").html("입력하신 비밀번호와 맞지 않습니다.")
-		  $("#pwConfirmMsg").css("color","red")
+		  $("#pwConfirmMsg").html("입력하신 비밀번호와 맞지 않습니다.");
+		  $("#pwConfirmMsg").css("color","red");
 		  pwcfCk = false;
-		  console.log('pwCk fail')
+		  console.log('pwCk fail');
 		}
 	  else if($("#passwd_confirm").val() != $("#passwd").val()){
-		  $("#pwConfirmMsg").html("입력하신 비밀번호와 맞지 않습니다.")
-		  $("#pwConfirmMsg").css("color","red")
+		  $("#pwConfirmMsg").html("입력하신 비밀번호와 맞지 않습니다.");
+		  $("#pwConfirmMsg").css("color","red");
 		  pwcfCk = false;
-		  console.log('pwCk fail')
+		  console.log('pwCk fail');
 	  }
 
 	  else{
-		  $("#pwConfirmMsg").html("입력하신 비밀번호와 맞지 않습니다.")
-		  $("#pwConfirmMsg").css("color","red")
+		  $("#pwConfirmMsg").html("입력하신 비밀번호와 맞지 않습니다.");
+		  $("#pwConfirmMsg").css("color","red");
 		  pwcfCk = false;
-		  console.log('pwCk fail')
+		  console.log('pwCk fail');
 	  }
 	});
 	
 	// 4.이름 유효성 검사
 	$("#name").blur(function(){
 		if($("#name").val() == ""){
-			$("#nameMsg").html("이름을 입력해주세요.")
-			$("#nameMsg").css("color","red")
+			$("#nameMsg").html("이름을 입력해주세요.");
+			$("#nameMsg").css("color","red");
 			nameCk = false;
-			console.log('nameCk fail')
+			console.log('nameCk fail');
 		}
 		else if(!nameCheck.test($("#name").val())){
-			$("#nameMsg").html("이름은 한글만 입력 가능합니다.")
-			$("#nameMsg").css("color","red")
+			$("#nameMsg").html("이름은 한글만 입력 가능합니다.");
+			$("#nameMsg").css("color","red");
 			nameCk = false;
-			console.log('nameCk fail')
+			console.log('nameCk fail');
 		}
 		else{
-			$("#nameMsg").html("")
+			$("#nameMsg").html("");
 			nameCk = true;
-			console.log('nameCk ok')
+			console.log('nameCk ok');
 
 		}
 	});
@@ -167,27 +167,27 @@ $(document).ready(function(){
 		
 		// #phone의 value값을 통해 유효성 검사
 		if($("#phone").val() == ""){
-			$("#phoneMsg").html("번호를 입력해주세요.")
-			$("#phoneMsg").css("color","red")
+			$("#phoneMsg").html("번호를 입력해주세요.");
+			$("#phoneMsg").css("color","red");
 			phoneCk = false;
-			console.log('phoneCk fail')
+			console.log('phoneCk fail');
 		}
 		else if(!phoneCheck.test($("#phone").val())){
-			$("#phoneMsg").html("번호를 다시 확인해주세요.")
-			$("#phoneMsg").css("color","red")
+			$("#phoneMsg").html("번호를 다시 확인해주세요.");
+			$("#phoneMsg").css("color","red");
 			phoneCk = false;
-			console.log('phoneCk 형식 fail')
+			console.log('phoneCk 형식 fail');
 		}
 		else if(phoneCheck.test($("#phone").val())){
-			$("#phoneMsg").html("")
-			//$("#phoneMsg").css("color","blue")
+			$("#phoneMsg").html("");
+			//$("#phoneMsg").css("color","blue");
 			phoneCk = true;
-			console.log('phoneCk ok')
+			console.log('phoneCk ok');
 		}else{
-			$("#phoneMsg").html("번호를 다시 확인해주세요.")
-			$("#phoneMsg").css("color","red")
+			$("#phoneMsg").html("번호를 다시 확인해주세요.");
+			$("#phoneMsg").css("color","red");
 			phoneCk = false;
-			console.log('phoneCk 형식 fail')
+			console.log('phoneCk 형식 fail');
 		}
 
 	});
@@ -205,28 +205,28 @@ $(document).ready(function(){
 			    success:function(data){
 
 			    	if(data != 0 && $("#email").val() != ""){
-					      $("#emailMsg").html("이미 가입된 이메일입니다.")
-					      $("#idMsg").css("color","red")
+					      $("#emailMsg").html("이미 가입된 이메일입니다.");
+					      $("#idMsg").css("color","red");
 						  emailCk = false;
-						  console.log("emailCk fail")
+						  console.log("emailCk fail");
 			        }
 			    	else if($("#email").val() == ""){
-			    		  $("#emailMsg").html("이메일을 입력해주세요.")
-			        	  $("#emailMsg").css("color","red")
+			    		  $("#emailMsg").html("이메일을 입력해주세요.");
+			        	  $("#emailMsg").css("color","red");
 						  emailCk = false;
-						  console.log("emailCk fail")
+						  console.log("emailCk fail");
 			    	}
 			        else if(!emailCheck.test($("#email").val())){
-			        	  $("#emailMsg").html("이메일을 다시 확인해주세요.")
-			        	  $("#emailMsg").css("color","red")
+			        	  $("#emailMsg").html("이메일을 다시 확인해주세요.");
+			        	  $("#emailMsg").css("color","red");
 						  emailCk = false;
-						  console.log("emailCk fail")
+						  console.log("emailCk fail");
 			        }
 			        else if(data == 0){
-						  $("#emailMsg").html("사용가능한 이메일입니다.")
-						  $("#emailMsg").css("color","blue")
+						  $("#emailMsg").html("사용가능한 이메일입니다.");
+						  $("#emailMsg").css("color","blue");
 					      emailCk = true;
-					      console.log("emailCk ok")
+					      console.log("emailCk ok");
 			        }
 
 			        console.log("data : " + data);

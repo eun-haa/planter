@@ -56,7 +56,7 @@ public class CartServiceImpl implements CartService{
 		return cmapper.deleteCart(cartId);
 	}
 	
-	
+	// 5.header 장바구니 갯수
 	@Override
 	public int cartCount(CartDTO cart) {
 		return cmapper.cartCount(cart);
