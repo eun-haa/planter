@@ -38,10 +38,12 @@ $(document).ready(function(){
 	    	if(count == 0){
 	    		$(".bag_count").text(count);
 	    		$(".bag_count").css("left","30%");
+	    		$(".bag_count").css("top","0");
 	        }
 	    	else{
 	        	$(".bag_count").text(count);
-	        	$(".bag_count").css("left","40%");
+	    		$(".bag_count").css("left","36%");
+	    		$(".bag_count").css("top","0");
 	    	}
 	    	
 	        console.log("count : " + count);
